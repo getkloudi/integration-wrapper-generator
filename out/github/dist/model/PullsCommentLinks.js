@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullsCommentLinks model module.
  * @module model/PullsCommentLinks
- * @version 1.4.5
+ * @version 1.4.6
  */
 var PullsCommentLinks = /*#__PURE__*/function () {
   /**

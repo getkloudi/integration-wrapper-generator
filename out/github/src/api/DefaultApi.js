@@ -103,7 +103,7 @@ import UserUpdate from '../model/UserUpdate';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.4.5
+* @version 1.4.6
 */
 export default class DefaultApi {
 
@@ -8538,7 +8538,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PullsComment;
@@ -8601,7 +8601,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PullsComment;
@@ -8659,7 +8659,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -8964,6 +8964,127 @@ export default class DefaultApi {
       let returnType = Repo;
       return this.apiClient.callApi(
         '/repos/{owner}/{repo}/pulls/{number}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the reposOwnerRepoPullsNumberReviewsGet operation.
+     * @callback module:api/DefaultApi~reposOwnerRepoPullsNumberReviewsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PullsComment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List reviews on a pull request.
+     * @param {String} owner Name of repository owner.
+     * @param {String} repo Name of repository.
+     * @param {Number} _number Id of pull.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.accept Is used to set specified media type.
+     * @param {module:api/DefaultApi~reposOwnerRepoPullsNumberReviewsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PullsComment}
+     */
+    reposOwnerRepoPullsNumberReviewsGet(owner, repo, _number, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'owner' is set
+      if (owner === undefined || owner === null) {
+        throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoPullsNumberReviewsGet");
+      }
+      // verify the required parameter 'repo' is set
+      if (repo === undefined || repo === null) {
+        throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoPullsNumberReviewsGet");
+      }
+      // verify the required parameter '_number' is set
+      if (_number === undefined || _number === null) {
+        throw new Error("Missing the required parameter '_number' when calling reposOwnerRepoPullsNumberReviewsGet");
+      }
+
+      let pathParams = {
+        'owner': owner,
+        'repo': repo,
+        'number': _number
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'Accept': opts['accept']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PullsComment;
+      return this.apiClient.callApi(
+        '/repos/{owner}/{repo}/pulls/{number}/reviews', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the reposOwnerRepoPullsNumberReviewsPost operation.
+     * @callback module:api/DefaultApi~reposOwnerRepoPullsNumberReviewsPostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PullsComment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to. 
+     * @param {String} owner Name of repository owner.
+     * @param {String} repo Name of repository.
+     * @param {Number} _number Id of pull.
+     * @param {module:model/PullsCommentPost} body 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.accept Is used to set specified media type.
+     * @param {module:api/DefaultApi~reposOwnerRepoPullsNumberReviewsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PullsComment}
+     */
+    reposOwnerRepoPullsNumberReviewsPost(owner, repo, _number, body, opts, callback) {
+      opts = opts || {};
+      let postBody = body;
+      // verify the required parameter 'owner' is set
+      if (owner === undefined || owner === null) {
+        throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoPullsNumberReviewsPost");
+      }
+      // verify the required parameter 'repo' is set
+      if (repo === undefined || repo === null) {
+        throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoPullsNumberReviewsPost");
+      }
+      // verify the required parameter '_number' is set
+      if (_number === undefined || _number === null) {
+        throw new Error("Missing the required parameter '_number' when calling reposOwnerRepoPullsNumberReviewsPost");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoPullsNumberReviewsPost");
+      }
+
+      let pathParams = {
+        'owner': owner,
+        'repo': repo,
+        'number': _number
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'Accept': opts['accept']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PullsComment;
+      return this.apiClient.callApi(
+        '/repos/{owner}/{repo}/pulls/{number}/reviews', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

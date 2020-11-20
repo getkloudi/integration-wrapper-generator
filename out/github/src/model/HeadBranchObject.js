@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HeadBranchObject model module.
  * @module model/HeadBranchObject
- * @version 1.4.5
+ * @version 1.4.6
  */
 class HeadBranchObject {
     /**

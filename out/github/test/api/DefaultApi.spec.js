@@ -1628,6 +1628,26 @@
         done();
       });
     });
+    describe('reposOwnerRepoPullsNumberReviewsGet', function() {
+      it('should call reposOwnerRepoPullsNumberReviewsGet successfully', function(done) {
+        //uncomment below and update the code to test reposOwnerRepoPullsNumberReviewsGet
+        //instance.reposOwnerRepoPullsNumberReviewsGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('reposOwnerRepoPullsNumberReviewsPost', function() {
+      it('should call reposOwnerRepoPullsNumberReviewsPost successfully', function(done) {
+        //uncomment below and update the code to test reposOwnerRepoPullsNumberReviewsPost
+        //instance.reposOwnerRepoPullsNumberReviewsPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('reposOwnerRepoPullsPost', function() {
       it('should call reposOwnerRepoPullsPost successfully', function(done) {
         //uncomment below and update the code to test reposOwnerRepoPullsPost

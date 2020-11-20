@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentPayload model module.
  * @module model/DeploymentPayload
- * @version 1.4.5
+ * @version 1.4.6
  */
 var DeploymentPayload = /*#__PURE__*/function () {
   /**

@@ -947,6 +947,18 @@ Merge a pull request (Merge Button&#39;s)
 Update a pull request.
 
 ",reposOwnerRepoPullsNumberPatch,owner repo _number body opts
+/repos/{owner}/{repo}/pulls/{number}/reviews,GET,"
+
+
+List reviews on a pull request.
+
+",reposOwnerRepoPullsNumberReviewsGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number}/reviews,POST,"
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to. 
+
+",reposOwnerRepoPullsNumberReviewsPost,owner repo _number body opts
 /repos/{owner}/{repo}/pulls,POST,"
 
 

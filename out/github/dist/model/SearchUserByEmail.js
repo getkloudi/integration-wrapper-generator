@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchUserByEmail model module.
  * @module model/SearchUserByEmail
- * @version 1.4.5
+ * @version 1.4.6
  */
 var SearchUserByEmail = /*#__PURE__*/function () {
   /**

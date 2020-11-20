@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GistHistory model module.
  * @module model/GistHistory
- * @version 1.4.5
+ * @version 1.4.6
  */
 var GistHistory = /*#__PURE__*/function () {
   /**

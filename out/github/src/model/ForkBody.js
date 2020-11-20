@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ForkBody model module.
  * @module model/ForkBody
- * @version 1.4.5
+ * @version 1.4.6
  */
 class ForkBody {
     /**

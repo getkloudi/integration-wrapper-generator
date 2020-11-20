@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagObject model module.
  * @module model/TagObject
- * @version 1.4.5
+ * @version 1.4.6
  */
 var TagObject = /*#__PURE__*/function () {
   /**

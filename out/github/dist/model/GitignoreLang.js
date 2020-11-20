@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GitignoreLang model module.
  * @module model/GitignoreLang
- * @version 1.4.5
+ * @version 1.4.6
  */
 var GitignoreLang = /*#__PURE__*/function () {
   /**

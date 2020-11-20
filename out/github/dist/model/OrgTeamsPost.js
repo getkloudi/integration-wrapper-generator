@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The OrgTeamsPost model module.
  * @module model/OrgTeamsPost
- * @version 1.4.5
+ * @version 1.4.6
  */
 var OrgTeamsPost = /*#__PURE__*/function () {
   /**

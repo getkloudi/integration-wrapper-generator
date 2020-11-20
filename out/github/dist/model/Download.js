@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Download model module.
  * @module model/Download
- * @version 1.4.5
+ * @version 1.4.6
  */
 var Download = /*#__PURE__*/function () {
   /**

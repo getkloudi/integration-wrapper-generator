@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReleaseCreate model module.
  * @module model/ReleaseCreate
- * @version 1.4.5
+ * @version 1.4.6
  */
 class ReleaseCreate {
     /**

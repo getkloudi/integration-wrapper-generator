@@ -9898,7 +9898,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a comment.",
@@ -9985,7 +9990,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/issues/{number}/events": {
@@ -12858,7 +12868,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a comment.\n  #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )\n  description: |\n    Alternative Input.\n    Instead of passing commit_id, path, and position you can reply to an\n    existing Pull Request Comment like this:\n\n        body\n           Required string\n        in_reply_to\n           Required number - Comment id to reply to.\n",
@@ -12945,7 +12960,190 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			}
+		},
+		"/repos/{owner}/{repo}/pulls/{number}/reviews": {
+			"get": {
+				"description": "List reviews on a pull request.",
+				"parameters": [
+					{
+						"description": "Name of repository owner.",
+						"in": "path",
+						"name": "owner",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"description": "Name of repository.",
+						"in": "path",
+						"name": "repo",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"description": "Id of pull.",
+						"in": "path",
+						"name": "number",
+						"required": true,
+						"type": "integer"
+					},
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"headers": {
+							"X-GitHub-Media-Type": {
+								"description": "You can check the current version of media type in responses.\n",
+								"type": "string"
+							},
+							"X-GitHub-Request-Id": {
+								"type": "integer"
+							},
+							"X-RateLimit-Limit": {
+								"type": "integer"
+							},
+							"X-RateLimit-Remaining": {
+								"type": "integer"
+							},
+							"X-RateLimit-Reset": {
+								"type": "integer"
+							}
+						},
+						"schema": {
+							"$ref": "#/definitions/pullsComment"
+						}
+					},
+					"403": {
+						"description": "API rate limit exceeded. See http://developer.github.com/v3/#rate-limiting\nfor details.\n",
+						"headers": {
+							"X-GitHub-Media-Type": {
+								"description": "You can check the current version of media type in responses.\n",
+								"type": "string"
+							},
+							"X-GitHub-Request-Id": {
+								"type": "integer"
+							},
+							"X-RateLimit-Limit": {
+								"type": "integer"
+							},
+							"X-RateLimit-Remaining": {
+								"type": "integer"
+							},
+							"X-RateLimit-Reset": {
+								"type": "integer"
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			},
+			"post": {
+				"description": "Create a comment.\n  #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )\n  description: |\n    Alternative Input.\n    Instead of passing commit_id, path, and position you can reply to an\n    existing Pull Request Comment like this:\n\n        body\n           Required string\n        in_reply_to\n           Required number - Comment id to reply to.\n",
+				"parameters": [
+					{
+						"description": "Name of repository owner.",
+						"in": "path",
+						"name": "owner",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"description": "Name of repository.",
+						"in": "path",
+						"name": "repo",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"description": "Id of pull.",
+						"in": "path",
+						"name": "number",
+						"required": true,
+						"type": "integer"
+					},
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/pullsCommentPost"
+						}
+					}
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"headers": {
+							"X-GitHub-Media-Type": {
+								"description": "You can check the current version of media type in responses.\n",
+								"type": "string"
+							},
+							"X-GitHub-Request-Id": {
+								"type": "integer"
+							},
+							"X-RateLimit-Limit": {
+								"type": "integer"
+							},
+							"X-RateLimit-Remaining": {
+								"type": "integer"
+							},
+							"X-RateLimit-Reset": {
+								"type": "integer"
+							}
+						},
+						"schema": {
+							"$ref": "#/definitions/pullsComment"
+						}
+					},
+					"403": {
+						"description": "API rate limit exceeded. See http://developer.github.com/v3/#rate-limiting\nfor details.\n",
+						"headers": {
+							"X-GitHub-Media-Type": {
+								"description": "You can check the current version of media type in responses.\n",
+								"type": "string"
+							},
+							"X-GitHub-Request-Id": {
+								"type": "integer"
+							},
+							"X-RateLimit-Limit": {
+								"type": "integer"
+							},
+							"X-RateLimit-Remaining": {
+								"type": "integer"
+							},
+							"X-RateLimit-Reset": {
+								"type": "integer"
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/pulls/{number}/commits": {
@@ -13026,7 +13224,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/pulls/{number}/files": {

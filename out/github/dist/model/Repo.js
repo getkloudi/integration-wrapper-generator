@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Repo model module.
  * @module model/Repo
- * @version 1.4.5
+ * @version 1.4.6
  */
 var Repo = /*#__PURE__*/function () {
   /**

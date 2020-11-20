@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompareCommitsFiles model module.
  * @module model/CompareCommitsFiles
- * @version 1.4.5
+ * @version 1.4.6
  */
 class CompareCommitsFiles {
     /**

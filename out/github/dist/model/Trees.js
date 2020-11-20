@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Trees model module.
  * @module model/Trees
- * @version 1.4.5
+ * @version 1.4.6
  */
 var Trees = /*#__PURE__*/function () {
   /**

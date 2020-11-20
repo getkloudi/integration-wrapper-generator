@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommentBody model module.
  * @module model/CommentBody
- * @version 1.4.5
+ * @version 1.4.6
  */
 class CommentBody {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompareCommitsBaseCommitCommitAuthor model module.
  * @module model/CompareCommitsBaseCommitCommitAuthor
- * @version 1.4.5
+ * @version 1.4.6
  */
 var CompareCommitsBaseCommitCommitAuthor = /*#__PURE__*/function () {
   /**

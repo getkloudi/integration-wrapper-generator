@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergesSuccessfulCommit model module.
  * @module model/MergesSuccessfulCommit
- * @version 1.4.5
+ * @version 1.4.6
  */
 var MergesSuccessfulCommit = /*#__PURE__*/function () {
   /**

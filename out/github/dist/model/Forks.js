@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Forks model module.
  * @module model/Forks
- * @version 1.4.5
+ * @version 1.4.6
  */
 var Forks = /*#__PURE__*/function () {
   /**

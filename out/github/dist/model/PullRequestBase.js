@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullRequestBase model module.
  * @module model/PullRequestBase
- * @version 1.4.5
+ * @version 1.4.6
  */
 var PullRequestBase = /*#__PURE__*/function () {
   /**

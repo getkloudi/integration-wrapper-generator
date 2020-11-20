@@ -253,8 +253,8 @@ class GithubService {
         {
           pepper_task: [
             "task.pepper.SYNC_GITHUB_TEAM_MEMBERS",
-            "task.pepper.SYNC_GITHUB_PRS",
             "task.pepper.SYNC_GITHUB_COMMITS",
+            "task.pepper.SYNC_GITHUB_PRS",
             "task.pepper.SYNC_GITHUB_ISSUES",
           ],
           project_id: options.projectId,
@@ -1100,7 +1100,11 @@ List commits on a repository.
             if (err) {
               reject({ error: err, response: response });
             }
-            resolve({ data: data, response: response });
+            resolve({
+              data: data,
+              response: response,
+              next: this.getNextPaginationURIFromResponse(response),
+            });
           });
         });
 
@@ -1982,7 +1986,11 @@ List comments on a pull request.
               if (err) {
                 reject({ error: err, response: response });
               }
-              resolve({ data: data, response: response });
+              resolve({
+                data: data,
+                response: response,
+                next: this.getNextPaginationURIFromResponse(response),
+              });
             }
           );
         });
@@ -2004,7 +2012,11 @@ List commits on a pull request.
               if (err) {
                 reject({ error: err, response: response });
               }
-              resolve({ data: data, response: response });
+              resolve({
+                data: data,
+                response: response,
+                next: this.getNextPaginationURIFromResponse(response),
+              });
             }
           );
         });
@@ -2068,6 +2080,32 @@ Get if a pull request has been merged.
                 reject({ error: err, response: response });
               }
               resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case "REPOS_OWNER_REPO_PULLS_NUMBER_REVIEWS":
+        /*
+
+
+
+List reviews on a pull request.
+
+
+      Function parameters for this API owner,repo,_number,opts
+        */
+        return new Promise((resolve, reject) => {
+          this.reposOwnerRepoPullsNumberReviewsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({
+                data: data,
+                response: response,
+                next: this.getNextPaginationURIFromResponse(response),
+              });
             }
           );
         });
@@ -3215,12 +3253,13 @@ Lists all the emojis available to use on GitHub.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
@@ -3255,12 +3294,13 @@ List public events.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
@@ -3295,12 +3335,13 @@ List Feeds. GitHub provides several timeline resources in Atom format. The Feeds
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
@@ -3336,12 +3377,13 @@ List the authenticated user&#39;s gists or if called anonymously, this will retu
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
@@ -3374,12 +3416,13 @@ Get a single comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdGet(
@@ -3419,12 +3462,13 @@ List comments on a gist.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsGet(
@@ -3461,12 +3505,13 @@ Get a single gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdGet(
@@ -3505,12 +3550,13 @@ Check if a gist is starred.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarGet(
@@ -3550,12 +3596,13 @@ List all public gists.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsPublicGet(
@@ -3594,12 +3641,13 @@ List the authenticated user&#39;s starred gists.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsStarredGet(
@@ -3637,12 +3685,13 @@ Listing available templates. List all templates available to pass as an option w
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gitignoreTemplatesGet(
@@ -3678,12 +3727,13 @@ Get a single template.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gitignoreTemplatesLanguageGet(
@@ -3723,12 +3773,13 @@ List issues. List all issues across all the authenticated user&#39;s visible rep
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.issuesGet(
@@ -3763,12 +3814,13 @@ Find issues by state and keyword.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
@@ -3806,12 +3858,13 @@ Find repositories by keyword. Note, this legacy method does not follow the v3 pa
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyReposSearchKeywordGet(
@@ -3842,12 +3895,13 @@ This API call is added for compatibility reasons only.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyUserEmailEmailGet(
@@ -3881,12 +3935,13 @@ Find users by keyword.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyUserSearchKeywordGet(
@@ -3923,12 +3978,13 @@ This gives some information about GitHub.com, the service.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
@@ -3963,12 +4019,13 @@ List public events for a network of repositories.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.networksOwnerRepoEventsGet(
@@ -4011,12 +4068,13 @@ List your notifications. List all notifications for the current user, grouped by
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsGet(
@@ -4052,12 +4110,13 @@ View a single thread.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdGet(
@@ -4096,12 +4155,13 @@ Get a Thread Subscription.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionGet(
@@ -4140,12 +4200,13 @@ List public events for an organization.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgEventsGet(
@@ -4184,12 +4245,13 @@ Get an Organization.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgGet(
@@ -4229,12 +4291,13 @@ List issues. List all issues for a given organization for the authenticated user
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgIssuesGet(
@@ -4278,12 +4341,13 @@ Members list. List all users who are members of an organization. A member is a u
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersGet(
@@ -4322,12 +4386,13 @@ Check if a user is, publicly or privately, a member of the organization.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersUsernameGet(
@@ -4367,12 +4432,13 @@ Public members list. Members of an organization can choose to have their members
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersGet(
@@ -4411,12 +4477,13 @@ Check public membership.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernameGet(
@@ -4457,12 +4524,13 @@ List repositories for the specified org.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgReposGet(
@@ -4501,12 +4569,13 @@ List teams.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgTeamsGet(
@@ -4545,12 +4614,13 @@ Get your current rate limit status Note: Accessing this endpoint does not count 
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
@@ -4585,12 +4655,13 @@ Get archive link. This method will return a 302 to a URL to download a tarball o
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoArchiveFormatPathGet(
@@ -4632,12 +4703,13 @@ Check assignee. You may also check to see if a particular user is an assignee fo
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoAssigneesAssigneeGet(
@@ -4678,12 +4750,13 @@ List assignees. This call lists all the available assignees (owner + collaborato
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoAssigneesGet(
@@ -4723,12 +4796,13 @@ Get Branch
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoBranchesBranchGet(
@@ -4769,12 +4843,13 @@ Get list of branches
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoBranchesGet(
@@ -4814,12 +4889,13 @@ List. When authenticating as an organization owner of an organization-owned repo
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsGet(
@@ -4859,12 +4935,13 @@ Check if user is a collaborator
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserGet(
@@ -4905,12 +4982,13 @@ Get a single commit comment.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdGet(
@@ -4951,12 +5029,13 @@ List commit comments for a repository. Comments are ordered by ascending ID.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsGet(
@@ -5001,12 +5080,13 @@ List commits on a repository.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsGet(
@@ -5046,12 +5126,13 @@ Get the combined Status for a specific Ref The Combined status endpoint is curre
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsRefStatusGet(
@@ -5092,12 +5173,13 @@ List comments for a single commitList comments for a single commit.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsGet(
@@ -5138,12 +5220,13 @@ Get a single commit.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeGet(
@@ -5184,12 +5267,13 @@ Compare two commits
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCompareBaseIdHeadIdGet(
@@ -5233,12 +5317,13 @@ Get contents. This method returns the contents of a file or directory in a repos
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathGet(
@@ -5279,12 +5364,13 @@ Get list of contributors.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContributorsGet(
@@ -5325,12 +5411,13 @@ Users with pull access can view deployments for a repository
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsGet(
@@ -5370,12 +5457,13 @@ Users with pull access can view deployment statuses for a deployment
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesGet(
@@ -5414,12 +5502,13 @@ Deprecated. Get a single download.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdGet(
@@ -5458,12 +5547,13 @@ Deprecated. List downloads for a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsGet(
@@ -5503,12 +5593,13 @@ Get list of repository events.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoEventsGet(
@@ -5549,12 +5640,13 @@ List forks.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoForksGet(
@@ -5594,12 +5686,13 @@ Get repository.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGet(
@@ -5631,12 +5724,13 @@ Get a Blob. Since blobs can be any arbitrary binary data, the input and response
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitBlobsShaCodeGet(
@@ -5669,12 +5763,13 @@ Get a Commit.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitCommitsShaCodeGet(
@@ -5709,12 +5804,13 @@ Get all References
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsGet(
@@ -5748,12 +5844,13 @@ Get a Reference
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefGet(
@@ -5788,12 +5885,13 @@ Get a Tag.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTagsShaCodeGet(
@@ -5827,12 +5925,13 @@ Get a Tree.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTreesShaCodeGet(
@@ -5873,12 +5972,13 @@ Get list of hooks.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksGet(
@@ -5916,12 +6016,13 @@ Get single hook.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdGet(
@@ -5954,12 +6055,13 @@ Get a single comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdGet(
@@ -5995,12 +6097,13 @@ List comments in a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsGet(
@@ -6032,12 +6135,13 @@ Get a single event.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesEventsEventIdGet(
@@ -6070,12 +6174,13 @@ List issue events for a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesEventsGet(
@@ -6116,12 +6221,13 @@ List issues for a repository.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesGet(
@@ -6158,12 +6264,13 @@ List comments on an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsGet(
@@ -6196,12 +6303,13 @@ List events for an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberEventsGet(
@@ -6228,24 +6336,19 @@ Get a single issue
  */
   reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
-    let defaultClient = Github.ApiClient.instance;
-    // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
-    api_key.apiKey = incomingOptions.apiKey;
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberGet(
@@ -6278,12 +6381,13 @@ List labels on an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsGet(
@@ -6316,12 +6420,13 @@ Get list of keys.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysGet(
@@ -6353,12 +6458,13 @@ Get a key
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysKeyIdGet(
@@ -6391,12 +6497,13 @@ List all labels for this repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsGet(
@@ -6428,12 +6535,13 @@ Get a single label.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNameGet(
@@ -6466,12 +6574,13 @@ List languages. List languages for the specified repository. The value on the ri
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLanguagesGet(
@@ -6506,12 +6615,13 @@ List milestones for a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesGet(
@@ -6543,12 +6653,13 @@ Get a single milestone.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberGet(
@@ -6581,12 +6692,13 @@ Get labels for every issue in a milestone.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberLabelsGet(
@@ -6622,12 +6734,13 @@ List your notifications in a repository List all notifications for the current u
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoNotificationsGet(
@@ -6659,12 +6772,13 @@ Get a single comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdGet(
@@ -6700,12 +6814,13 @@ List comments in a repository. By default, Review Comments are ordered by ascend
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsGet(
@@ -6740,12 +6855,13 @@ List pull requests.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsGet(
@@ -6771,18 +6887,25 @@ List comments on a pull request.
  */
   reposOwnerRepoPullsNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommentsGet(
@@ -6809,18 +6932,25 @@ List commits on a pull request.
  */
   reposOwnerRepoPullsNumberCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommitsGet(
@@ -6853,12 +6983,13 @@ List pull requests files.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberFilesGet(
@@ -6891,12 +7022,13 @@ Get a single pull request.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberGet(
@@ -6929,12 +7061,13 @@ Get if a pull request has been merged.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberMergeGet(
@@ -6947,6 +7080,51 @@ Get if a pull request has been merged.
           cb(error, null, response);
         } else {
           cb(null, "", response);
+        }
+      }
+    );
+  }
+
+  // This is a function for reposOwnerRepoPullsNumberReviewsGet
+  /*
+
+
+List reviews on a pull request.
+
+ */
+  reposOwnerRepoPullsNumberReviewsGet(incomingOptions, cb) {
+    const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.reposOwnerRepoPullsNumberReviewsGet(
+      incomingOptions.owner,
+      incomingOptions.repo,
+      incomingOptions._number,
+      incomingOptions.opts,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
         }
       }
     );
@@ -6968,12 +7146,13 @@ Get the README. This method returns the preferred README for a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReadmeGet(
@@ -7005,12 +7184,13 @@ Get a single release asset
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdGet(
@@ -7043,12 +7223,13 @@ Users with push access to the repository will receive all releases (i.e., publis
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesGet(
@@ -7080,12 +7261,13 @@ List assets for a release
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdAssetsGet(
@@ -7118,12 +7300,13 @@ Get a single release
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdGet(
@@ -7156,12 +7339,13 @@ List Stargazers.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStargazersGet(
@@ -7193,12 +7377,13 @@ Get the number of additions and deletions per week. Returns a weekly aggregate o
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsCodeFrequencyGet(
@@ -7230,12 +7415,13 @@ Get the last year of commit activity data. Returns the last year of commit activ
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsCommitActivityGet(
@@ -7267,12 +7453,13 @@ Get contributors list with additions, deletions, and commit counts.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsContributorsGet(
@@ -7304,12 +7491,13 @@ Get the weekly commit count for the repo owner and everyone else.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsParticipationGet(
@@ -7341,12 +7529,13 @@ Get the number of commits per hour in each day. Each array contains the day numb
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsPunchCardGet(
@@ -7378,12 +7567,13 @@ List Statuses for a specific Ref.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatusesRefGet(
@@ -7416,12 +7606,13 @@ List watchers.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscribersGet(
@@ -7453,12 +7644,13 @@ Get a Repository Subscription.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionGet(
@@ -7490,12 +7682,13 @@ Get list of tags.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoTagsGet(
@@ -7527,12 +7720,13 @@ Get list of teams
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoTeamsGet(
@@ -7570,12 +7764,13 @@ List Stargazers. New implementation.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoWatchersGet(
@@ -7616,12 +7811,13 @@ List all public repositories. This provides a dump of every public repository, i
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesGet(
@@ -7661,12 +7857,13 @@ Search code.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchCodeGet(
@@ -7707,12 +7904,13 @@ Find issues by state and keyword. (This method returns up to 100 results per pag
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchIssuesGet(
@@ -7753,12 +7951,13 @@ Search repositories.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchRepositoriesGet(
@@ -7799,12 +7998,13 @@ Search users.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchUsersGet(
@@ -7841,12 +8041,13 @@ Get team.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdGet(
@@ -7885,12 +8086,13 @@ List team members. In order to list members in a team, the authenticated user mu
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersGet(
@@ -7927,12 +8129,13 @@ The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernameGet(
@@ -7970,12 +8173,13 @@ Get team membership. In order to get a user&#39;s membership with a team, the au
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernameGet(
@@ -8015,12 +8219,13 @@ List team repos
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposGet(
@@ -8057,12 +8262,13 @@ Check if a team manages a repository
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoGet(
@@ -8101,12 +8307,13 @@ List email addresses for a user. In the final version of the API, this method wi
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
@@ -8141,12 +8348,13 @@ List the authenticated user&#39;s followers
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowersGet(
@@ -8184,12 +8392,13 @@ List who the authenticated user is following.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingGet(
@@ -8225,12 +8434,13 @@ Check if you are following a user.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernameGet(
@@ -8269,12 +8479,13 @@ Get the authenticated user.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
@@ -8310,12 +8521,13 @@ List issues. List all issues across owned and member repositories for the authen
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userIssuesGet(
@@ -8356,12 +8568,13 @@ List your public keys. Lists the current user&#39;s keys. Management of public k
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
@@ -8394,12 +8607,13 @@ Get a single public key.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysKeyIdGet(
@@ -8436,12 +8650,13 @@ List public and private organizations for the authenticated user.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
@@ -8477,12 +8692,13 @@ List repositories for the authenticated user. Note that this does not include re
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
@@ -8517,12 +8733,13 @@ List repositories being starred by the authenticated user.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredGet(
@@ -8558,12 +8775,13 @@ Check if you are starring a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoGet(
@@ -8601,12 +8819,13 @@ List repositories being watched by the authenticated user.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsGet(
@@ -8642,12 +8861,13 @@ Check if you are watching a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoGet(
@@ -8685,12 +8905,13 @@ List all of the teams across all of the organizations to which the authenticated
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
@@ -8726,12 +8947,13 @@ Get all users. This provides a dump of every user, in the order that they signed
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
@@ -8766,12 +8988,13 @@ If you are authenticated as the given user, you will see your private events. Ot
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameEventsGet(
@@ -8808,12 +9031,13 @@ This is the user&#39;s organization dashboard. You must be authenticated as the 
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameEventsOrgsOrgGet(
@@ -8851,12 +9075,13 @@ List a user&#39;s followers
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameFollowersGet(
@@ -8887,12 +9112,13 @@ Check if one user follows another.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameFollowingTargetUserGet(
@@ -8930,12 +9156,13 @@ Get a single user.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameGet(
@@ -8975,12 +9202,13 @@ List a users gists.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameGistsGet(
@@ -9017,12 +9245,13 @@ List public keys for a user. Lists the verified public keys for a user. This is 
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameKeysGet(
@@ -9059,12 +9288,13 @@ List all public organizations for a user.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameOrgsGet(
@@ -9101,12 +9331,13 @@ These are events that you&#39;ll only see public events.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReceivedEventsGet(
@@ -9143,12 +9374,13 @@ List public events that a user has received
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReceivedEventsPublicGet(
@@ -9188,12 +9420,13 @@ List public repositories for the specified user.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReposGet(
@@ -9230,12 +9463,13 @@ List repositories being starred by a user.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameStarredGet(
@@ -9272,12 +9506,13 @@ List repositories being watched by a user.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameSubscriptionsGet(
@@ -9807,6 +10042,28 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
           );
         });
 
+      case "REPOS_OWNER_REPO_PULLS_NUMBER_REVIEWS":
+        /*
+
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+
+
+      Function parameters for this API owner,repo,_number,body,opts
+        */
+        return new Promise((resolve, reject) => {
+          this.reposOwnerRepoPullsNumberReviewsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
       case "REPOS_OWNER_REPO_PULLS":
         /*
 
@@ -9946,12 +10203,13 @@ Create a commen
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsPost(
@@ -9989,12 +10247,13 @@ Fork a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdForksPost(
@@ -10031,12 +10290,13 @@ Create a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsPost(
@@ -10073,12 +10333,13 @@ Render an arbitrary Markdown document
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.markdownPost(
@@ -10115,12 +10376,13 @@ Render a Markdown document in raw mode
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.markdownRawPost(
@@ -10156,12 +10418,13 @@ Create a new repository for the authenticated user. OAuth users must supply repo
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgReposPost(
@@ -10199,12 +10462,13 @@ Create team. In order to create a team, the authenticated user must be an owner 
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgTeamsPost(
@@ -10242,12 +10506,13 @@ Create a commit comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsPost(
@@ -10287,12 +10552,13 @@ Create a Deployment Status Users with push access can create deployment statuses
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesPost(
@@ -10332,12 +10598,13 @@ Users with push access can create a deployment for a given ref
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsPost(
@@ -10376,12 +10643,13 @@ Create a fork. Forking a Repository happens asynchronously. Therefore, you may h
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoForksPost(
@@ -10422,12 +10690,13 @@ Create a Blob.
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitBlobsPost(
@@ -10460,12 +10729,13 @@ Create a Commit.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitCommitsPost(
@@ -10498,12 +10768,13 @@ Create a Reference
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsPost(
@@ -10536,12 +10807,13 @@ Create a Tag Object. Note that creating a tag object does not create the referen
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTagsPost(
@@ -10574,12 +10846,13 @@ Create a Tree. The tree creation API will take nested entries as well. If both a
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTreesPost(
@@ -10612,12 +10885,13 @@ Test a push hook. This will trigger the hook with the latest push to the current
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdTestsPost(
@@ -10656,12 +10930,13 @@ Create a hook.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksPost(
@@ -10694,12 +10969,13 @@ Create a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsPost(
@@ -10733,12 +11009,13 @@ Add labels to an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPost(
@@ -10778,12 +11055,13 @@ Create an issue. Any user with pull access to a repository can create an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesPost(
@@ -10816,12 +11094,13 @@ Create a key.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysPost(
@@ -10854,12 +11133,13 @@ Create a label.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsPost(
@@ -10892,12 +11172,13 @@ Perform a merge.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMergesPost(
@@ -10930,12 +11211,13 @@ Create a milestone.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesPost(
@@ -10962,21 +11244,74 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
  */
   reposOwnerRepoPullsNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ let opts = {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommentsPost(
+      incomingOptions.owner,
+      incomingOptions.repo,
+      incomingOptions._number,
+      incomingOptions.body,
+      incomingOptions.opts,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for reposOwnerRepoPullsNumberReviewsPost
+  /*
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+
+ */
+  reposOwnerRepoPullsNumberReviewsPost(incomingOptions, cb) {
+    const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.reposOwnerRepoPullsNumberReviewsPost(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions._number,
@@ -11007,12 +11342,13 @@ Create a pull request.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsPost(
@@ -11045,12 +11381,13 @@ Create a release Users with push access to the repository can create a release.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesPost(
@@ -11083,12 +11420,13 @@ Create a Status.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatusesRefPost(
@@ -11128,12 +11466,13 @@ Add email address(es). You can post a single email address or an array of addres
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsPost(
@@ -11170,12 +11509,13 @@ Create a public key.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysPost(
@@ -11212,12 +11552,13 @@ Create a new repository for the authenticated user. OAuth users must supply repo
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userReposPost(
@@ -11585,12 +11926,13 @@ Star a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarPut(
@@ -11627,12 +11969,13 @@ Mark as read. Marking a notification as \&quot;read\&quot; removes it from the d
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsPut(
@@ -11669,12 +12012,13 @@ Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Su
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionPut(
@@ -11712,12 +12056,13 @@ Publicize a user&#39;s membership.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernamePut(
@@ -11755,12 +12100,13 @@ Add collaborator.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserPut(
@@ -11799,12 +12145,13 @@ Create a file.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathPut(
@@ -11838,12 +12185,13 @@ Replace all labels for an issue. Sending an empty array ([]) will remove all Lab
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPut(
@@ -11877,12 +12225,13 @@ Mark notifications as read in a repository. Marking all notifications in a repos
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoNotificationsPut(
@@ -11915,12 +12264,13 @@ Merge a pull request (Merge Button&#39;s)
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberMergePut(
@@ -11954,12 +12304,13 @@ Set a Repository Subscription
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionPut(
@@ -11998,12 +12349,13 @@ The API (described below) is deprecated and is scheduled for removal in the next
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernamePut(
@@ -12041,12 +12393,13 @@ Add team membership. In order to add a membership between a user and a team, the
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernamePut(
@@ -12084,12 +12437,13 @@ In order to add a repository to a team, the authenticated user must be an owner 
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoPut(
@@ -12128,12 +12482,13 @@ Follow a user. Following a user requires the user to be logged in and authentica
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernamePut(
@@ -12170,12 +12525,13 @@ Star a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoPut(
@@ -12213,12 +12569,13 @@ Watch a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoPut(
@@ -12936,12 +13293,13 @@ Delete a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdDelete(
@@ -12979,12 +13337,13 @@ Delete a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdDelete(
@@ -13021,12 +13380,13 @@ Unstar a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarDelete(
@@ -13063,12 +13423,13 @@ Delete a Thread Subscription.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionDelete(
@@ -13105,12 +13466,13 @@ Remove a member. Removing a user from this list will remove them from all teams 
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersUsernameDelete(
@@ -13148,12 +13510,13 @@ Conceal a user&#39;s membership.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernameDelete(
@@ -13191,12 +13554,13 @@ Remove collaborator.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserDelete(
@@ -13235,12 +13599,13 @@ Delete a commit comment
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdDelete(
@@ -13279,12 +13644,13 @@ Delete a file. This method deletes a file in a repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathDelete(
@@ -13324,12 +13690,13 @@ Delete a Repository. Deleting a repository requires admin access. If OAuth is us
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDelete(
@@ -13367,12 +13734,13 @@ Deprecated. Delete a download.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdDelete(
@@ -13405,12 +13773,13 @@ Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefDelete(
@@ -13449,12 +13818,13 @@ Delete a hook.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdDelete(
@@ -13487,12 +13857,13 @@ Delete a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdDelete(
@@ -13525,12 +13896,13 @@ Remove all labels from an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsDelete(
@@ -13563,12 +13935,13 @@ Remove a label from an issue.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsNameDelete(
@@ -13602,12 +13975,13 @@ Delete a key.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysKeyIdDelete(
@@ -13640,12 +14014,13 @@ Delete a label.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNameDelete(
@@ -13678,12 +14053,13 @@ Delete a milestone.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberDelete(
@@ -13716,12 +14092,13 @@ Delete a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdDelete(
@@ -13754,12 +14131,13 @@ Delete a release asset
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdDelete(
@@ -13792,12 +14170,13 @@ Users with push access to the repository can delete a release.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdDelete(
@@ -13830,12 +14209,13 @@ Delete a Repository Subscription.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionDelete(
@@ -13875,12 +14255,13 @@ Delete team. In order to delete a team, the authenticated user must be an owner 
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdDelete(
@@ -13919,12 +14300,13 @@ The \&quot;Remove team member\&quot; API is deprecated and is scheduled for remo
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernameDelete(
@@ -13964,12 +14346,13 @@ Remove team membership. In order to remove a membership between a user and a tea
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernameDelete(
@@ -14009,12 +14392,13 @@ In order to remove a repository from a team, the authenticated user must be an o
       page: 1, // Number | Page number at which you want the search result to come from.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoDelete(
@@ -14053,12 +14437,13 @@ Delete email address(es). You can include a single email address or an array of 
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsDelete(
@@ -14095,12 +14480,13 @@ Unfollow a user. Unfollowing a user requires the user to be logged in and authen
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernameDelete(
@@ -14137,12 +14523,13 @@ Delete a public key. Removes a public key. Requires that you are authenticated v
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysKeyIdDelete(
@@ -14179,12 +14566,13 @@ Unstar a repository
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoDelete(
@@ -14222,12 +14610,13 @@ Stop watching a repository
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoDelete(
@@ -14637,12 +15026,13 @@ Edit a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdPatch(
@@ -14681,12 +15071,13 @@ Edit a gist.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdPatch(
@@ -14724,12 +15115,13 @@ Mark a thread as read
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdPatch(
@@ -14766,12 +15158,13 @@ Edit an Organization.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPatch(
@@ -14809,12 +15202,13 @@ Update a commit comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdPatch(
@@ -14848,12 +15242,13 @@ Update a Reference
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefPatch(
@@ -14893,12 +15288,13 @@ Edit a hook.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdPatch(
@@ -14932,12 +15328,13 @@ Edit a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdPatch(
@@ -14965,24 +15362,19 @@ Edit an issue. Issue owners and users with push access can edit an issue.
  */
   reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
-    let defaultClient = Github.ApiClient.instance;
-    // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
-    api_key.apiKey = incomingOptions.apiKey;
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ let opts = {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberPatch(
@@ -15016,12 +15408,13 @@ Update a label.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNamePatch(
@@ -15055,12 +15448,13 @@ Update a milestone.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberPatch(
@@ -15100,12 +15494,13 @@ Edit repository.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPatch(
@@ -15138,12 +15533,13 @@ Edit a comment.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdPatch(
@@ -15177,12 +15573,13 @@ Update a pull request.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberPatch(
@@ -15216,12 +15613,13 @@ Edit a release asset Users with push access to the repository can edit a release
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdPatch(
@@ -15255,12 +15653,13 @@ Users with push access to the repository can edit a release
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdPatch(
@@ -15300,12 +15699,13 @@ Edit team. In order to edit a team, the authenticated user must be an owner of t
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdPatch(
@@ -15343,12 +15743,13 @@ Update the authenticated user.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      (key) =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
-
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userPatch(

@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The SearchUsers model module.
  * @module model/SearchUsers
- * @version 1.4.5
+ * @version 1.4.6
  */
 class SearchUsers {
     /**

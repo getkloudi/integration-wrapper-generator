@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The Release model module.
  * @module model/Release
- * @version 1.4.5
+ * @version 1.4.6
  */
 class Release {
     /**

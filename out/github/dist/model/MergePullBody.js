@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergePullBody model module.
  * @module model/MergePullBody
- * @version 1.4.5
+ * @version 1.4.6
  */
 var MergePullBody = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserKeysKeyId model module.
  * @module model/UserKeysKeyId
- * @version 1.4.5
+ * @version 1.4.6
  */
 var UserKeysKeyId = /*#__PURE__*/function () {
   /**

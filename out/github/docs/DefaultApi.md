@@ -162,6 +162,8 @@ Method | HTTP request | Description
 [**reposOwnerRepoPullsNumberMergeGet**](DefaultApi.md#reposOwnerRepoPullsNumberMergeGet) | **GET** /repos/{owner}/{repo}/pulls/{number}/merge | 
 [**reposOwnerRepoPullsNumberMergePut**](DefaultApi.md#reposOwnerRepoPullsNumberMergePut) | **PUT** /repos/{owner}/{repo}/pulls/{number}/merge | 
 [**reposOwnerRepoPullsNumberPatch**](DefaultApi.md#reposOwnerRepoPullsNumberPatch) | **PATCH** /repos/{owner}/{repo}/pulls/{number} | 
+[**reposOwnerRepoPullsNumberReviewsGet**](DefaultApi.md#reposOwnerRepoPullsNumberReviewsGet) | **GET** /repos/{owner}/{repo}/pulls/{number}/reviews | 
+[**reposOwnerRepoPullsNumberReviewsPost**](DefaultApi.md#reposOwnerRepoPullsNumberReviewsPost) | **POST** /repos/{owner}/{repo}/pulls/{number}/reviews | 
 [**reposOwnerRepoPullsPost**](DefaultApi.md#reposOwnerRepoPullsPost) | **POST** /repos/{owner}/{repo}/pulls | 
 [**reposOwnerRepoReadmeGet**](DefaultApi.md#reposOwnerRepoReadmeGet) | **GET** /repos/{owner}/{repo}/readme | 
 [**reposOwnerRepoReleasesAssetsIdDelete**](DefaultApi.md#reposOwnerRepoReleasesAssetsIdDelete) | **DELETE** /repos/{owner}/{repo}/releases/assets/{id} | 
@@ -8875,6 +8877,12 @@ List comments on a pull request.
 
 ```javascript
 import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8908,7 +8916,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -8928,6 +8936,12 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
 
 ```javascript
 import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8963,7 +8977,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -8983,6 +8997,12 @@ List commits on a pull request.
 
 ```javascript
 import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9016,7 +9036,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -9286,6 +9306,126 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## reposOwnerRepoPullsNumberReviewsGet
+
+> PullsComment reposOwnerRepoPullsNumberReviewsGet(owner, repo, _number, opts)
+
+
+
+List reviews on a pull request.
+
+### Example
+
+```javascript
+import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new Github.DefaultApi();
+let owner = "owner_example"; // String | Name of repository owner.
+let repo = "repo_example"; // String | Name of repository.
+let _number = 56; // Number | Id of pull.
+let opts = {
+  'accept': "accept_example" // String | Is used to set specified media type.
+};
+apiInstance.reposOwnerRepoPullsNumberReviewsGet(owner, repo, _number, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **String**| Name of repository owner. | 
+ **repo** | **String**| Name of repository. | 
+ **_number** | **Number**| Id of pull. | 
+ **accept** | **String**| Is used to set specified media type. | [optional] 
+
+### Return type
+
+[**PullsComment**](PullsComment.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## reposOwnerRepoPullsNumberReviewsPost
+
+> PullsComment reposOwnerRepoPullsNumberReviewsPost(owner, repo, _number, body, opts)
+
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/reviews/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to. 
+
+### Example
+
+```javascript
+import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new Github.DefaultApi();
+let owner = "owner_example"; // String | Name of repository owner.
+let repo = "repo_example"; // String | Name of repository.
+let _number = 56; // Number | Id of pull.
+let body = new Github.PullsCommentPost(); // PullsCommentPost | 
+let opts = {
+  'accept': "accept_example" // String | Is used to set specified media type.
+};
+apiInstance.reposOwnerRepoPullsNumberReviewsPost(owner, repo, _number, body, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **String**| Name of repository owner. | 
+ **repo** | **String**| Name of repository. | 
+ **_number** | **Number**| Id of pull. | 
+ **body** | [**PullsCommentPost**](PullsCommentPost.md)|  | 
+ **accept** | **String**| Is used to set specified media type. | [optional] 
+
+### Return type
+
+[**PullsComment**](PullsComment.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Markdown model module.
  * @module model/Markdown
- * @version 1.4.5
+ * @version 1.4.6
  */
 var Markdown = /*#__PURE__*/function () {
   /**

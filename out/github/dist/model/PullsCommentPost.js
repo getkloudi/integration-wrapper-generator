@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullsCommentPost model module.
  * @module model/PullsCommentPost
- * @version 1.4.5
+ * @version 1.4.6
  */
 var PullsCommentPost = /*#__PURE__*/function () {
   /**

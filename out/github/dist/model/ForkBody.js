@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ForkBody model module.
  * @module model/ForkBody
- * @version 1.4.5
+ * @version 1.4.6
  */
 var ForkBody = /*#__PURE__*/function () {
   /**

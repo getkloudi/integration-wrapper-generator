@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserUpdate model module.
  * @module model/UserUpdate
- * @version 1.4.5
+ * @version 1.4.6
  */
 class UserUpdate {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ActorPlan model module.
  * @module model/ActorPlan
- * @version 1.4.5
+ * @version 1.4.6
  */
 var ActorPlan = /*#__PURE__*/function () {
   /**

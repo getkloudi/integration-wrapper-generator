@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The GistHistory model module.
  * @module model/GistHistory
- * @version 1.4.5
+ * @version 1.4.6
  */
 class GistHistory {
     /**

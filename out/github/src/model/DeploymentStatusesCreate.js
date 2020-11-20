@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentStatusesCreate model module.
  * @module model/DeploymentStatusesCreate
- * @version 1.4.5
+ * @version 1.4.6
  */
 class DeploymentStatusesCreate {
     /**
