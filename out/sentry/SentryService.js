@@ -3,6 +3,7 @@ const qs = require("querystring");
 const nconf = require("nconf");
 const ErrorHelper = require("../../../helpers/ErrorHelper");
 const parseLinkHeader = require("parse-link-header");
+const KloudiWebhookHostnameHelper = require("../../../helpers/KloudiWebhookHostnameHelper");
 class SentryService {
   get name() {
     return "SENTRY";
@@ -103,11 +104,8 @@ class SentryService {
       headers: { Authorization: `Bearer ${incomingOptions.accessToken}` },
     });
     const { config } = res.data;
-    const webhookURL = `${nconf.get("WEBHOOK_API_URI")}/${
-      incomingOptions.userId
-    }/${incomingOptions.projectId}/SENTRY/${
-      incomingOptions.project.organizationId
-    }/${incomingOptions.project.projectId}/`;
+    const webhookHostname = await KloudiWebhookHostnameHelper.getHostnameForWebhookRegistration();
+    const webhookURL = `${webhookHostname}/${incomingOptions.userId}/${incomingOptions.projectId}/SENTRY/${incomingOptions.project.organizationId}/${incomingOptions.project.projectId}/`;
     if (
       config[0].value &&
       config[0].value.split("\n").indexOf(webhookURL) < 0

@@ -1,7 +1,8 @@
-const Axios = require('axios');
-const qs = require('querystring');
-const nconf = require('nconf');
-const ErrorHelper = require('../../../helpers/ErrorHelper');
+const Axios = require("axios");
+const qs = require("querystring");
+const nconf = require("nconf");
+const ErrorHelper = require("../../../helpers/ErrorHelper");
+const KloudiWebhookHostnameHelper = require("../../../helpers/KloudiWebhookHostnameHelper");
 
 /*
  * Implements APIs found at https://developer.atlassian.com/cloud/jira/platform/rest/v3/
@@ -10,24 +11,24 @@ const ErrorHelper = require('../../../helpers/ErrorHelper');
 
 //As found on https://developer.atlassian.com/cloud/jira/platform/scopes/
 const SCOPES = [
-  'read:jira-work',
-  'write:jira-work',
-  'read:jira-user',
-  'offline_access',
-  'read:me',
+  "read:jira-work",
+  "write:jira-work",
+  "read:jira-user",
+  "offline_access",
+  "read:me",
 ];
 
 class JiraService {
   get name() {
-    return 'JIRA';
+    return "JIRA";
   }
 
   get description() {
-    return 'The #1 software development tool used by agile teams to plan, track, and release great software.';
+    return "The #1 software development tool used by agile teams to plan, track, and release great software.";
   }
 
   get icon() {
-    return 'jira.svg';
+    return "jira.svg";
   }
 
   get category() {
@@ -39,16 +40,16 @@ class JiraService {
   }
 
   get authMethod() {
-    return 'OAUTH2';
+    return "OAUTH2";
   }
 
   get authEndpoint() {
     return (
       `https://auth.atlassian.com/authorize?audience=api.atlassian.com&` +
-      `client_id=${nconf.get('JIRA_CLIENT_ID')}&` +
-      `scope=${qs.escape(this.scopes.join(' '))}&` +
+      `client_id=${nconf.get("JIRA_CLIENT_ID")}&` +
+      `scope=${qs.escape(this.scopes.join(" "))}&` +
       `redirect_uri=${qs.escape(
-        nconf.get('WEB_APP_URI') + '/integrations/jira/callback'
+        nconf.get("WEB_APP_URI") + "/integrations/jira/callback"
       )}&` +
       `state=qwesomeval123123&` +
       `response_type=code&` +
@@ -57,7 +58,7 @@ class JiraService {
   }
 
   get apiTokenURL() {
-    return 'https://id.atlassian.com/manage/api-tokens';
+    return "https://id.atlassian.com/manage/api-tokens";
   }
 
   get scopes() {
@@ -65,12 +66,12 @@ class JiraService {
   }
 
   get requiredAuthParams() {
-    return ['code'];
+    return ["code"];
   }
 
   get primaryAction() {
     return {
-      type: 'HREF',
+      type: "HREF",
       url: this.authEndpoint,
       requiredAuthParams: this.requiredAuthParams,
     };
@@ -78,132 +79,132 @@ class JiraService {
 
   get webhooks() {
     return [
-      'jira:issue_created',
-      'jira:issue_updated',
-      'jira:issue_deleted',
-      'comment_created',
-      'comment_updated',
-      'comment_deleted',
-      'issue_property_set', //Not added any task for this
-      'issue_property_deleted', //Not added any task for this
-      'worklog_created',
-      'worklog_updated',
-      'worklog_deleted',
-      'issuelink_created', //Not added any task for this
-      'issuelink_deleted', //Not added any task for this
-      'project_created',
-      'project_updated',
-      'project_deleted',
-      'sprint_created',
-      'sprint_deleted',
-      'sprint_updated',
-      'sprint_started',
-      'sprint_closed',
-      'board_created',
-      'board_updated',
-      'board_deleted',
+      "jira:issue_created",
+      "jira:issue_updated",
+      "jira:issue_deleted",
+      "comment_created",
+      "comment_updated",
+      "comment_deleted",
+      "issue_property_set", //Not added any task for this
+      "issue_property_deleted", //Not added any task for this
+      "worklog_created",
+      "worklog_updated",
+      "worklog_deleted",
+      "issuelink_created", //Not added any task for this
+      "issuelink_deleted", //Not added any task for this
+      "project_created",
+      "project_updated",
+      "project_deleted",
+      "sprint_created",
+      "sprint_deleted",
+      "sprint_updated",
+      "sprint_started",
+      "sprint_closed",
+      "board_created",
+      "board_updated",
+      "board_deleted",
     ];
   }
 
   get webhookToTasksMap() {
     return [
       {
-        name: 'task.thirdParty.CREATE_JIRA_ISSUE',
-        webhook: 'jira:issue_created',
+        name: "task.thirdParty.CREATE_JIRA_ISSUE",
+        webhook: "jira:issue_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_ISSUE',
-        webhook: 'jira:issue_updated',
+        name: "task.thirdParty.UPDATE_JIRA_ISSUE",
+        webhook: "jira:issue_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_ISSUE',
-        webhook: 'jira:issue_deleted',
+        name: "task.thirdParty.DELETE_JIRA_ISSUE",
+        webhook: "jira:issue_deleted",
       },
       {
-        name: 'task.thirdParty.CREATE_JIRA_COMMENT',
-        webhook: 'comment_created',
+        name: "task.thirdParty.CREATE_JIRA_COMMENT",
+        webhook: "comment_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_COMMENT',
-        webhook: 'comment_updated',
+        name: "task.thirdParty.UPDATE_JIRA_COMMENT",
+        webhook: "comment_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_COMMENT',
-        webhook: 'comment_deleted',
+        name: "task.thirdParty.DELETE_JIRA_COMMENT",
+        webhook: "comment_deleted",
       },
       {
-        name: 'task.thirdParty.CREATE_JIRA_WORKLOG',
-        webhook: 'worklog_created',
+        name: "task.thirdParty.CREATE_JIRA_WORKLOG",
+        webhook: "worklog_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_WORKLOG',
-        webhook: 'worklog_updated',
+        name: "task.thirdParty.UPDATE_JIRA_WORKLOG",
+        webhook: "worklog_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_WORKLOG',
-        webhook: 'worklog_deleted',
+        name: "task.thirdParty.DELETE_JIRA_WORKLOG",
+        webhook: "worklog_deleted",
       },
       {
-        name: 'task.thirdParty.CREATE_JIRA_PROJECT',
-        webhook: 'project_created',
+        name: "task.thirdParty.CREATE_JIRA_PROJECT",
+        webhook: "project_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_PROJECT',
-        webhook: 'project_updated',
+        name: "task.thirdParty.UPDATE_JIRA_PROJECT",
+        webhook: "project_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_PROJECT',
-        webhook: 'project_deleted',
+        name: "task.thirdParty.DELETE_JIRA_PROJECT",
+        webhook: "project_deleted",
       },
       {
-        name: 'task.thirdParty.CREATE_JIRA_SPRINT',
-        webhook: 'sprint_created',
+        name: "task.thirdParty.CREATE_JIRA_SPRINT",
+        webhook: "sprint_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_SPRINT',
-        webhook: 'sprint_updated',
+        name: "task.thirdParty.UPDATE_JIRA_SPRINT",
+        webhook: "sprint_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_SPRINT',
-        webhook: 'sprint_deleted',
+        name: "task.thirdParty.DELETE_JIRA_SPRINT",
+        webhook: "sprint_deleted",
       },
       {
-        name: 'task.thirdParty.STARTED_JIRA_SPRINT',
-        webhook: 'sprint_started',
+        name: "task.thirdParty.STARTED_JIRA_SPRINT",
+        webhook: "sprint_started",
       },
       {
-        name: 'task.thirdParty.CLOSED_JIRA_SPRINT',
-        webhook: 'sprint_closed',
+        name: "task.thirdParty.CLOSED_JIRA_SPRINT",
+        webhook: "sprint_closed",
       },
       {
-        name: 'task.thirdParty.CREATE_JIRA_BOARD',
-        webhook: 'board_created',
+        name: "task.thirdParty.CREATE_JIRA_BOARD",
+        webhook: "board_created",
       },
       {
-        name: 'task.thirdParty.UPDATE_JIRA_BOARD',
-        webhook: 'board_updated',
+        name: "task.thirdParty.UPDATE_JIRA_BOARD",
+        webhook: "board_updated",
       },
       {
-        name: 'task.thirdParty.DELETE_JIRA_BOARD',
-        webhook: 'board_deleted',
+        name: "task.thirdParty.DELETE_JIRA_BOARD",
+        webhook: "board_deleted",
       },
     ];
   }
 
   get entities() {
-    return ['ISSUES', 'BOARDS', 'PROEJCTS'];
+    return ["ISSUES", "BOARDS", "PROEJCTS"];
   }
 
   async getAccessToken(integration) {
     const res = await Axios.default.post(
-      'https://auth.atlassian.com/oauth/token',
+      "https://auth.atlassian.com/oauth/token",
       {
-        grant_type: 'refresh_token',
-        client_id: nconf.get('JIRA_CLIENT_ID'),
-        client_secret: nconf.get('JIRA_CLIENT_SECRET'),
+        grant_type: "refresh_token",
+        client_id: nconf.get("JIRA_CLIENT_ID"),
+        client_secret: nconf.get("JIRA_CLIENT_SECRET"),
         refresh_token: integration.authRefreshToken,
       },
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     );
     return res.data.access_token;
   }
@@ -212,39 +213,39 @@ class JiraService {
     if (!response.body.nextPage && !response.body.next) return;
     else if (!!response.body.nextPage)
       return Object.fromEntries(
-        new URLSearchParams(require('url').parse(response.body.nextPage).query)
+        new URLSearchParams(require("url").parse(response.body.nextPage).query)
       );
     else if (!!response.body.next)
       return Object.fromEntries(
-        new URLSearchParams(require('url').parse(response.body.next).query)
+        new URLSearchParams(require("url").parse(response.body.next).query)
       );
   }
 
   async connect(authParams, metadata) {
     let response;
     response = await Axios.default.post(
-      'https://auth.atlassian.com/oauth/token',
+      "https://auth.atlassian.com/oauth/token",
       {
-        grant_type: 'authorization_code',
+        grant_type: "authorization_code",
         code: authParams.code,
-        client_id: nconf.get('JIRA_CLIENT_ID'),
-        client_secret: nconf.get('JIRA_CLIENT_SECRET'),
+        client_id: nconf.get("JIRA_CLIENT_ID"),
+        client_secret: nconf.get("JIRA_CLIENT_SECRET"),
         redirect_uri: `${
-          nconf.get('WEB_APP_URI') + '/integrations/jira/callback'
+          nconf.get("WEB_APP_URI") + "/integrations/jira/callback"
         }`,
       },
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     );
     const accessToken = response.data.access_token,
       authAccessTokenExpiresAt = Date.now() + response.data.expires_in * 1000,
       refreshToken = response.data.refresh_token;
 
     response = await Axios.default.get(
-      'https://api.atlassian.com/oauth/token/accessible-resources',
+      "https://api.atlassian.com/oauth/token/accessible-resources",
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          Accept: 'application/json',
+          Accept: "application/json",
         },
       }
     );
@@ -264,7 +265,7 @@ class JiraService {
   async getThirdPartyProjects(incomingOptions) {
     let projects = [];
     while (true) {
-      const res = await this.get('PROJECT_SEARCH', incomingOptions);
+      const res = await this.get("PROJECT_SEARCH", incomingOptions);
       projects = projects.concat(res.data.values);
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         res.response
@@ -280,22 +281,19 @@ class JiraService {
   }
 
   async registerWebhooks(incomingOptions) {
-    let res = await this.get('MYSELF', incomingOptions);
+    let res = await this.get("MYSELF", incomingOptions);
 
     const email = res.data.emailAddress;
     const apiKey = incomingOptions.webhookApiKey;
-    const webhookURL = `${nconf.get('WEBHOOK_API_URI')}/${
-      incomingOptions.userId
-    }/${incomingOptions.projectId}/JIRA/${
-      incomingOptions.project.organizationId
-    }/${incomingOptions.project.projectId}/`;
+    const webhookHostname = await KloudiWebhookHostnameHelper.getHostnameForWebhookRegistration();
+    const webhookURL = `${webhookHostname}/${incomingOptions.userId}/${incomingOptions.projectId}/JIRA/${incomingOptions.project.organizationId}/${incomingOptions.project.projectId}/`;
     const webhookEvents = Array.from(new Set(this.webhooks));
 
     res = await Axios.get(
       `https://${incomingOptions.cloudDomainName}.atlassian.net/rest/webhooks/1.0/webhook/`,
       {
         auth: { username: email, password: apiKey },
-        headers: { Accept: 'application/json' },
+        headers: { Accept: "application/json" },
       }
     );
     const webhooks = res.data.filter(
@@ -303,40 +301,40 @@ class JiraService {
         item.url === webhookURL &&
         item.events.sort().toString() === webhookEvents.sort().toString()
     );
-    if (webhooks && webhooks.length > 0) return 'Ok';
+    if (webhooks && webhooks.length > 0) return "Ok";
 
     try {
       res = await Axios.post(
         `https://${incomingOptions.cloudDomainName}.atlassian.net/rest/webhooks/1.0/webhook/`,
         {
-          name: 'Webhook for Kloudi',
+          name: "Webhook for Kloudi",
           url: webhookURL,
           events: webhookEvents,
         },
         {
           auth: { username: email, password: apiKey },
-          headers: { Accept: 'application/json' },
+          headers: { Accept: "application/json" },
         }
       );
     } catch (err) {
       console.log(err);
     } finally {
-      if (res.status == 201) return 'Ok';
-      return 'ERROR';
+      if (res.status == 201) return "Ok";
+      return "ERROR";
     }
   }
 
   async syncIntegrationEntities(integration, incomingOptions) {
-    const taskUri = nconf.get('TASK_API_URI');
-    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
+    const taskUri = nconf.get("TASK_API_URI");
+    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
 
     try {
       const res = await Axios.default.post(
         taskUri,
         {
           pepper_task: [
-            'task.pepper.SYNC_JIRA_USER',
-            'task.pepper.SYNC_LEGACY_JIRA_ISSUES',
+            "task.pepper.SYNC_JIRA_USER",
+            "task.pepper.SYNC_LEGACY_JIRA_ISSUES",
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
@@ -350,26 +348,26 @@ class JiraService {
           },
         }
       );
-      return 'Ok';
+      return "Ok";
     } catch (error) {
       console.error(error.response || error);
-      return 'ERROR';
+      return "ERROR";
     }
   }
 
   async createIssues(options) {
     if (!options.projects || options.projects.length == 0) {
-      console.error('No third party projects present');
-      return 'Ok';
+      console.error("No third party projects present");
+      return "Ok";
     }
 
-    const taskUri = nconf.get('TASK_API_URI');
-    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
+    const taskUri = nconf.get("TASK_API_URI");
+    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
     try {
       const res = await Axios.default.post(
         taskUri,
         {
-          pepper_task: 'task.thirdParty.CREATE_JIRA_ISSUES',
+          pepper_task: "task.thirdParty.CREATE_JIRA_ISSUES",
           project_id: options.projectId,
           user_id: options.userId,
           bug: options.body.bug,
@@ -382,16 +380,16 @@ class JiraService {
           },
         }
       );
-      return 'Ok';
+      return "Ok";
     } catch (error) {
       console.error(error.response || error);
-      return 'Ok';
+      return "Ok";
     }
   }
 
   async get(entity, options) {
     switch (entity) {
-      case 'COMMENT_COMMENT_ID_PROPERTIES':
+      case "COMMENT_COMMENT_ID_PROPERTIES":
         /*
 
 Get comment property keys
@@ -408,7 +406,7 @@ Get comment property keys
           });
         });
 
-      case 'COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY':
+      case "COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get comment property
@@ -428,7 +426,7 @@ Get comment property
           );
         });
 
-      case 'WORKFLOW_RULE_CONFIG':
+      case "WORKFLOW_RULE_CONFIG":
         /*
 
 Get workflow transition rule configurations
@@ -445,7 +443,7 @@ Get workflow transition rule configurations
           });
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC':
+      case "REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC":
         /*
 
 Get modules
@@ -465,7 +463,7 @@ Get modules
           );
         });
 
-      case 'PROJECT_CATEGORY':
+      case "PROJECT_CATEGORY":
         /*
 
 Get all project categories
@@ -482,7 +480,7 @@ Get all project categories
           });
         });
 
-      case 'PROJECT_CATEGORY_ID':
+      case "PROJECT_CATEGORY_ID":
         /*
 
 Get project category by id
@@ -499,7 +497,7 @@ Get project category by id
           });
         });
 
-      case 'JQL_AUTOCOMPLETEDATA':
+      case "JQL_AUTOCOMPLETEDATA":
         /*
 
 Get field reference data
@@ -516,7 +514,7 @@ Get field reference data
           });
         });
 
-      case 'JQL_AUTOCOMPLETEDATA_SUGGESTIONS':
+      case "JQL_AUTOCOMPLETEDATA_SUGGESTIONS":
         /*
 
 Get field auto complete suggestions
@@ -536,7 +534,7 @@ Get field auto complete suggestions
           );
         });
 
-      case 'ISSUE_PICKER':
+      case "ISSUE_PICKER":
         /*
 
 Get issue picker suggestions
@@ -553,7 +551,7 @@ Get issue picker suggestions
           });
         });
 
-      case 'SEARCH':
+      case "SEARCH":
         /*
 
 Search for issues using JQL (GET)
@@ -570,7 +568,7 @@ Search for issues using JQL (GET)
           });
         });
 
-      case 'AVATAR_TYPE_SYSTEM':
+      case "AVATAR_TYPE_SYSTEM":
         /*
 
 Get system avatars by type
@@ -587,7 +585,7 @@ Get system avatars by type
           });
         });
 
-      case 'UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_ENTITY_ID':
+      case "UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_ENTITY_ID":
         /*
 
 Get avatars
@@ -607,7 +605,7 @@ Get avatars
           );
         });
 
-      case 'ROLE_ID_ACTORS':
+      case "ROLE_ID_ACTORS":
         /*
 
 Get default actors for project role
@@ -624,7 +622,7 @@ Get default actors for project role
           });
         });
 
-      case 'ISSUESECURITYSCHEMES':
+      case "ISSUESECURITYSCHEMES":
         /*
 
 Get issue security schemes
@@ -641,7 +639,7 @@ Get issue security schemes
           });
         });
 
-      case 'ISSUESECURITYSCHEMES_ID':
+      case "ISSUESECURITYSCHEMES_ID":
         /*
 
 Get issue security scheme
@@ -658,7 +656,7 @@ Get issue security scheme
           });
         });
 
-      case 'ATTACHMENT_ID_EXPAND_HUMAN':
+      case "ATTACHMENT_ID_EXPAND_HUMAN":
         /*
 
 Get all metadata for an expanded attachment
@@ -675,7 +673,7 @@ Get all metadata for an expanded attachment
           });
         });
 
-      case 'ATTACHMENT_ID_EXPAND_RAW':
+      case "ATTACHMENT_ID_EXPAND_RAW":
         /*
 
 Get contents metadata for an expanded attachment
@@ -692,7 +690,7 @@ Get contents metadata for an expanded attachment
           });
         });
 
-      case 'ATTACHMENT_ID':
+      case "ATTACHMENT_ID":
         /*
 
 Get attachment metadata
@@ -709,7 +707,7 @@ Get attachment metadata
           });
         });
 
-      case 'ATTACHMENT_META':
+      case "ATTACHMENT_META":
         /*
 
 Get Jira attachment settings
@@ -726,7 +724,7 @@ Get Jira attachment settings
           });
         });
 
-      case 'ISSUESECURITYSCHEMES_ISSUE_SECURITY_SCHEME_ID_MEMBERS':
+      case "ISSUESECURITYSCHEMES_ISSUE_SECURITY_SCHEME_ID_MEMBERS":
         /*
 
 Get issue security level members
@@ -746,7 +744,7 @@ Get issue security level members
           );
         });
 
-      case 'SECURITYLEVEL_ID':
+      case "SECURITYLEVEL_ID":
         /*
 
 Get issue security level
@@ -763,7 +761,7 @@ Get issue security level
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLE':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLE":
         /*
 
 Get project roles for project
@@ -780,7 +778,7 @@ Get project roles for project
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLE_ID':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLE_ID":
         /*
 
 Get project role for project
@@ -800,7 +798,7 @@ Get project role for project
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLEDETAILS':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLEDETAILS":
         /*
 
 Get project role details
@@ -820,7 +818,7 @@ Get project role details
           );
         });
 
-      case 'ROLE':
+      case "ROLE":
         /*
 
 Get all project roles
@@ -837,7 +835,7 @@ Get all project roles
           });
         });
 
-      case 'ROLE_ID':
+      case "ROLE_ID":
         /*
 
 Get project role by ID
@@ -854,7 +852,7 @@ Get project role by ID
           });
         });
 
-      case 'MYPERMISSIONS':
+      case "MYPERMISSIONS":
         /*
 
 Get my permissions
@@ -871,7 +869,7 @@ Get my permissions
           });
         });
 
-      case 'PERMISSIONS':
+      case "PERMISSIONS":
         /*
 
 Get all permissions
@@ -888,7 +886,7 @@ Get all permissions
           });
         });
 
-      case 'FIELD_FIELD_ID_SCREENS':
+      case "FIELD_FIELD_ID_SCREENS":
         /*
 
 Get screens for a field
@@ -905,7 +903,7 @@ Get screens for a field
           });
         });
 
-      case 'SCREENS':
+      case "SCREENS":
         /*
 
 Get all screens
@@ -922,7 +920,7 @@ Get all screens
           });
         });
 
-      case 'SCREENS_SCREEN_ID_AVAILABLE_FIELDS':
+      case "SCREENS_SCREEN_ID_AVAILABLE_FIELDS":
         /*
 
 Get available screen fields
@@ -942,7 +940,7 @@ Get available screen fields
           );
         });
 
-      case 'SCREENS_SCREEN_ID_TABS':
+      case "SCREENS_SCREEN_ID_TABS":
         /*
 
 Get all screen tabs
@@ -959,7 +957,7 @@ Get all screen tabs
           });
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS":
         /*
 
 Get all screen tab fields
@@ -979,7 +977,7 @@ Get all screen tab fields
           );
         });
 
-      case 'SCREENSCHEME':
+      case "SCREENSCHEME":
         /*
 
 Get screen schemes
@@ -996,7 +994,7 @@ Get screen schemes
           });
         });
 
-      case 'USER_ASSIGNABLE_MULTI_PROJECT_SEARCH':
+      case "USER_ASSIGNABLE_MULTI_PROJECT_SEARCH":
         /*
 
 Find users assignable to projects
@@ -1016,7 +1014,7 @@ Find users assignable to projects
           );
         });
 
-      case 'USER_ASSIGNABLE_SEARCH':
+      case "USER_ASSIGNABLE_SEARCH":
         /*
 
 Find users assignable to issues
@@ -1033,7 +1031,7 @@ Find users assignable to issues
           });
         });
 
-      case 'USER_PERMISSION_SEARCH':
+      case "USER_PERMISSION_SEARCH":
         /*
 
 Find users with permissions
@@ -1050,7 +1048,7 @@ Find users with permissions
           });
         });
 
-      case 'USER_PICKER':
+      case "USER_PICKER":
         /*
 
 Find users for picker
@@ -1067,7 +1065,7 @@ Find users for picker
           });
         });
 
-      case 'USER_SEARCH':
+      case "USER_SEARCH":
         /*
 
 Find users
@@ -1084,7 +1082,7 @@ Find users
           });
         });
 
-      case 'USER_SEARCH_QUERY':
+      case "USER_SEARCH_QUERY":
         /*
 
 Find users by query
@@ -1101,7 +1099,7 @@ Find users by query
           });
         });
 
-      case 'USER_SEARCH_QUERY_KEY':
+      case "USER_SEARCH_QUERY_KEY":
         /*
 
 Find user keys by query
@@ -1118,7 +1116,7 @@ Find user keys by query
           });
         });
 
-      case 'USER_VIEWISSUE_SEARCH':
+      case "USER_VIEWISSUE_SEARCH":
         /*
 
 Find users with browse permission
@@ -1135,7 +1133,7 @@ Find users with browse permission
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WATCHERS':
+      case "ISSUE_ISSUE_ID_OR_KEY_WATCHERS":
         /*
 
 Get issue watchers
@@ -1152,7 +1150,7 @@ Get issue watchers
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES":
         /*
 
 Get worklog property keys
@@ -1172,7 +1170,7 @@ Get worklog property keys
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get worklog property
@@ -1192,7 +1190,7 @@ Get worklog property
           );
         });
 
-      case 'WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES':
+      case "WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES":
         /*
 
 Get workflow transition properties
@@ -1212,7 +1210,7 @@ Get workflow transition properties
           );
         });
 
-      case 'SETTINGS_COLUMNS':
+      case "SETTINGS_COLUMNS":
         /*
 
 Get issue navigator default columns
@@ -1229,7 +1227,7 @@ Get issue navigator default columns
           });
         });
 
-      case 'AUDITING_RECORD':
+      case "AUDITING_RECORD":
         /*
 
 Get audit records
@@ -1246,7 +1244,7 @@ Get audit records
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_PROPERTIES':
+      case "PROJECT_PROJECT_ID_OR_KEY_PROPERTIES":
         /*
 
 Get project property keys
@@ -1266,7 +1264,7 @@ Get project property keys
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get project property
@@ -1286,7 +1284,7 @@ Get project property
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_VERSION':
+      case "PROJECT_PROJECT_ID_OR_KEY_VERSION":
         /*
 
 Get project versions paginated
@@ -1306,7 +1304,7 @@ Get project versions paginated
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_VERSIONS':
+      case "PROJECT_PROJECT_ID_OR_KEY_VERSIONS":
         /*
 
 Get project versions
@@ -1326,7 +1324,7 @@ Get project versions
           );
         });
 
-      case 'VERSION_ID':
+      case "VERSION_ID":
         /*
 
 Get version
@@ -1343,7 +1341,7 @@ Get version
           });
         });
 
-      case 'VERSION_ID_RELATED_ISSUE_COUNTS':
+      case "VERSION_ID_RELATED_ISSUE_COUNTS":
         /*
 
 Get version&#39;s related issues count
@@ -1363,7 +1361,7 @@ Get version&#39;s related issues count
           );
         });
 
-      case 'VERSION_ID_UNRESOLVED_ISSUE_COUNT':
+      case "VERSION_ID_UNRESOLVED_ISSUE_COUNT":
         /*
 
 Get version&#39;s unresolved issues count
@@ -1383,7 +1381,7 @@ Get version&#39;s unresolved issues count
           );
         });
 
-      case 'NOTIFICATIONSCHEME':
+      case "NOTIFICATIONSCHEME":
         /*
 
 Get notification schemes paginated
@@ -1400,7 +1398,7 @@ Get notification schemes paginated
           });
         });
 
-      case 'NOTIFICATIONSCHEME_ID':
+      case "NOTIFICATIONSCHEME_ID":
         /*
 
 Get notification scheme
@@ -1417,7 +1415,7 @@ Get notification scheme
           });
         });
 
-      case 'USER_BULK':
+      case "USER_BULK":
         /*
 
 Bulk get users
@@ -1434,7 +1432,7 @@ Bulk get users
           });
         });
 
-      case 'USER_BULK_MIGRATION':
+      case "USER_BULK_MIGRATION":
         /*
 
 Get account IDs for users
@@ -1451,7 +1449,7 @@ Get account IDs for users
           });
         });
 
-      case 'USER_COLUMNS':
+      case "USER_COLUMNS":
         /*
 
 Get user default columns
@@ -1468,7 +1466,7 @@ Get user default columns
           });
         });
 
-      case 'USER_EMAIL_BULK':
+      case "USER_EMAIL_BULK":
         /*
 
 Get user email bulk
@@ -1485,7 +1483,7 @@ Get user email bulk
           });
         });
 
-      case 'USER_EMAIL':
+      case "USER_EMAIL":
         /*
 
 Get user email
@@ -1502,7 +1500,7 @@ Get user email
           });
         });
 
-      case 'USER':
+      case "USER":
         /*
 
 Get user
@@ -1519,7 +1517,7 @@ Get user
           });
         });
 
-      case 'USER_GROUPS':
+      case "USER_GROUPS":
         /*
 
 Get user groups
@@ -1536,7 +1534,7 @@ Get user groups
           });
         });
 
-      case 'USERS':
+      case "USERS":
         /*
 
 Get all users default
@@ -1553,7 +1551,7 @@ Get all users default
           });
         });
 
-      case 'USERS_SEARCH':
+      case "USERS_SEARCH":
         /*
 
 Get all users
@@ -1570,7 +1568,7 @@ Get all users
           });
         });
 
-      case 'STATUS':
+      case "STATUS":
         /*
 
 Get all statuses
@@ -1587,7 +1585,7 @@ Get all statuses
           });
         });
 
-      case 'STATUS_ID_OR_NAME':
+      case "STATUS_ID_OR_NAME":
         /*
 
 Get status
@@ -1604,7 +1602,7 @@ Get status
           });
         });
 
-      case 'ISSUE_CREATEMETA':
+      case "ISSUE_CREATEMETA":
         /*
 
 Get create issue metadata
@@ -1621,7 +1619,7 @@ Get create issue metadata
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_CHANGELOG':
+      case "ISSUE_ISSUE_ID_OR_KEY_CHANGELOG":
         /*
 
 Get change logs
@@ -1638,7 +1636,7 @@ Get change logs
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_EDITMETA':
+      case "ISSUE_ISSUE_ID_OR_KEY_EDITMETA":
         /*
 
 Get edit issue metadata
@@ -1655,7 +1653,7 @@ Get edit issue metadata
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY":
         /*
 
 Get issue
@@ -1672,7 +1670,7 @@ Get issue
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_TRANSITIONS':
+      case "ISSUE_ISSUE_ID_OR_KEY_TRANSITIONS":
         /*
 
 Get transitions
@@ -1692,7 +1690,7 @@ Get transitions
           );
         });
 
-      case 'MYPREFERENCES':
+      case "MYPREFERENCES":
         /*
 
 Get preference
@@ -1709,7 +1707,7 @@ Get preference
           });
         });
 
-      case 'MYPREFERENCES_LOCALE':
+      case "MYPREFERENCES_LOCALE":
         /*
 
 Get locale
@@ -1726,7 +1724,7 @@ Get locale
           });
         });
 
-      case 'MYSELF':
+      case "MYSELF":
         /*
 
 Get current user
@@ -1743,7 +1741,7 @@ Get current user
           });
         });
 
-      case 'ISSUETYPESCHEME':
+      case "ISSUETYPESCHEME":
         /*
 
 Get all issue type schemes
@@ -1760,7 +1758,7 @@ Get all issue type schemes
           });
         });
 
-      case 'ISSUETYPESCHEME_MAPPING':
+      case "ISSUETYPESCHEME_MAPPING":
         /*
 
 Get issue type scheme items
@@ -1777,7 +1775,7 @@ Get issue type scheme items
           });
         });
 
-      case 'ISSUETYPESCHEME_PROJECT':
+      case "ISSUETYPESCHEME_PROJECT":
         /*
 
 Get issue type schemes for projects
@@ -1794,7 +1792,7 @@ Get issue type schemes for projects
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_COMMENT':
+      case "ISSUE_ISSUE_ID_OR_KEY_COMMENT":
         /*
 
 Get comments
@@ -1811,7 +1809,7 @@ Get comments
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID":
         /*
 
 Get comment
@@ -1828,7 +1826,7 @@ Get comment
           });
         });
 
-      case 'FILTER_DEFAULT_SHARE_SCOPE':
+      case "FILTER_DEFAULT_SHARE_SCOPE":
         /*
 
 Get default share scope
@@ -1845,7 +1843,7 @@ Get default share scope
           });
         });
 
-      case 'FILTER_ID_PERMISSION':
+      case "FILTER_ID_PERMISSION":
         /*
 
 Get share permissions
@@ -1862,7 +1860,7 @@ Get share permissions
           });
         });
 
-      case 'FILTER_ID_PERMISSION_PERMISSION_ID':
+      case "FILTER_ID_PERMISSION_PERMISSION_ID":
         /*
 
 Get share permission
@@ -1882,7 +1880,7 @@ Get share permission
           );
         });
 
-      case 'WORKFLOWSCHEME_PROJECT':
+      case "WORKFLOWSCHEME_PROJECT":
         /*
 
 Get workflow scheme project associations
@@ -1899,7 +1897,7 @@ Get workflow scheme project associations
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_AVATARS':
+      case "PROJECT_PROJECT_ID_OR_KEY_AVATARS":
         /*
 
 Get all project avatars
@@ -1919,7 +1917,7 @@ Get all project avatars
           );
         });
 
-      case 'ISSUETYPE':
+      case "ISSUETYPE":
         /*
 
 Get all issue types for user
@@ -1936,7 +1934,7 @@ Get all issue types for user
           });
         });
 
-      case 'ISSUETYPE_ID_ALTERNATIVES':
+      case "ISSUETYPE_ID_ALTERNATIVES":
         /*
 
 Get alternative issue types
@@ -1953,7 +1951,7 @@ Get alternative issue types
           });
         });
 
-      case 'ISSUETYPE_ID':
+      case "ISSUETYPE_ID":
         /*
 
 Get issue type
@@ -1970,7 +1968,7 @@ Get issue type
           });
         });
 
-      case 'WORKFLOWSCHEME':
+      case "WORKFLOWSCHEME":
         /*
 
 Get all workflow schemes
@@ -1987,7 +1985,7 @@ Get all workflow schemes
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DEFAULT":
         /*
 
 Get default workflow
@@ -2004,7 +2002,7 @@ Get default workflow
           });
         });
 
-      case 'WORKFLOWSCHEME_ID':
+      case "WORKFLOWSCHEME_ID":
         /*
 
 Get workflow scheme
@@ -2021,7 +2019,7 @@ Get workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Get workflow for issue type in workflow scheme
@@ -2041,7 +2039,7 @@ Get workflow for issue type in workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_WORKFLOW":
         /*
 
 Get issue types for workflows in workflow scheme
@@ -2058,7 +2056,7 @@ Get issue types for workflows in workflow scheme
           });
         });
 
-      case 'ISSUE_LINK_TYPE':
+      case "ISSUE_LINK_TYPE":
         /*
 
 Get issue link types
@@ -2075,7 +2073,7 @@ Get issue link types
           });
         });
 
-      case 'ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID':
+      case "ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID":
         /*
 
 Get issue link type
@@ -2095,7 +2093,7 @@ Get issue link type
           );
         });
 
-      case 'ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES':
+      case "ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES":
         /*
 
 Get issue type property keys
@@ -2115,7 +2113,7 @@ Get issue type property keys
           );
         });
 
-      case 'ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get issue type property
@@ -2135,7 +2133,7 @@ Get issue type property
           );
         });
 
-      case 'STATUSCATEGORY':
+      case "STATUSCATEGORY":
         /*
 
 Get all status categories
@@ -2152,7 +2150,7 @@ Get all status categories
           });
         });
 
-      case 'STATUSCATEGORY_ID_OR_KEY':
+      case "STATUSCATEGORY_ID_OR_KEY":
         /*
 
 Get status category
@@ -2169,7 +2167,7 @@ Get status category
           });
         });
 
-      case 'PROJECT_TYPE_ACCESSIBLE':
+      case "PROJECT_TYPE_ACCESSIBLE":
         /*
 
 Get licensed project types
@@ -2186,7 +2184,7 @@ Get licensed project types
           });
         });
 
-      case 'PROJECT_TYPE':
+      case "PROJECT_TYPE":
         /*
 
 Get all project types
@@ -2203,7 +2201,7 @@ Get all project types
           });
         });
 
-      case 'PROJECT_TYPE_PROJECT_TYPE_KEY_ACCESSIBLE':
+      case "PROJECT_TYPE_PROJECT_TYPE_KEY_ACCESSIBLE":
         /*
 
 Get accessible project type by key
@@ -2223,7 +2221,7 @@ Get accessible project type by key
           );
         });
 
-      case 'PROJECT_TYPE_PROJECT_TYPE_KEY':
+      case "PROJECT_TYPE_PROJECT_TYPE_KEY":
         /*
 
 Get project type by key
@@ -2240,7 +2238,7 @@ Get project type by key
           });
         });
 
-      case 'FILTER_FAVOURITE':
+      case "FILTER_FAVOURITE":
         /*
 
 Get favorite filters
@@ -2257,7 +2255,7 @@ Get favorite filters
           });
         });
 
-      case 'FILTER':
+      case "FILTER":
         /*
 
 Get filters
@@ -2274,7 +2272,7 @@ Get filters
           });
         });
 
-      case 'FILTER_ID_COLUMNS':
+      case "FILTER_ID_COLUMNS":
         /*
 
 Get columns
@@ -2291,7 +2289,7 @@ Get columns
           });
         });
 
-      case 'FILTER_ID':
+      case "FILTER_ID":
         /*
 
 Get filter
@@ -2308,7 +2306,7 @@ Get filter
           });
         });
 
-      case 'FILTER_MY':
+      case "FILTER_MY":
         /*
 
 Get my filters
@@ -2325,7 +2323,7 @@ Get my filters
           });
         });
 
-      case 'FILTER_SEARCH':
+      case "FILTER_SEARCH":
         /*
 
 Search for filters
@@ -2342,7 +2340,7 @@ Search for filters
           });
         });
 
-      case 'GROUPUSERPICKER':
+      case "GROUPUSERPICKER":
         /*
 
 Find users and groups
@@ -2359,7 +2357,7 @@ Find users and groups
           });
         });
 
-      case 'WORKFLOW':
+      case "WORKFLOW":
         /*
 
 Get all workflows
@@ -2376,7 +2374,7 @@ Get all workflows
           });
         });
 
-      case 'WORKFLOW_SEARCH':
+      case "WORKFLOW_SEARCH":
         /*
 
 Get workflows paginated
@@ -2393,7 +2391,7 @@ Get workflows paginated
           });
         });
 
-      case 'PERMISSIONSCHEME':
+      case "PERMISSIONSCHEME":
         /*
 
 Get all permission schemes
@@ -2410,7 +2408,7 @@ Get all permission schemes
           });
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID':
+      case "PERMISSIONSCHEME_SCHEME_ID":
         /*
 
 Get permission scheme
@@ -2427,7 +2425,7 @@ Get permission scheme
           });
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID_PERMISSION':
+      case "PERMISSIONSCHEME_SCHEME_ID_PERMISSION":
         /*
 
 Get permission scheme grants
@@ -2447,7 +2445,7 @@ Get permission scheme grants
           );
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID_PERMISSION_PERMISSION_ID':
+      case "PERMISSIONSCHEME_SCHEME_ID_PERMISSION_PERMISSION_ID":
         /*
 
 Get permission scheme grant
@@ -2467,7 +2465,7 @@ Get permission scheme grant
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK":
         /*
 
 Get remote issue links
@@ -2487,7 +2485,7 @@ Get remote issue links
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID":
         /*
 
 Get remote issue link by ID
@@ -2507,7 +2505,7 @@ Get remote issue link by ID
           );
         });
 
-      case 'PRIORITY':
+      case "PRIORITY":
         /*
 
 Get priorities
@@ -2524,7 +2522,7 @@ Get priorities
           });
         });
 
-      case 'PRIORITY_ID':
+      case "PRIORITY_ID":
         /*
 
 Get priority
@@ -2541,7 +2539,7 @@ Get priority
           });
         });
 
-      case 'APPLICATION_PROPERTIES_ADVANCED_SETTINGS':
+      case "APPLICATION_PROPERTIES_ADVANCED_SETTINGS":
         /*
 
 Get advanced settings
@@ -2561,7 +2559,7 @@ Get advanced settings
           );
         });
 
-      case 'APPLICATION_PROPERTIES':
+      case "APPLICATION_PROPERTIES":
         /*
 
 Get application property
@@ -2578,7 +2576,7 @@ Get application property
           });
         });
 
-      case 'CONFIGURATION':
+      case "CONFIGURATION":
         /*
 
 Get global settings
@@ -2595,7 +2593,7 @@ Get global settings
           });
         });
 
-      case 'TASK_TASK_ID':
+      case "TASK_TASK_ID":
         /*
 
 Get task
@@ -2612,7 +2610,7 @@ Get task
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_VOTES':
+      case "ISSUE_ISSUE_ID_OR_KEY_VOTES":
         /*
 
 Get votes
@@ -2629,7 +2627,7 @@ Get votes
           });
         });
 
-      case 'SERVER_INFO':
+      case "SERVER_INFO":
         /*
 
 Get Jira instance info
@@ -2646,7 +2644,7 @@ Get Jira instance info
           });
         });
 
-      case 'APPLICATIONROLE':
+      case "APPLICATIONROLE":
         /*
 
 Get all application roles
@@ -2663,7 +2661,7 @@ Get all application roles
           });
         });
 
-      case 'APPLICATIONROLE_KEY':
+      case "APPLICATIONROLE_KEY":
         /*
 
 Get application role
@@ -2680,7 +2678,7 @@ Get application role
           });
         });
 
-      case 'COMPONENT_ID':
+      case "COMPONENT_ID":
         /*
 
 Get component
@@ -2697,7 +2695,7 @@ Get component
           });
         });
 
-      case 'COMPONENT_ID_RELATED_ISSUE_COUNTS':
+      case "COMPONENT_ID_RELATED_ISSUE_COUNTS":
         /*
 
 Get component issues count
@@ -2717,7 +2715,7 @@ Get component issues count
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_COMPONENT':
+      case "PROJECT_PROJECT_ID_OR_KEY_COMPONENT":
         /*
 
 Get project components paginated
@@ -2737,7 +2735,7 @@ Get project components paginated
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_COMPONENTS':
+      case "PROJECT_PROJECT_ID_OR_KEY_COMPONENTS":
         /*
 
 Get project components
@@ -2757,7 +2755,7 @@ Get project components
           );
         });
 
-      case 'CUSTOM_FIELD_FIELD_ID_OPTION':
+      case "CUSTOM_FIELD_FIELD_ID_OPTION":
         /*
 
 Get options for field
@@ -2774,7 +2772,7 @@ Get options for field
           });
         });
 
-      case 'CUSTOM_FIELD_OPTION_ID':
+      case "CUSTOM_FIELD_OPTION_ID":
         /*
 
 Get custom field option
@@ -2791,7 +2789,7 @@ Get custom field option
           });
         });
 
-      case 'RESOLUTION':
+      case "RESOLUTION":
         /*
 
 Get resolutions
@@ -2808,7 +2806,7 @@ Get resolutions
           });
         });
 
-      case 'RESOLUTION_ID':
+      case "RESOLUTION_ID":
         /*
 
 Get resolution
@@ -2825,7 +2823,7 @@ Get resolution
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DRAFT_DEFAULT":
         /*
 
 Get draft default workflow
@@ -2845,7 +2843,7 @@ Get draft default workflow
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT':
+      case "WORKFLOWSCHEME_ID_DRAFT":
         /*
 
 Get draft workflow scheme
@@ -2862,7 +2860,7 @@ Get draft workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Get workflow for issue type in draft workflow scheme
@@ -2882,7 +2880,7 @@ Get workflow for issue type in draft workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_DRAFT_WORKFLOW":
         /*
 
 Get issue types for workflows in draft workflow scheme
@@ -2902,7 +2900,7 @@ Get issue types for workflows in draft workflow scheme
           );
         });
 
-      case 'GROUP':
+      case "GROUP":
         /*
 
 Get group
@@ -2919,7 +2917,7 @@ Get group
           });
         });
 
-      case 'GROUP_MEMBER':
+      case "GROUP_MEMBER":
         /*
 
 Get users from group
@@ -2936,7 +2934,7 @@ Get users from group
           });
         });
 
-      case 'GROUPS_PICKER':
+      case "GROUPS_PICKER":
         /*
 
 Find groups
@@ -2953,7 +2951,7 @@ Find groups
           });
         });
 
-      case 'LABEL':
+      case "LABEL":
         /*
 
 Get all labels
@@ -2970,7 +2968,7 @@ Get all labels
           });
         });
 
-      case 'USER_PROPERTIES':
+      case "USER_PROPERTIES":
         /*
 
 Get user property keys
@@ -2987,7 +2985,7 @@ Get user property keys
           });
         });
 
-      case 'USER_PROPERTIES_PROPERTY_KEY':
+      case "USER_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get user property
@@ -3004,7 +3002,7 @@ Get user property
           });
         });
 
-      case 'ISSUETYPESCREENSCHEME':
+      case "ISSUETYPESCREENSCHEME":
         /*
 
 Get issue type screen schemes
@@ -3021,7 +3019,7 @@ Get issue type screen schemes
           });
         });
 
-      case 'ISSUETYPESCREENSCHEME_MAPPING':
+      case "ISSUETYPESCREENSCHEME_MAPPING":
         /*
 
 Get issue type screen scheme items
@@ -3041,7 +3039,7 @@ Get issue type screen scheme items
           );
         });
 
-      case 'ISSUETYPESCREENSCHEME_PROJECT':
+      case "ISSUETYPESCREENSCHEME_PROJECT":
         /*
 
 Get issue type screen schemes for projects
@@ -3061,7 +3059,7 @@ Get issue type screen schemes for projects
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION':
+      case "FIELD_FIELD_KEY_OPTION":
         /*
 
 Get all issue field options
@@ -3078,7 +3076,7 @@ Get all issue field options
           });
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_OPTION_ID':
+      case "FIELD_FIELD_KEY_OPTION_OPTION_ID":
         /*
 
 Get issue field option
@@ -3098,7 +3096,7 @@ Get issue field option
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_SUGGESTIONS_EDIT':
+      case "FIELD_FIELD_KEY_OPTION_SUGGESTIONS_EDIT":
         /*
 
 Get selectable issue field options
@@ -3118,7 +3116,7 @@ Get selectable issue field options
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_SUGGESTIONS_SEARCH':
+      case "FIELD_FIELD_KEY_OPTION_SUGGESTIONS_SEARCH":
         /*
 
 Get visible issue field options
@@ -3138,7 +3136,7 @@ Get visible issue field options
           );
         });
 
-      case 'ISSUE_LINK_LINK_ID':
+      case "ISSUE_LINK_LINK_ID":
         /*
 
 Get issue link
@@ -3155,7 +3153,7 @@ Get issue link
           });
         });
 
-      case 'FIELD_FIELD_ID_CONTEXTS':
+      case "FIELD_FIELD_ID_CONTEXTS":
         /*
 
 Get contexts for a field
@@ -3172,7 +3170,7 @@ Get contexts for a field
           });
         });
 
-      case 'FIELD':
+      case "FIELD":
         /*
 
 Get fields
@@ -3189,7 +3187,7 @@ Get fields
           });
         });
 
-      case 'FIELD_SEARCH':
+      case "FIELD_SEARCH":
         /*
 
 Get fields paginated
@@ -3206,7 +3204,7 @@ Get fields paginated
           });
         });
 
-      case 'WEBHOOK_FAILED':
+      case "WEBHOOK_FAILED":
         /*
 
 Get failed webhooks
@@ -3223,7 +3221,7 @@ Get failed webhooks
           });
         });
 
-      case 'WEBHOOK':
+      case "WEBHOOK":
         /*
 
 Get dynamic webhooks for app
@@ -3240,7 +3238,7 @@ Get dynamic webhooks for app
           });
         });
 
-      case 'FIELDCONFIGURATION':
+      case "FIELDCONFIGURATION":
         /*
 
 Get all field configurations
@@ -3257,7 +3255,7 @@ Get all field configurations
           });
         });
 
-      case 'FIELDCONFIGURATION_ID_FIELDS':
+      case "FIELDCONFIGURATION_ID_FIELDS":
         /*
 
 Get field configuration items
@@ -3274,7 +3272,7 @@ Get field configuration items
           });
         });
 
-      case 'FIELDCONFIGURATIONSCHEME':
+      case "FIELDCONFIGURATIONSCHEME":
         /*
 
 Get all field configuration schemes
@@ -3291,7 +3289,7 @@ Get all field configuration schemes
           });
         });
 
-      case 'FIELDCONFIGURATIONSCHEME_MAPPING':
+      case "FIELDCONFIGURATIONSCHEME_MAPPING":
         /*
 
 Get field configuration issue type items
@@ -3311,7 +3309,7 @@ Get field configuration issue type items
           );
         });
 
-      case 'FIELDCONFIGURATIONSCHEME_PROJECT':
+      case "FIELDCONFIGURATIONSCHEME_PROJECT":
         /*
 
 Get field configuration schemes for projects
@@ -3331,7 +3329,7 @@ Get field configuration schemes for projects
           );
         });
 
-      case 'PROJECT_PROJECT_KEY_OR_ID_ISSUESECURITYLEVELSCHEME':
+      case "PROJECT_PROJECT_KEY_OR_ID_ISSUESECURITYLEVELSCHEME":
         /*
 
 Get project issue security scheme
@@ -3351,7 +3349,7 @@ Get project issue security scheme
           );
         });
 
-      case 'PROJECT_PROJECT_KEY_OR_ID_PERMISSIONSCHEME':
+      case "PROJECT_PROJECT_KEY_OR_ID_PERMISSIONSCHEME":
         /*
 
 Get assigned permission scheme
@@ -3371,7 +3369,7 @@ Get assigned permission scheme
           );
         });
 
-      case 'PROJECT_PROJECT_KEY_OR_ID_SECURITYLEVEL':
+      case "PROJECT_PROJECT_KEY_OR_ID_SECURITYLEVEL":
         /*
 
 Get project issue security levels
@@ -3391,7 +3389,7 @@ Get project issue security levels
           );
         });
 
-      case 'PROJECT':
+      case "PROJECT":
         /*
 
 Get all projects
@@ -3408,7 +3406,7 @@ Get all projects
           });
         });
 
-      case 'PROJECT_PROJECT_ID_HIERARCHY':
+      case "PROJECT_PROJECT_ID_HIERARCHY":
         /*
 
 Get project issue type hierarchy
@@ -3425,7 +3423,7 @@ Get project issue type hierarchy
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY":
         /*
 
 Get project
@@ -3442,7 +3440,7 @@ Get project
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_STATUSES':
+      case "PROJECT_PROJECT_ID_OR_KEY_STATUSES":
         /*
 
 Get all statuses for project
@@ -3462,7 +3460,7 @@ Get all statuses for project
           );
         });
 
-      case 'PROJECT_PROJECT_KEY_OR_ID_NOTIFICATIONSCHEME':
+      case "PROJECT_PROJECT_KEY_OR_ID_NOTIFICATIONSCHEME":
         /*
 
 Get project notification scheme
@@ -3482,7 +3480,7 @@ Get project notification scheme
           );
         });
 
-      case 'PROJECT_SEARCH':
+      case "PROJECT_SEARCH":
         /*
 
 Get projects paginated
@@ -3499,7 +3497,7 @@ Get projects paginated
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_PROPERTIES':
+      case "ISSUE_ISSUE_ID_OR_KEY_PROPERTIES":
         /*
 
 Get issue property keys
@@ -3519,7 +3517,7 @@ Get issue property keys
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get issue property
@@ -3539,7 +3537,7 @@ Get issue property
           );
         });
 
-      case 'CONFIGURATION_TIMETRACKING':
+      case "CONFIGURATION_TIMETRACKING":
         /*
 
 Get selected time tracking provider
@@ -3556,7 +3554,7 @@ Get selected time tracking provider
           });
         });
 
-      case 'CONFIGURATION_TIMETRACKING_LIST':
+      case "CONFIGURATION_TIMETRACKING_LIST":
         /*
 
 Get all time tracking providers
@@ -3576,7 +3574,7 @@ Get all time tracking providers
           );
         });
 
-      case 'CONFIGURATION_TIMETRACKING_OPTIONS':
+      case "CONFIGURATION_TIMETRACKING_OPTIONS":
         /*
 
 Get time tracking settings
@@ -3596,7 +3594,7 @@ Get time tracking settings
           );
         });
 
-      case 'DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES':
+      case "DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES":
         /*
 
 Get dashboard item property keys
@@ -3616,7 +3614,7 @@ Get dashboard item property keys
           );
         });
 
-      case 'DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY':
+      case "DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get dashboard item property
@@ -3636,7 +3634,7 @@ Get dashboard item property
           );
         });
 
-      case 'DASHBOARD':
+      case "DASHBOARD":
         /*
 
 Get all dashboards
@@ -3653,7 +3651,7 @@ Get all dashboards
           });
         });
 
-      case 'DASHBOARD_ID':
+      case "DASHBOARD_ID":
         /*
 
 Get dashboard
@@ -3670,7 +3668,7 @@ Get dashboard
           });
         });
 
-      case 'DASHBOARD_SEARCH':
+      case "DASHBOARD_SEARCH":
         /*
 
 Search for dashboards
@@ -3687,7 +3685,7 @@ Search for dashboards
           });
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES':
+      case "REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES":
         /*
 
 Get app properties
@@ -3707,7 +3705,7 @@ Get app properties
           );
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY':
+      case "REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Get app property
@@ -3727,7 +3725,7 @@ Get app property
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG":
         /*
 
 Get issue worklogs
@@ -3744,7 +3742,7 @@ Get issue worklogs
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID":
         /*
 
 Get worklog
@@ -3761,7 +3759,7 @@ Get worklog
           });
         });
 
-      case 'WORKLOG_DELETED':
+      case "WORKLOG_DELETED":
         /*
 
 Get IDs of deleted worklogs
@@ -3778,7 +3776,7 @@ Get IDs of deleted worklogs
           });
         });
 
-      case 'WORKLOG_UPDATED':
+      case "WORKLOG_UPDATED":
         /*
 
 Get IDs of updated worklogs
@@ -3795,7 +3793,7 @@ Get IDs of updated worklogs
           });
         });
 
-      case 'PROJECTVALIDATE_KEY':
+      case "PROJECTVALIDATE_KEY":
         /*
 
 Validate project key
@@ -3812,7 +3810,7 @@ Validate project key
           });
         });
 
-      case 'PROJECTVALIDATE_VALID_PROJECT_KEY':
+      case "PROJECTVALIDATE_VALID_PROJECT_KEY":
         /*
 
 Get valid project key
@@ -3832,7 +3830,7 @@ Get valid project key
           );
         });
 
-      case 'PROJECTVALIDATE_VALID_PROJECT_NAME':
+      case "PROJECTVALIDATE_VALID_PROJECT_NAME":
         /*
 
 Get valid project name
@@ -3862,10 +3860,10 @@ Get comment property keys
 
  */
   commentCommentIdPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentPropertiesApi(); // Object | Cloudi of the projec // String | The ID of the comment.
@@ -3888,10 +3886,10 @@ Get comment property
 
  */
   commentCommentIdPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentPropertiesApi(); // Object | Cloudi of the projec // String | The ID of the comment // String | The key of the property.
@@ -3915,10 +3913,10 @@ Get workflow transition rule configurations
 
  */
   workflowRuleConfigGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionRulesApi(); // Object | Cloudi of the projec // [String] | The types of the transition rules to return.
@@ -3958,7 +3956,7 @@ Get modules
 
  */
   restAtlassianConnect1AppModuleDynamicGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.DynamicModulesApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ apiInstance.restAtlassianConnect1AppModuleDynamicGet(
@@ -3979,10 +3977,10 @@ Get all project categories
 
  */
   projectCategoryGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectCategoriesApi(); // Object | Cloudi of the project
@@ -4004,10 +4002,10 @@ Get project category by id
 
  */
   projectCategoryIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectCategoriesApi(); // Object | Cloudi of the projec // Number | The ID of the project category.
@@ -4030,10 +4028,10 @@ Get field reference data
 
  */
   jqlAutocompletedataGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JQLApi(); // Object | Cloudi of the project
@@ -4055,10 +4053,10 @@ Get field auto complete suggestions
 
  */
   jqlAutocompletedataSuggestionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JQLApi(); // Object | Cloudi of the project
@@ -4097,10 +4095,10 @@ Get issue picker suggestions
 
  */
   issuePickerGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSearchApi(); // Object | Cloudi of the project
@@ -4141,10 +4139,10 @@ Search for issues using JQL (GET)
 
  */
   searchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSearchApi(); // Object | Cloudi of the project
@@ -4187,7 +4185,7 @@ Get system avatars by type
 
  */
   avatarTypeSystemGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AvatarsApi(); // Object | Cloudi of the projec // String | The avatar type.
     /*let cloudid = null;*/ /*let type = "type_example";*/ apiInstance.avatarTypeSystemGet(
@@ -4209,7 +4207,7 @@ Get avatars
 
  */
   universalAvatarTypeTypeOwnerEntityIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AvatarsApi(); // Object | Cloudi of the projec // String | The avatar type // String | The ID of the item the avatar is associated with.
     /*let cloudid = null;*/ /*let type = "type_example";*/ /*let entityId = "entityId_example";*/ apiInstance.universalAvatarTypeTypeOwnerEntityIdGet(
@@ -4232,10 +4230,10 @@ Get default actors for project role
 
  */
   roleIdActorsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -4258,10 +4256,10 @@ Get issue security schemes
 
  */
   issuesecurityschemesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSecuritySchemesApi(); // Object | Cloudi of the project
@@ -4283,10 +4281,10 @@ Get issue security scheme
 
  */
   issuesecurityschemesIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSecuritySchemesApi(); // Object | Cloudi of the projec // Number | The ID of the issue security scheme. Use the [Get issue security schemes](#api-rest-api-3-issuesecurityschemes-get) operation to get a list of issue security scheme IDs.
@@ -4309,10 +4307,10 @@ Get all metadata for an expanded attachment
 
  */
   attachmentIdExpandHumanGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the projec // String | The ID of the attachment.
@@ -4335,10 +4333,10 @@ Get contents metadata for an expanded attachment
 
  */
   attachmentIdExpandRawGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the projec // String | The ID of the attachment.
@@ -4361,10 +4359,10 @@ Get attachment metadata
 
  */
   attachmentIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the projec // String | The ID of the attachment.
@@ -4387,10 +4385,10 @@ Get Jira attachment settings
 
  */
   attachmentMetaGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the project
@@ -4412,10 +4410,10 @@ Get issue security level members
 
  */
   issuesecurityschemesIssueSecuritySchemeIdMembersGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSecurityLevelApi(); // Object | Cloudi of the projec // Number | The ID of the issue security scheme. Use the [Get issue security schemes](#api-rest-api-3-issuesecurityschemes-get) operation to get a list of issue security scheme IDs.
@@ -4455,10 +4453,10 @@ Get issue security level
 
  */
   securitylevelIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSecurityLevelApi(); // Object | Cloudi of the projec // String | The ID of the issue security level.
@@ -4481,10 +4479,10 @@ Get project roles for project
 
  */
   projectProjectIdOrKeyRoleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -4507,10 +4505,10 @@ Get project role for project
 
  */
   projectProjectIdOrKeyRoleIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -4534,10 +4532,10 @@ Get project role details
 
  */
   projectProjectIdOrKeyRoledetailsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -4575,10 +4573,10 @@ Get all project roles
 
  */
   roleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the project
@@ -4600,10 +4598,10 @@ Get project role by ID
 
  */
   roleIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -4626,10 +4624,10 @@ Get my permissions
 
  */
   mypermissionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionsApi(); // Object | Cloudi of the project
@@ -4671,10 +4669,10 @@ Get all permissions
 
  */
   permissionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionsApi(); // Object | Cloudi of the project
@@ -4696,7 +4694,7 @@ Get screens for a field
 
  */
   fieldFieldIdScreensGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // String | The ID of the field to return screens for.
     /*let cloudid = null;*/ /*let fieldId = "fieldId_example";*/ let opts = {
@@ -4733,10 +4731,10 @@ Get all screens
 
  */
   screensGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the project
@@ -4773,10 +4771,10 @@ Get available screen fields
 
  */
   screensScreenIdAvailableFieldsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen.
@@ -4799,10 +4797,10 @@ Get all screen tabs
 
  */
   screensScreenIdTabsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen.
@@ -4839,10 +4837,10 @@ Get all screen tab fields
 
  */
   screensScreenIdTabsTabIdFieldsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab.
@@ -4880,10 +4878,10 @@ Get screen schemes
 
  */
   screenschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the project
@@ -4921,10 +4919,10 @@ Find users assignable to projects
 
  */
   userAssignableMultiProjectSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the projec // String | A list of project keys (case sensitive). This parameter accepts a comma-separated list.
@@ -4965,10 +4963,10 @@ Find users assignable to issues
 
  */
   userAssignableSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the project
@@ -5013,10 +5011,10 @@ Find users with permissions
 
  */
   userPermissionSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the projec // String | A comma separated list of permissions. Permissions can be specified as any:   *  permission returned by [Get all permissions](#api-rest-api-3-permissions-get).  *  custom project permission added by Connect apps.  *  (deprecated) one of the following:           *  ASSIGNABLE\\_USER      *  ASSIGN\\_ISSUE      *  ATTACHMENT\\_DELETE\\_ALL      *  ATTACHMENT\\_DELETE\\_OWN      *  BROWSE      *  CLOSE\\_ISSUE      *  COMMENT\\_DELETE\\_ALL      *  COMMENT\\_DELETE\\_OWN      *  COMMENT\\_EDIT\\_ALL      *  COMMENT\\_EDIT\\_OWN      *  COMMENT\\_ISSUE      *  CREATE\\_ATTACHMENT      *  CREATE\\_ISSUE      *  DELETE\\_ISSUE      *  EDIT\\_ISSUE      *  LINK\\_ISSUE      *  MANAGE\\_WATCHER\\_LIST      *  MODIFY\\_REPORTER      *  MOVE\\_ISSUE      *  PROJECT\\_ADMIN      *  RESOLVE\\_ISSUE      *  SCHEDULE\\_ISSUE      *  SET\\_ISSUE\\_SECURITY      *  TRANSITION\\_ISSUE      *  VIEW\\_VERSION\\_CONTROL      *  VIEW\\_VOTERS\\_AND\\_WATCHERS      *  VIEW\\_WORKFLOW\\_READONLY      *  WORKLOG\\_DELETE\\_ALL      *  WORKLOG\\_DELETE\\_OWN      *  WORKLOG\\_EDIT\\_ALL      *  WORKLOG\\_EDIT\\_OWN      *  WORK\\_ISSUE
@@ -5059,10 +5057,10 @@ Find users for picker
 
  */
   userPickerGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the projec // String | A query string that is matched against user attributes, such as `displayName`, and `emailAddress`, to find relevant users. The string can match the prefix of the attribute's value. For example, *query=john* matches a user with a `displayName` of *John Smith* and a user with an `emailAddress` of *johnson@example.com*.
@@ -5104,10 +5102,10 @@ Find users
 
  */
   userSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the project
@@ -5148,10 +5146,10 @@ Find users by query
 
  */
   userSearchQueryGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the projec // String | The search query.
@@ -5189,10 +5187,10 @@ Find user keys by query
 
  */
   userSearchQueryKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the projec // String | The search query.
@@ -5230,10 +5228,10 @@ Find users with browse permission
 
  */
   userViewissueSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserSearchApi(); // Object | Cloudi of the project
@@ -5275,10 +5273,10 @@ Get issue watchers
 
  */
   issueIssueIdOrKeyWatchersGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWatchersApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -5301,10 +5299,10 @@ Get worklog property keys
 
  */
   issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogPropertiesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog.
@@ -5331,10 +5329,10 @@ Get worklog property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogPropertiesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog // String | The key of the property.
@@ -5359,10 +5357,10 @@ Get workflow transition properties
 
  */
   workflowTransitionsTransitionIdPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionPropertiesApi(); // Object | Cloudi of the projec // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira administration console. The ID is shown next to the transition // String | The name of the workflow that the transition belongs to.
@@ -5402,10 +5400,10 @@ Get issue navigator default columns
 
  */
   settingsColumnsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueNavigatorSettingsApi(); // Object | Cloudi of the project
@@ -5427,10 +5425,10 @@ Get audit records
 
  */
   auditingRecordGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.AuditRecordsApi(); // Object | Cloudi of the project
@@ -5438,8 +5436,8 @@ Get audit records
       offset: 0, // Number | The number of records to skip before returning the first result.
       limit: 1000, // Number | The maximum number of results to return.
       //  'filter': "filter_example", // String | The query string.
-      from: new Date('2013-10-20T19:20:30+01:00'), // Date | The date and time on or after which returned audit records must have been created. If `to` is provided `from` must be before `to` or no audit records are returned.
-      to: new Date('2013-10-20T19:20:30+01:00'), // Date | The date and time on or before which returned audit results must have been created. If `from` is provided `to` must be after `from` or no audit records are returned.
+      from: new Date("2013-10-20T19:20:30+01:00"), // Date | The date and time on or after which returned audit records must have been created. If `to` is provided `from` must be before `to` or no audit records are returned.
+      to: new Date("2013-10-20T19:20:30+01:00"), // Date | The date and time on or before which returned audit results must have been created. If `from` is provided `to` must be after `from` or no audit records are returned.
     };
 
     if (incomingOptions.opts)
@@ -5470,10 +5468,10 @@ Get project property keys
 
  */
   projectProjectIdOrKeyPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPropertiesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -5496,10 +5494,10 @@ Get project property
 
  */
   projectProjectIdOrKeyPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPropertiesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // String | The project property key. Use [Get project property keys](#api-rest-api-3-project-projectIdOrKey-properties-get) to get a list of all project property keys.
@@ -5523,10 +5521,10 @@ Get project versions paginated
 
  */
   projectProjectIdOrKeyVersionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -5568,10 +5566,10 @@ Get project versions
 
  */
   projectProjectIdOrKeyVersionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -5608,10 +5606,10 @@ Get version
 
  */
   versionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version.
@@ -5648,10 +5646,10 @@ Get version&#39;s related issues count
 
  */
   versionIdRelatedIssueCountsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version.
@@ -5674,10 +5672,10 @@ Get version&#39;s unresolved issues count
 
  */
   versionIdUnresolvedIssueCountGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version.
@@ -5700,10 +5698,10 @@ Get notification schemes paginated
 
  */
   notificationschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueNotificationSchemesApi(); // Object | Cloudi of the project
@@ -5741,10 +5739,10 @@ Get notification scheme
 
  */
   notificationschemeIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueNotificationSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the notification scheme. Use [Get notification schemes paginated](#api-rest-api-3-notificationscheme-get) to get a list of notification scheme IDs.
@@ -5781,10 +5779,10 @@ Bulk get users
 
  */
   userBulkGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // [String] | The account ID of a user. To specify multiple users, pass multiple `accountId` parameters. For example, `accountId=5b10a2844c20165700ede21g&accountId=5b10ac8d82e05b22cc7d4ef5`.
@@ -5824,10 +5822,10 @@ Get account IDs for users
 
  */
   userBulkMigrationGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
@@ -5866,10 +5864,10 @@ Get user default columns
 
  */
   userColumnsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
@@ -5906,10 +5904,10 @@ Get user email bulk
 
  */
   userEmailBulkGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // [String] | The account IDs of the users for which emails are required. An `accountId` is an identifier that uniquely identifies the user across all Atlassian products. For example, `5b10ac8d82e05b22cc7d4ef5`. Note, this should be treated as an opaque identifier (that is, do not assume any structure in the value).
@@ -5932,10 +5930,10 @@ Get user email
 
  */
   userEmailGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // String | The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, `5b10ac8d82e05b22cc7d4ef5`.
@@ -5958,10 +5956,10 @@ Get user
 
  */
   userGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
@@ -6000,10 +5998,10 @@ Get user groups
 
  */
   userGroupsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // String | The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*.
@@ -6041,10 +6039,10 @@ Get all users default
 
  */
   usersGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
@@ -6081,10 +6079,10 @@ Get all users
 
  */
   usersSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
@@ -6121,10 +6119,10 @@ Get all statuses
 
  */
   statusGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowStatusesApi(); // Object | Cloudi of the project
@@ -6146,10 +6144,10 @@ Get status
 
  */
   statusIdOrNameGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowStatusesApi(); // Object | Cloudi of the projec // String | The ID or name of the status.
@@ -6172,10 +6170,10 @@ Get create issue metadata
 
  */
   issueCreatemetaGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the project
@@ -6215,10 +6213,10 @@ Get change logs
 
  */
   issueIssueIdOrKeyChangelogGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -6256,10 +6254,10 @@ Get edit issue metadata
 
  */
   issueIssueIdOrKeyEditmetaGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -6297,10 +6295,10 @@ Get issue
 
  */
   issueIssueIdOrKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -6341,10 +6339,10 @@ Get transitions
 
  */
   issueIssueIdOrKeyTransitionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -6384,10 +6382,10 @@ Get preference
 
  */
   mypreferencesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the projec // String | The key of the preference.
@@ -6410,7 +6408,7 @@ Get locale
 
  */
   mypreferencesLocaleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ apiInstance.mypreferencesLocaleGet(
@@ -6431,10 +6429,10 @@ Get current user
 
  */
   myselfGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the project
@@ -6470,10 +6468,10 @@ Get all issue type schemes
 
  */
   issuetypeschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeSchemesApi(); // Object | Cloudi of the project
@@ -6511,10 +6509,10 @@ Get issue type scheme items
 
  */
   issuetypeschemeMappingGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeSchemesApi(); // Object | Cloudi of the project
@@ -6552,10 +6550,10 @@ Get issue type schemes for projects
 
  */
   issuetypeschemeProjectGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeSchemesApi(); // Object | Cloudi of the projec // [Number] | The list of project IDs. To include multiple project IDs, provide an ampersand-separated list. For example, `projectId=10000&projectId=10001`.
@@ -6593,10 +6591,10 @@ Get comments
 
  */
   issueIssueIdOrKeyCommentGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -6636,10 +6634,10 @@ Get comment
 
  */
   issueIssueIdOrKeyCommentIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the comment.
@@ -6677,10 +6675,10 @@ Get default share scope
 
  */
   filterDefaultShareScopeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the project
@@ -6702,10 +6700,10 @@ Get share permissions
 
  */
   filterIdPermissionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -6728,10 +6726,10 @@ Get share permission
 
  */
   filterIdPermissionPermissionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the projec // Number | The ID of the filter // Number | The ID of the share permission.
@@ -6755,10 +6753,10 @@ Get workflow scheme project associations
 
  */
   workflowschemeProjectGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeProjectAssociationsApi(); // Object | Cloudi of the projec // [Number] | The ID of a project to return the workflow schemes for. To include multiple projects, provide an ampersand-Jim: oneseparated list. For example, `projectId=10000&projectId=10001`.
@@ -6781,10 +6779,10 @@ Get all project avatars
 
  */
   projectProjectIdOrKeyAvatarsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectAvatarsApi(); // Object | Cloudi of the projec // String | The ID or (case-sensitive) key of the project.
@@ -6807,10 +6805,10 @@ Get all issue types for user
 
  */
   issuetypeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the project
@@ -6832,10 +6830,10 @@ Get alternative issue types
 
  */
   issuetypeIdAlternativesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue type.
@@ -6858,10 +6856,10 @@ Get issue type
 
  */
   issuetypeIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue type.
@@ -6884,10 +6882,10 @@ Get all workflow schemes
 
  */
   workflowschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the project
@@ -6924,10 +6922,10 @@ Get default workflow
 
  */
   workflowschemeIdDefaultGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme.
@@ -6964,10 +6962,10 @@ Get workflow scheme
 
  */
   workflowschemeIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID is shown in the URL as `schemeId`. For example, *schemeId=10301*.
@@ -7004,10 +7002,10 @@ Get workflow for issue type in workflow scheme
 
  */
   workflowschemeIdIssuetypeIssueTypeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // String | The ID of the issue type.
@@ -7045,10 +7043,10 @@ Get issue types for workflows in workflow scheme
 
  */
   workflowschemeIdWorkflowGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme.
@@ -7086,10 +7084,10 @@ Get issue link types
 
  */
   issueLinkTypeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinkTypesApi(); // Object | Cloudi of the project
@@ -7111,10 +7109,10 @@ Get issue link type
 
  */
   issueLinkTypeIssueLinkTypeIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinkTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue link type.
@@ -7137,10 +7135,10 @@ Get issue type property keys
 
  */
   issuetypeIssueTypeIdPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypePropertiesApi(); // Object | Cloudi of the projec // String | The ID of the issue type.
@@ -7163,10 +7161,10 @@ Get issue type property
 
  */
   issuetypeIssueTypeIdPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypePropertiesApi(); // Object | Cloudi of the projec // String | The ID of the issue type // String | The key of the property. Use [Get issue type property keys](#api-rest-api-3-issuetype-issueTypeId-properties-get) to get a list of all issue type property keys.
@@ -7190,10 +7188,10 @@ Get all status categories
 
  */
   statuscategoryGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowStatusCategoriesApi(); // Object | Cloudi of the project
@@ -7215,10 +7213,10 @@ Get status category
 
  */
   statuscategoryIdOrKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowStatusCategoriesApi(); // Object | Cloudi of the projec // String | The ID or key of the status category.
@@ -7241,10 +7239,10 @@ Get licensed project types
 
  */
   projectTypeAccessibleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectTypesApi(); // Object | Cloudi of the project
@@ -7266,10 +7264,10 @@ Get all project types
 
  */
   projectTypeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectTypesApi(); // Object | Cloudi of the project
@@ -7291,10 +7289,10 @@ Get accessible project type by key
 
  */
   projectTypeProjectTypeKeyAccessibleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectTypesApi(); // Object | Cloudi of the projec // String | The key of the project type.
@@ -7317,10 +7315,10 @@ Get project type by key
 
  */
   projectTypeProjectTypeKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectTypesApi(); // Object | Cloudi of the projec // String | The key of the project type.
@@ -7343,10 +7341,10 @@ Get favorite filters
 
  */
   filterFavouriteGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the project
@@ -7382,10 +7380,10 @@ Get filters
 
  */
   filterGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the project
@@ -7421,10 +7419,10 @@ Get columns
 
  */
   filterIdColumnsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -7447,10 +7445,10 @@ Get filter
 
  */
   filterIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter to return.
@@ -7487,10 +7485,10 @@ Get my filters
 
  */
   filterMyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the project
@@ -7527,10 +7525,10 @@ Search for filters
 
  */
   filterSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the project
@@ -7574,10 +7572,10 @@ Find users and groups
 
  */
   groupuserpickerGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupAndUserPickerApi(); // Object | Cloudi of the projec // String | The search string.
@@ -7621,10 +7619,10 @@ Get all workflows
 
  */
   workflowGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowsApi(); // Object | Cloudi of the project
@@ -7660,10 +7658,10 @@ Get workflows paginated
 
  */
   workflowSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowsApi(); // Object | Cloudi of the project
@@ -7702,10 +7700,10 @@ Get all permission schemes
 
  */
   permissionschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the project
@@ -7741,10 +7739,10 @@ Get permission scheme
 
  */
   permissionschemeSchemeIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme to return.
@@ -7781,10 +7779,10 @@ Get permission scheme grants
 
  */
   permissionschemeSchemeIdPermissionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme.
@@ -7821,10 +7819,10 @@ Get permission scheme grant
 
  */
   permissionschemeSchemeIdPermissionPermissionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme // Number | The ID of the permission grant.
@@ -7862,10 +7860,10 @@ Get remote issue links
 
  */
   issueIssueIdOrKeyRemotelinkGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -7902,10 +7900,10 @@ Get remote issue link by ID
 
  */
   issueIssueIdOrKeyRemotelinkLinkIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the remote issue link.
@@ -7929,10 +7927,10 @@ Get priorities
 
  */
   priorityGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePrioritiesApi(); // Object | Cloudi of the project
@@ -7954,10 +7952,10 @@ Get priority
 
  */
   priorityIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePrioritiesApi(); // Object | Cloudi of the projec // String | The ID of the issue priority.
@@ -7980,10 +7978,10 @@ Get advanced settings
 
  */
   applicationPropertiesAdvancedSettingsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JiraSettingsApi(); // Object | Cloudi of the project
@@ -8005,10 +8003,10 @@ Get application property
 
  */
   applicationPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JiraSettingsApi(); // Object | Cloudi of the project
@@ -8046,7 +8044,7 @@ Get global settings
 
  */
   configurationGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.JiraSettingsApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ apiInstance.configurationGet(
@@ -8067,10 +8065,10 @@ Get task
 
  */
   taskTaskIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TasksApi(); // Object | Cloudi of the projec // String | The ID of the task.
@@ -8093,10 +8091,10 @@ Get votes
 
  */
   issueIssueIdOrKeyVotesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueVotesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -8119,10 +8117,10 @@ Get Jira instance info
 
  */
   serverInfoGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ServerInfoApi(); // Object | Cloudi of the project
@@ -8144,10 +8142,10 @@ Get all application roles
 
  */
   applicationroleGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ApplicationRolesApi(); // Object | Cloudi of the project
@@ -8169,10 +8167,10 @@ Get application role
 
  */
   applicationroleKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ApplicationRolesApi(); // Object | Cloudi of the projec // String | The key of the application role. Use the [Get all application roles](#api-rest-api-3-applicationrole-get) operation to get the key for each application role.
@@ -8195,10 +8193,10 @@ Get component
 
  */
   componentIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The ID of the component.
@@ -8221,10 +8219,10 @@ Get component issues count
 
  */
   componentIdRelatedIssueCountsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The ID of the component.
@@ -8247,10 +8245,10 @@ Get project components paginated
 
  */
   projectProjectIdOrKeyComponentGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -8290,10 +8288,10 @@ Get project components
 
  */
   projectProjectIdOrKeyComponentsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -8316,10 +8314,10 @@ Get options for field
 
  */
   customFieldFieldIdOptionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsApi(); // Object | Cloudi of the projec // Number | The ID of the custom field. Note: This is the numeric part of the of the field ID. For example, for a field with the ID *customfield\\_10075* use *10075*.
@@ -8357,10 +8355,10 @@ Get custom field option
 
  */
   customFieldOptionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsApi(); // Object | Cloudi of the projec // String | The ID of the custom field option.
@@ -8383,10 +8381,10 @@ Get resolutions
 
  */
   resolutionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueResolutionsApi(); // Object | Cloudi of the project
@@ -8408,10 +8406,10 @@ Get resolution
 
  */
   resolutionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueResolutionsApi(); // Object | Cloudi of the projec // String | The ID of the issue resolution value.
@@ -8434,10 +8432,10 @@ Get draft default workflow
 
  */
   workflowschemeIdDraftDefaultGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to.
@@ -8460,10 +8458,10 @@ Get draft workflow scheme
 
  */
   workflowschemeIdDraftGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the active workflow scheme that the draft was created from.
@@ -8486,10 +8484,10 @@ Get workflow for issue type in draft workflow scheme
 
  */
   workflowschemeIdDraftIssuetypeIssueTypeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // String | The ID of the issue type.
@@ -8513,10 +8511,10 @@ Get issue types for workflows in draft workflow scheme
 
  */
   workflowschemeIdDraftWorkflowGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to.
@@ -8553,10 +8551,10 @@ Get group
 
  */
   groupGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // String | The name of the group.
@@ -8593,10 +8591,10 @@ Get users from group
 
  */
   groupMemberGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // String | The name of the group.
@@ -8635,7 +8633,7 @@ Find groups
 
  */
   groupsPickerGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
@@ -8674,10 +8672,10 @@ Get all labels
 
  */
   labelGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.LabelsApi(); // Object | Cloudi of the project
@@ -8714,10 +8712,10 @@ Get user property keys
 
  */
   userPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserPropertiesApi(); // Object | Cloudi of the project
@@ -8755,10 +8753,10 @@ Get user property
 
  */
   userPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserPropertiesApi(); // Object | Cloudi of the projec // String | The key of the user's property.
@@ -8797,10 +8795,10 @@ Get issue type screen schemes
 
  */
   issuetypescreenschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeScreenSchemesApi(); // Object | Cloudi of the project
@@ -8838,10 +8836,10 @@ Get issue type screen scheme items
 
  */
   issuetypescreenschemeMappingGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeScreenSchemesApi(); // Object | Cloudi of the project
@@ -8879,10 +8877,10 @@ Get issue type screen schemes for projects
 
  */
   issuetypescreenschemeProjectGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeScreenSchemesApi(); // Object | Cloudi of the project
@@ -8920,10 +8918,10 @@ Get all issue field options
 
  */
   fieldFieldKeyOptionGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\"`
@@ -8961,10 +8959,10 @@ Get issue field option
 
  */
   fieldFieldKeyOptionOptionIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\" // Number | The ID of the option to be returned.
@@ -8988,10 +8986,10 @@ Get selectable issue field options
 
  */
   fieldFieldKeyOptionSuggestionsEditGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\"`
@@ -9030,10 +9028,10 @@ Get visible issue field options
 
  */
   fieldFieldKeyOptionSuggestionsSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\"`
@@ -9072,10 +9070,10 @@ Get issue link
 
  */
   issueLinkLinkIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinksApi(); // Object | Cloudi of the projec // String | The ID of the issue link.
@@ -9098,7 +9096,7 @@ Get contexts for a field
 
  */
   fieldFieldIdContextsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.IssueFieldsApi(); // Object | Cloudi of the projec // String | The ID of the field to return contexts for.
     /*let cloudid = null;*/ /*let fieldId = "fieldId_example";*/ let opts = {
@@ -9135,10 +9133,10 @@ Get fields
 
  */
   fieldGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldsApi(); // Object | Cloudi of the project
@@ -9160,10 +9158,10 @@ Get fields paginated
 
  */
   fieldSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldsApi(); // Object | Cloudi of the project
@@ -9205,10 +9203,10 @@ Get failed webhooks
 
  */
   webhookFailedGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WebhooksApi(); // Object | Cloudi of the project
@@ -9245,10 +9243,10 @@ Get dynamic webhooks for app
 
  */
   webhookGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WebhooksApi(); // Object | Cloudi of the project
@@ -9285,10 +9283,10 @@ Get all field configurations
 
  */
   fieldconfigurationGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the project
@@ -9327,10 +9325,10 @@ Get field configuration items
 
  */
   fieldconfigurationIdFieldsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the projec // Number | The ID of the field configuration.
@@ -9368,10 +9366,10 @@ Get all field configuration schemes
 
  */
   fieldconfigurationschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the project
@@ -9409,10 +9407,10 @@ Get field configuration issue type items
 
  */
   fieldconfigurationschemeMappingGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the project
@@ -9450,10 +9448,10 @@ Get field configuration schemes for projects
 
  */
   fieldconfigurationschemeProjectGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the projec // [Number] | The list of project IDs. To include multiple projects, separate IDs with ampersand: `projectId=10000&projectId=10001`.
@@ -9491,10 +9489,10 @@ Get project issue security scheme
 
  */
   projectProjectKeyOrIdIssuesecuritylevelschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPermissionSchemesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9517,10 +9515,10 @@ Get assigned permission scheme
 
  */
   projectProjectKeyOrIdPermissionschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPermissionSchemesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9557,10 +9555,10 @@ Get project issue security levels
 
  */
   projectProjectKeyOrIdSecuritylevelGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPermissionSchemesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9583,10 +9581,10 @@ Get all projects
 
  */
   projectGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the project
@@ -9624,10 +9622,10 @@ Get project issue type hierarchy
 
  */
   projectProjectIdHierarchyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // Number | The ID of the project.
@@ -9650,10 +9648,10 @@ Get project
 
  */
   projectProjectIdOrKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9691,10 +9689,10 @@ Get all statuses for project
 
  */
   projectProjectIdOrKeyStatusesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9717,10 +9715,10 @@ Get project notification scheme
 
  */
   projectProjectKeyOrIdNotificationschemeGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -9757,10 +9755,10 @@ Get projects paginated
 
  */
   projectSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the project
@@ -9805,10 +9803,10 @@ Get issue property keys
 
  */
   issueIssueIdOrKeyPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The key or ID of the issue.
@@ -9831,10 +9829,10 @@ Get issue property
 
  */
   issueIssueIdOrKeyPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The key or ID of the issue // String | The key of the property.
@@ -9858,10 +9856,10 @@ Get selected time tracking provider
 
  */
   configurationTimetrackingGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TimeTrackingApi(); // Object | Cloudi of the project
@@ -9883,10 +9881,10 @@ Get all time tracking providers
 
  */
   configurationTimetrackingListGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TimeTrackingApi(); // Object | Cloudi of the project
@@ -9908,10 +9906,10 @@ Get time tracking settings
 
  */
   configurationTimetrackingOptionsGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TimeTrackingApi(); // Object | Cloudi of the project
@@ -9933,10 +9931,10 @@ Get dashboard item property keys
 
  */
   dashboardDashboardIdItemsItemIdPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard // String | The ID of the dashboard item.
@@ -9960,10 +9958,10 @@ Get dashboard item property
 
  */
   dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard // String | The ID of the dashboard item // String | The key of the dashboard item property.
@@ -9988,10 +9986,10 @@ Get all dashboards
 
  */
   dashboardGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the project
@@ -10029,10 +10027,10 @@ Get dashboard
 
  */
   dashboardIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard.
@@ -10055,10 +10053,10 @@ Search for dashboards
 
  */
   dashboardSearchGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the project
@@ -10102,7 +10100,7 @@ Get app properties
 
  */
   restAtlassianConnect1AddonsAddonKeyPropertiesGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AppPropertiesApi(); // Object | Cloudi of the projec // String | The key of the app, as defined in its descriptor.
     /*let cloudid = null;*/ /*let addonKey = "addonKey_example";*/ apiInstance.restAtlassianConnect1AddonsAddonKeyPropertiesGet(
@@ -10127,7 +10125,7 @@ Get app property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AppPropertiesApi(); // Object | Cloudi of the projec // String | The key of the app, as defined in its descriptor // String | The key of the property.
     /*let cloudid = null;*/ /*let addonKey = "addonKey_example";*/ /*let propertyKey = "propertyKey_example";*/ apiInstance.restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyGet(
@@ -10150,10 +10148,10 @@ Get issue worklogs
 
  */
   issueIssueIdOrKeyWorklogGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -10193,10 +10191,10 @@ Get worklog
 
  */
   issueIssueIdOrKeyWorklogIdGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog.
@@ -10234,10 +10232,10 @@ Get IDs of deleted worklogs
 
  */
   worklogDeletedGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the project
@@ -10273,10 +10271,10 @@ Get IDs of updated worklogs
 
  */
   worklogUpdatedGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the project
@@ -10313,10 +10311,10 @@ Validate project key
 
  */
   projectvalidateKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectKeyAndNameValidationApi(); // Object | Cloudi of the project
@@ -10352,10 +10350,10 @@ Get valid project key
 
  */
   projectvalidateValidProjectKeyGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectKeyAndNameValidationApi(); // Object | Cloudi of the project
@@ -10391,10 +10389,10 @@ Get valid project name
 
  */
   projectvalidateValidProjectNameGet(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectKeyAndNameValidationApi(); // Object | Cloudi of the projec // String | The project name.
@@ -10413,9 +10411,9 @@ Get valid project name
 
   async post(entity, options) {
     switch (entity) {
-      case 'ISSUES':
+      case "ISSUES":
         return await this.createIssues(options);
-      case 'REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC':
+      case "REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC":
         /*
 
 Register modules
@@ -10435,7 +10433,7 @@ Register modules
           );
         });
 
-      case 'PROJECT_CATEGORY':
+      case "PROJECT_CATEGORY":
         /*
 
 Create project category
@@ -10452,7 +10450,7 @@ Create project category
           });
         });
 
-      case 'JQL_PARSE':
+      case "JQL_PARSE":
         /*
 
 Parse JQL query
@@ -10469,7 +10467,7 @@ Parse JQL query
           });
         });
 
-      case 'JQL_PDCLEANER':
+      case "JQL_PDCLEANER":
         /*
 
 Convert user identifiers to account IDs in JQL queries
@@ -10486,7 +10484,7 @@ Convert user identifiers to account IDs in JQL queries
           });
         });
 
-      case 'JQL_MATCH':
+      case "JQL_MATCH":
         /*
 
 Check issues against JQL
@@ -10503,7 +10501,7 @@ Check issues against JQL
           });
         });
 
-      case 'SEARCH':
+      case "SEARCH":
         /*
 
 Search for issues using JQL (POST)
@@ -10520,7 +10518,7 @@ Search for issues using JQL (POST)
           });
         });
 
-      case 'UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_ENTITY_ID':
+      case "UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_ENTITY_ID":
         /*
 
 Load avatar
@@ -10540,7 +10538,7 @@ Load avatar
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLE_ID':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLE_ID":
         /*
 
 Add actors to project role
@@ -10560,7 +10558,7 @@ Add actors to project role
           );
         });
 
-      case 'ROLE_ID_ACTORS':
+      case "ROLE_ID_ACTORS":
         /*
 
 Add default actors to project role
@@ -10577,7 +10575,7 @@ Add default actors to project role
           });
         });
 
-      case 'EXPRESSION_ANALYSE':
+      case "EXPRESSION_ANALYSE":
         /*
 
 Analyse Jira expression
@@ -10594,7 +10592,7 @@ Analyse Jira expression
           });
         });
 
-      case 'EXPRESSION_EVAL':
+      case "EXPRESSION_EVAL":
         /*
 
 Evaluate Jira expression
@@ -10611,7 +10609,7 @@ Evaluate Jira expression
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_ATTACHMENTS':
+      case "ISSUE_ISSUE_ID_OR_KEY_ATTACHMENTS":
         /*
 
 Add attachment
@@ -10631,7 +10629,7 @@ Add attachment
           );
         });
 
-      case 'ROLE_ID':
+      case "ROLE_ID":
         /*
 
 Partial update project role
@@ -10648,7 +10646,7 @@ Partial update project role
           });
         });
 
-      case 'ROLE':
+      case "ROLE":
         /*
 
 Create project role
@@ -10665,7 +10663,7 @@ Create project role
           });
         });
 
-      case 'PERMISSIONS_CHECK':
+      case "PERMISSIONS_CHECK":
         /*
 
 Get bulk permissions
@@ -10682,7 +10680,7 @@ Get bulk permissions
           });
         });
 
-      case 'PERMISSIONS_PROJECT':
+      case "PERMISSIONS_PROJECT":
         /*
 
 Get permitted projects
@@ -10699,7 +10697,7 @@ Get permitted projects
           });
         });
 
-      case 'SCREENS_ADD_TO_DEFAULT_FIELD_ID':
+      case "SCREENS_ADD_TO_DEFAULT_FIELD_ID":
         /*
 
 Add field to default screen
@@ -10719,7 +10717,7 @@ Add field to default screen
           );
         });
 
-      case 'SCREENS_SCREEN_ID_TABS':
+      case "SCREENS_SCREEN_ID_TABS":
         /*
 
 Create screen tab
@@ -10736,7 +10734,7 @@ Create screen tab
           });
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS_ID_MOVE':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS_ID_MOVE":
         /*
 
 Move screen tab field
@@ -10756,7 +10754,7 @@ Move screen tab field
           );
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS":
         /*
 
 Add screen tab field
@@ -10776,7 +10774,7 @@ Add screen tab field
           );
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID_MOVE_POS':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID_MOVE_POS":
         /*
 
 Move screen tab
@@ -10796,7 +10794,7 @@ Move screen tab
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WATCHERS':
+      case "ISSUE_ISSUE_ID_OR_KEY_WATCHERS":
         /*
 
 Add watcher
@@ -10813,7 +10811,7 @@ Add watcher
           });
         });
 
-      case 'WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES':
+      case "WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES":
         /*
 
 Create workflow transition property
@@ -10833,7 +10831,7 @@ Create workflow transition property
           );
         });
 
-      case 'VERSION_ID_MOVE':
+      case "VERSION_ID_MOVE":
         /*
 
 Move version
@@ -10850,7 +10848,7 @@ Move version
           });
         });
 
-      case 'VERSION_ID_REMOVE_AND_SWAP':
+      case "VERSION_ID_REMOVE_AND_SWAP":
         /*
 
 Delete and replace version
@@ -10867,7 +10865,7 @@ Delete and replace version
           });
         });
 
-      case 'VERSION':
+      case "VERSION":
         /*
 
 Create version
@@ -10884,7 +10882,7 @@ Create version
           });
         });
 
-      case 'USER':
+      case "USER":
         /*
 
 Create user
@@ -10901,7 +10899,7 @@ Create user
           });
         });
 
-      case 'ISSUE_BULK':
+      case "ISSUE_BULK":
         /*
 
 Bulk create issue
@@ -10918,7 +10916,7 @@ Bulk create issue
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_NOTIFY':
+      case "ISSUE_ISSUE_ID_OR_KEY_NOTIFY":
         /*
 
 Send notification for issue
@@ -10935,7 +10933,7 @@ Send notification for issue
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_TRANSITIONS':
+      case "ISSUE_ISSUE_ID_OR_KEY_TRANSITIONS":
         /*
 
 Transition issue
@@ -10955,7 +10953,7 @@ Transition issue
           );
         });
 
-      case 'ISSUE':
+      case "ISSUE":
         /*
 
 Create issue
@@ -10972,7 +10970,7 @@ Create issue
           });
         });
 
-      case 'COMMENT_LIST':
+      case "COMMENT_LIST":
         /*
 
 Get comments by IDs
@@ -10989,7 +10987,7 @@ Get comments by IDs
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_COMMENT':
+      case "ISSUE_ISSUE_ID_OR_KEY_COMMENT":
         /*
 
 Add comment
@@ -11006,7 +11004,7 @@ Add comment
           });
         });
 
-      case 'FILTER_ID_PERMISSION':
+      case "FILTER_ID_PERMISSION":
         /*
 
 Add share permission
@@ -11023,7 +11021,7 @@ Add share permission
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_AVATAR2':
+      case "PROJECT_PROJECT_ID_OR_KEY_AVATAR2":
         /*
 
 Load project avatar
@@ -11043,7 +11041,7 @@ Load project avatar
           );
         });
 
-      case 'ISSUETYPE_ID_AVATAR2':
+      case "ISSUETYPE_ID_AVATAR2":
         /*
 
 Load issue type avatar
@@ -11060,7 +11058,7 @@ Load issue type avatar
           });
         });
 
-      case 'ISSUETYPE':
+      case "ISSUETYPE":
         /*
 
 Create issue type
@@ -11077,7 +11075,7 @@ Create issue type
           });
         });
 
-      case 'WORKFLOWSCHEME':
+      case "WORKFLOWSCHEME":
         /*
 
 Create workflow scheme
@@ -11094,7 +11092,7 @@ Create workflow scheme
           });
         });
 
-      case 'ISSUE_LINK_TYPE':
+      case "ISSUE_LINK_TYPE":
         /*
 
 Create issue link type
@@ -11111,7 +11109,7 @@ Create issue link type
           });
         });
 
-      case 'FILTER':
+      case "FILTER":
         /*
 
 Create filter
@@ -11128,7 +11126,7 @@ Create filter
           });
         });
 
-      case 'PERMISSIONSCHEME':
+      case "PERMISSIONSCHEME":
         /*
 
 Create permission scheme
@@ -11145,7 +11143,7 @@ Create permission scheme
           });
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID_PERMISSION':
+      case "PERMISSIONSCHEME_SCHEME_ID_PERMISSION":
         /*
 
 Create permission grant
@@ -11165,7 +11163,7 @@ Create permission grant
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK":
         /*
 
 Create or update remote issue link
@@ -11185,7 +11183,7 @@ Create or update remote issue link
           );
         });
 
-      case 'TASK_TASK_ID_CANCEL':
+      case "TASK_TASK_ID_CANCEL":
         /*
 
 Cancel task
@@ -11202,7 +11200,7 @@ Cancel task
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_VOTES':
+      case "ISSUE_ISSUE_ID_OR_KEY_VOTES":
         /*
 
 Add vote
@@ -11219,7 +11217,7 @@ Add vote
           });
         });
 
-      case 'COMPONENT':
+      case "COMPONENT":
         /*
 
 Create component
@@ -11236,7 +11234,7 @@ Create component
           });
         });
 
-      case 'CUSTOM_FIELD_FIELD_ID_OPTION':
+      case "CUSTOM_FIELD_FIELD_ID_OPTION":
         /*
 
 Create custom field options
@@ -11253,7 +11251,7 @@ Create custom field options
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_CREATEDRAFT':
+      case "WORKFLOWSCHEME_ID_CREATEDRAFT":
         /*
 
 Create draft workflow scheme
@@ -11273,7 +11271,7 @@ Create draft workflow scheme
           );
         });
 
-      case 'GROUP':
+      case "GROUP":
         /*
 
 Create group
@@ -11290,7 +11288,7 @@ Create group
           });
         });
 
-      case 'GROUP_USER':
+      case "GROUP_USER":
         /*
 
 Add user to group
@@ -11307,7 +11305,7 @@ Add user to group
           });
         });
 
-      case 'FIELD_FIELD_KEY_OPTION':
+      case "FIELD_FIELD_KEY_OPTION":
         /*
 
 Create issue field option
@@ -11324,7 +11322,7 @@ Create issue field option
           });
         });
 
-      case 'ISSUE_LINK':
+      case "ISSUE_LINK":
         /*
 
 Create issue link
@@ -11341,7 +11339,7 @@ Create issue link
           });
         });
 
-      case 'FIELD':
+      case "FIELD":
         /*
 
 Create custom field
@@ -11358,7 +11356,7 @@ Create custom field
           });
         });
 
-      case 'WEBHOOK':
+      case "WEBHOOK":
         /*
 
 Register dynamic webhooks
@@ -11375,7 +11373,7 @@ Register dynamic webhooks
           });
         });
 
-      case 'PROJECT':
+      case "PROJECT":
         /*
 
 Create project
@@ -11392,7 +11390,7 @@ Create project
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_DELETE':
+      case "PROJECT_PROJECT_ID_OR_KEY_DELETE":
         /*
 
 Delete project asynchronously
@@ -11412,7 +11410,7 @@ Delete project asynchronously
           );
         });
 
-      case 'ISSUE_PROPERTIES':
+      case "ISSUE_PROPERTIES":
         /*
 
 Bulk set issues properties
@@ -11429,7 +11427,7 @@ Bulk set issues properties
           });
         });
 
-      case 'DASHBOARD_ID_COPY':
+      case "DASHBOARD_ID_COPY":
         /*
 
 Copy dashboard
@@ -11446,7 +11444,7 @@ Copy dashboard
           });
         });
 
-      case 'DASHBOARD':
+      case "DASHBOARD":
         /*
 
 Create dashboard
@@ -11463,7 +11461,7 @@ Create dashboard
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG":
         /*
 
 Add worklog
@@ -11480,7 +11478,7 @@ Add worklog
           });
         });
 
-      case 'WORKLOG_LIST':
+      case "WORKLOG_LIST":
         /*
 
 Get worklogs
@@ -11507,7 +11505,7 @@ Register modules
 
  */
   restAtlassianConnect1AppModuleDynamicPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.DynamicModulesApi(); // Object | Cloudi of the projec // {String: [Object]} |
     /*let cloudid = null;*/ /*let body = {key: null};*/ apiInstance.restAtlassianConnect1AppModuleDynamicPost(
@@ -11517,7 +11515,7 @@ Register modules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -11529,10 +11527,10 @@ Create project category
 
  */
   projectCategoryPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectCategoriesApi(); // Object | Cloudi of the projec // ProjectCategory |
@@ -11555,10 +11553,10 @@ Parse JQL query
 
  */
   jqlParsePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JQLApi(); // Object | Cloudi of the projec // JqlQueriesToParse |
@@ -11581,10 +11579,10 @@ Convert user identifiers to account IDs in JQL queries
 
  */
   jqlPdcleanerPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JQLApi(); // Object | Cloudi of the projec // JQLPersonalDataMigrationRequest |
@@ -11607,10 +11605,10 @@ Check issues against JQL
 
  */
   jqlMatchPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSearchApi(); // Object | Cloudi of the projec // IssuesAndJQLQueries |
@@ -11633,10 +11631,10 @@ Search for issues using JQL (POST)
 
  */
   searchPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueSearchApi(); // Object | Cloudi of the projec // SearchRequestBean | A JSON object containing the search request.
@@ -11659,7 +11657,7 @@ Load avatar
 
  */
   universalAvatarTypeTypeOwnerEntityIdPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AvatarsApi(); // Object | Cloudi of the projec // String | The avatar type // String | The ID of the item the avatar is associated with // Number | The length of each side of the crop region // Object |
     /*let cloudid = null;*/ /*let type = "type_example";*/ /*let entityId = "entityId_example";*/ /*let size = 56;*/ /*let body = null;*/ let opts = {
@@ -11699,10 +11697,10 @@ Add actors to project role
 
  */
   projectProjectIdOrKeyRoleIdPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs // ActorsMap | The groups or users to associate with the project role for this project. Provide the user account ID or group name.
@@ -11727,10 +11725,10 @@ Add default actors to project role
 
  */
   roleIdActorsPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs // ActorInputBean |
@@ -11754,10 +11752,10 @@ Analyse Jira expression
 
  */
   expressionAnalysePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JiraExpressionsApi(); // Object | Cloudi of the projec // JiraExpressionForAnalysis | The Jira expressions to analyse.
@@ -11780,10 +11778,10 @@ Evaluate Jira expression
 
  */
   expressionEvalPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JiraExpressionsApi(); // Object | Cloudi of the projec // JiraExpressionEvalRequestBean | The Jira expression and the evaluation context.
@@ -11820,15 +11818,15 @@ Add attachment
 
  */
   issueIssueIdOrKeyAttachmentsPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue that attachments are added to.
     /*let cloudid = null;*/ /*let issueIdOrKey = "issueIdOrKey_example";*/ let opts = {
-      body: '/path/to/file', // File |
+      body: "/path/to/file", // File |
     };
 
     if (incomingOptions.opts)
@@ -11860,10 +11858,10 @@ Partial update project role
 
  */
   roleIdPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs // CreateUpdateRoleRequestBean |
@@ -11887,10 +11885,10 @@ Create project role
 
  */
   rolePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // CreateUpdateRoleRequestBean |
@@ -11913,10 +11911,10 @@ Get bulk permissions
 
  */
   permissionsCheckPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionsApi(); // Object | Cloudi of the projec // BulkPermissionsRequestBean | Details of the permissions to check.
@@ -11939,10 +11937,10 @@ Get permitted projects
 
  */
   permissionsProjectPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionsApi(); // Object | Cloudi of the projec // PermissionsKeysBean |
@@ -11965,10 +11963,10 @@ Add field to default screen
 
  */
   screensAddToDefaultFieldIdPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // String | The ID of the field.
@@ -11991,10 +11989,10 @@ Create screen tab
 
  */
   screensScreenIdTabsPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // ScreenableTab |
@@ -12018,10 +12016,10 @@ Move screen tab field
 
  */
   screensScreenIdTabsTabIdFieldsIdMovePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab // String | The ID of the field // MoveFieldBean |
@@ -12047,10 +12045,10 @@ Add screen tab field
 
  */
   screensScreenIdTabsTabIdFieldsPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab // AddFieldBean |
@@ -12075,10 +12073,10 @@ Move screen tab
 
  */
   screensScreenIdTabsTabIdMovePosPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab // Number | The position of tab. The base index is 0.
@@ -12103,10 +12101,10 @@ Add watcher
 
  */
   issueIssueIdOrKeyWatchersPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWatchersApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The account ID of the user. Note that username cannot be used due to privacy changes.
@@ -12130,10 +12128,10 @@ Create workflow transition property
 
  */
   workflowTransitionsTransitionIdPropertiesPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionPropertiesApi(); // Object | Cloudi of the projec // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition // String | The key of the property being added, also known as the name of the property. Set this to the same value as the `key` defined in the request body // String | The name of the workflow that the transition belongs to // WorkflowTransitionProperty |
@@ -12173,10 +12171,10 @@ Move version
 
  */
   versionIdMovePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version to be moved // VersionMoveBean |
@@ -12200,10 +12198,10 @@ Delete and replace version
 
  */
   versionIdRemoveAndSwapPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version // DeleteAndReplaceVersionBean |
@@ -12227,10 +12225,10 @@ Create version
 
  */
   versionPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // Version |
@@ -12253,7 +12251,7 @@ Create user
 
  */
   userPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // UserWriteBean |
     /*let cloudid = null;*/ /*let body = new Jira.UserWriteBean();*/ apiInstance.userPost(
@@ -12275,10 +12273,10 @@ Bulk create issue
 
  */
   issueBulkPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // IssuesUpdateBean |
@@ -12301,10 +12299,10 @@ Send notification for issue
 
  */
   issueIssueIdOrKeyNotifyPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | ID or key of the issue that the notification is sent for // Notification | The request object for the notification and recipients.
@@ -12328,10 +12326,10 @@ Transition issue
 
  */
   issueIssueIdOrKeyTransitionsPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // IssueUpdateDetails |
@@ -12355,10 +12353,10 @@ Create issue
 
  */
   issuePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // IssueUpdateDetails |
@@ -12395,10 +12393,10 @@ Get comments by IDs
 
  */
   commentListPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // IssueCommentListRequestBean | The list of comment IDs.
@@ -12435,10 +12433,10 @@ Add comment
 
  */
   issueIssueIdOrKeyCommentPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // Comment |
@@ -12476,10 +12474,10 @@ Add share permission
 
  */
   filterIdPermissionPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the projec // Number | The ID of the filter // SharePermissionInputBean |
@@ -12503,10 +12501,10 @@ Load project avatar
 
  */
   projectProjectIdOrKeyAvatar2Post(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectAvatarsApi(); // Object | Cloudi of the projec // String | The ID or (case-sensitive) key of the project // Object |
@@ -12546,10 +12544,10 @@ Load issue type avatar
 
  */
   issuetypeIdAvatar2Post(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue type // Number | The length of each side of the crop region // Object |
@@ -12589,10 +12587,10 @@ Create issue type
 
  */
   issuetypePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // IssueTypeCreateBean |
@@ -12615,10 +12613,10 @@ Create workflow scheme
 
  */
   workflowschemePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // WorkflowScheme |
@@ -12641,10 +12639,10 @@ Create issue link type
 
  */
   issueLinkTypePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinkTypesApi(); // Object | Cloudi of the projec // IssueLinkType |
@@ -12667,10 +12665,10 @@ Create filter
 
  */
   filterPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Filter | The filter to create.
@@ -12707,10 +12705,10 @@ Create permission scheme
 
  */
   permissionschemePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // PermissionScheme | The permission scheme to create.
@@ -12747,10 +12745,10 @@ Create permission grant
 
  */
   permissionschemeSchemeIdPermissionPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme in which to create a new permission grant // PermissionGrant | The permission grant to create.
@@ -12788,10 +12786,10 @@ Create or update remote issue link
 
  */
   issueIssueIdOrKeyRemotelinkPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // RemoteIssueLinkRequest |
@@ -12815,10 +12813,10 @@ Cancel task
 
  */
   taskTaskIdCancelPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TasksApi(); // Object | Cloudi of the projec // String | The ID of the task.
@@ -12841,10 +12839,10 @@ Add vote
 
  */
   issueIssueIdOrKeyVotesPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueVotesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -12867,10 +12865,10 @@ Create component
 
  */
   componentPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // Component |
@@ -12893,10 +12891,10 @@ Create custom field options
 
  */
   customFieldFieldIdOptionPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsApi(); // Object | Cloudi of the projec // Number | The ID of the custom field. Note: This is the numeric part of the of the field ID. For example, for a field with the ID *customfield\\_10075* use *10075* // BulkCreateCustomFieldOptionRequest |
@@ -12920,10 +12918,10 @@ Create draft workflow scheme
 
  */
   workflowschemeIdCreatedraftPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the active workflow scheme that the draft is created from.
@@ -12946,10 +12944,10 @@ Create group
 
  */
   groupPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // AddGroupBean | The name of the group.
@@ -12972,10 +12970,10 @@ Add user to group
 
  */
   groupUserPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // String | The name of the group (case sensitive) // UpdateUserToGroupBean | The user to add to the group.
@@ -12999,10 +12997,10 @@ Create issue field option
 
  */
   fieldFieldKeyOptionPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\" // IssueFieldOptionCreateBean |
@@ -13026,10 +13024,10 @@ Create issue link
 
  */
   issueLinkPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinksApi(); // Object | Cloudi of the projec // LinkIssueRequestJsonBean | The issue link request.
@@ -13052,10 +13050,10 @@ Create custom field
 
  */
   fieldPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldsApi(); // Object | Cloudi of the projec // CustomFieldDefinitionJsonBean | Definition of the custom field to be created
@@ -13078,10 +13076,10 @@ Register dynamic webhooks
 
  */
   webhookPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WebhooksApi(); // Object | Cloudi of the projec // WebhookRegistrationDetails |
@@ -13104,10 +13102,10 @@ Create project
 
  */
   projectPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // ProjectInputBean | The JSON representation of the project being created.
@@ -13130,10 +13128,10 @@ Delete project asynchronously
 
  */
   projectProjectIdOrKeyDeletePost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -13144,7 +13142,7 @@ Delete project asynchronously
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -13156,10 +13154,10 @@ Bulk set issues properties
 
  */
   issuePropertiesPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // IssueEntityProperties | Issue properties to be set or updated with values.
@@ -13170,7 +13168,7 @@ Bulk set issues properties
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -13182,10 +13180,10 @@ Copy dashboard
 
  */
   dashboardIdCopyPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | // DashboardRequest | Dashboard details.
@@ -13209,10 +13207,10 @@ Create dashboard
 
  */
   dashboardPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // DashboardRequest | Dashboard details.
@@ -13235,10 +13233,10 @@ Add worklog
 
  */
   issueIssueIdOrKeyWorklogPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // String | The ID or key the issue // Worklog |
@@ -13281,10 +13279,10 @@ Get worklogs
 
  */
   worklogListPost(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // WorklogIdsRequestBean | A JSON object containing a list of worklog IDs.
@@ -13317,7 +13315,7 @@ Get worklogs
 
   async put(entity, options) {
     switch (entity) {
-      case 'COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY':
+      case "COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set comment property
@@ -13337,7 +13335,7 @@ Set comment property
           );
         });
 
-      case 'WORKFLOW_RULE_CONFIG':
+      case "WORKFLOW_RULE_CONFIG":
         /*
 
 Update workflow transition rule configurations
@@ -13354,7 +13352,7 @@ Update workflow transition rule configurations
           });
         });
 
-      case 'PROJECT_CATEGORY_ID':
+      case "PROJECT_CATEGORY_ID":
         /*
 
 Update project category
@@ -13371,7 +13369,7 @@ Update project category
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLE_ID':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLE_ID":
         /*
 
 Set actors for project role
@@ -13391,7 +13389,7 @@ Set actors for project role
           );
         });
 
-      case 'ROLE_ID':
+      case "ROLE_ID":
         /*
 
 Fully update project role
@@ -13408,7 +13406,7 @@ Fully update project role
           });
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID":
         /*
 
 Update screen tab
@@ -13425,7 +13423,7 @@ Update screen tab
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set worklog property
@@ -13445,7 +13443,7 @@ Set worklog property
           );
         });
 
-      case 'WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES':
+      case "WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES":
         /*
 
 Update workflow transition property
@@ -13465,7 +13463,7 @@ Update workflow transition property
           );
         });
 
-      case 'SETTINGS_COLUMNS':
+      case "SETTINGS_COLUMNS":
         /*
 
 Set issue navigator default columns
@@ -13482,7 +13480,7 @@ Set issue navigator default columns
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set project property
@@ -13502,7 +13500,7 @@ Set project property
           );
         });
 
-      case 'VERSION_ID_MERGETO_MOVE_ISSUES_TO':
+      case "VERSION_ID_MERGETO_MOVE_ISSUES_TO":
         /*
 
 Merge versions
@@ -13522,7 +13520,7 @@ Merge versions
           );
         });
 
-      case 'VERSION_ID':
+      case "VERSION_ID":
         /*
 
 Update version
@@ -13539,7 +13537,7 @@ Update version
           });
         });
 
-      case 'USER_COLUMNS':
+      case "USER_COLUMNS":
         /*
 
 Set user default columns
@@ -13556,7 +13554,7 @@ Set user default columns
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_ASSIGNEE':
+      case "ISSUE_ISSUE_ID_OR_KEY_ASSIGNEE":
         /*
 
 Assign issue
@@ -13573,7 +13571,7 @@ Assign issue
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY":
         /*
 
 Edit issue
@@ -13590,7 +13588,7 @@ Edit issue
           });
         });
 
-      case 'MYPREFERENCES_LOCALE':
+      case "MYPREFERENCES_LOCALE":
         /*
 
 Set locale
@@ -13607,7 +13605,7 @@ Set locale
           });
         });
 
-      case 'MYPREFERENCES':
+      case "MYPREFERENCES":
         /*
 
 Set preference
@@ -13624,7 +13622,7 @@ Set preference
           });
         });
 
-      case 'ISSUETYPESCHEME_PROJECT':
+      case "ISSUETYPESCHEME_PROJECT":
         /*
 
 Assign issue type scheme to project
@@ -13641,7 +13639,7 @@ Assign issue type scheme to project
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID":
         /*
 
 Update comment
@@ -13658,7 +13656,7 @@ Update comment
           });
         });
 
-      case 'FILTER_DEFAULT_SHARE_SCOPE':
+      case "FILTER_DEFAULT_SHARE_SCOPE":
         /*
 
 Set default share scope
@@ -13675,7 +13673,7 @@ Set default share scope
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_AVATAR':
+      case "PROJECT_PROJECT_ID_OR_KEY_AVATAR":
         /*
 
 Set project avatar
@@ -13695,7 +13693,7 @@ Set project avatar
           );
         });
 
-      case 'ISSUETYPE_ID':
+      case "ISSUETYPE_ID":
         /*
 
 Update issue type
@@ -13712,7 +13710,7 @@ Update issue type
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DEFAULT":
         /*
 
 Update default workflow
@@ -13729,7 +13727,7 @@ Update default workflow
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Set workflow for issue type in workflow scheme
@@ -13749,7 +13747,7 @@ Set workflow for issue type in workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID':
+      case "WORKFLOWSCHEME_ID":
         /*
 
 Update workflow scheme
@@ -13766,7 +13764,7 @@ Update workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_WORKFLOW":
         /*
 
 Set issue types for workflow in workflow scheme
@@ -13783,7 +13781,7 @@ Set issue types for workflow in workflow scheme
           });
         });
 
-      case 'ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID':
+      case "ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID":
         /*
 
 Update issue link type
@@ -13803,7 +13801,7 @@ Update issue link type
           );
         });
 
-      case 'ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set issue type property
@@ -13823,7 +13821,7 @@ Set issue type property
           );
         });
 
-      case 'FILTER_ID_COLUMNS':
+      case "FILTER_ID_COLUMNS":
         /*
 
 Set columns
@@ -13840,7 +13838,7 @@ Set columns
           });
         });
 
-      case 'FILTER_ID_FAVOURITE':
+      case "FILTER_ID_FAVOURITE":
         /*
 
 Add filter as favorite
@@ -13857,7 +13855,7 @@ Add filter as favorite
           });
         });
 
-      case 'FILTER_ID':
+      case "FILTER_ID":
         /*
 
 Update filter
@@ -13874,7 +13872,7 @@ Update filter
           });
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID':
+      case "PERMISSIONSCHEME_SCHEME_ID":
         /*
 
 Update permission scheme
@@ -13891,7 +13889,7 @@ Update permission scheme
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID":
         /*
 
 Update remote issue link by ID
@@ -13911,7 +13909,7 @@ Update remote issue link by ID
           );
         });
 
-      case 'APPLICATION_PROPERTIES_ID':
+      case "APPLICATION_PROPERTIES_ID":
         /*
 
 Set application property
@@ -13928,7 +13926,7 @@ Set application property
           });
         });
 
-      case 'COMPONENT_ID':
+      case "COMPONENT_ID":
         /*
 
 Update component
@@ -13945,7 +13943,7 @@ Update component
           });
         });
 
-      case 'CUSTOM_FIELD_FIELD_ID_OPTION':
+      case "CUSTOM_FIELD_FIELD_ID_OPTION":
         /*
 
 Update custom field options
@@ -13962,7 +13960,7 @@ Update custom field options
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DRAFT_DEFAULT":
         /*
 
 Update draft default workflow
@@ -13982,7 +13980,7 @@ Update draft default workflow
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Set workflow for issue type in draft workflow scheme
@@ -14002,7 +14000,7 @@ Set workflow for issue type in draft workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT':
+      case "WORKFLOWSCHEME_ID_DRAFT":
         /*
 
 Update draft workflow scheme
@@ -14019,7 +14017,7 @@ Update draft workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_DRAFT_WORKFLOW":
         /*
 
 Set issue types for workflow in workflow scheme
@@ -14039,7 +14037,7 @@ Set issue types for workflow in workflow scheme
           );
         });
 
-      case 'USER_PROPERTIES_PROPERTY_KEY':
+      case "USER_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set user property
@@ -14056,7 +14054,7 @@ Set user property
           });
         });
 
-      case 'ISSUETYPESCREENSCHEME_PROJECT':
+      case "ISSUETYPESCREENSCHEME_PROJECT":
         /*
 
 Assign issue type screen scheme to project
@@ -14076,7 +14074,7 @@ Assign issue type screen scheme to project
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_OPTION_ID':
+      case "FIELD_FIELD_KEY_OPTION_OPTION_ID":
         /*
 
 Update issue field option
@@ -14096,7 +14094,7 @@ Update issue field option
           );
         });
 
-      case 'WEBHOOK_REFRESH':
+      case "WEBHOOK_REFRESH":
         /*
 
 Extend webhook life
@@ -14113,7 +14111,7 @@ Extend webhook life
           });
         });
 
-      case 'FIELDCONFIGURATIONSCHEME_PROJECT':
+      case "FIELDCONFIGURATIONSCHEME_PROJECT":
         /*
 
 Assign field configuration scheme to project
@@ -14133,7 +14131,7 @@ Assign field configuration scheme to project
           );
         });
 
-      case 'PROJECT_PROJECT_KEY_OR_ID_PERMISSIONSCHEME':
+      case "PROJECT_PROJECT_KEY_OR_ID_PERMISSIONSCHEME":
         /*
 
 Assign permission scheme
@@ -14153,7 +14151,7 @@ Assign permission scheme
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY":
         /*
 
 Update project
@@ -14170,7 +14168,7 @@ Update project
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_TYPE_NEW_PROJECT_TYPE_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY_TYPE_NEW_PROJECT_TYPE_KEY":
         /*
 
 Update project type
@@ -14190,7 +14188,7 @@ Update project type
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set issue property
@@ -14210,7 +14208,7 @@ Set issue property
           );
         });
 
-      case 'ISSUE_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_PROPERTIES_PROPERTY_KEY":
         /*
 
 Bulk set issue property
@@ -14227,7 +14225,7 @@ Bulk set issue property
           });
         });
 
-      case 'CONFIGURATION_TIMETRACKING_OPTIONS':
+      case "CONFIGURATION_TIMETRACKING_OPTIONS":
         /*
 
 Set time tracking settings
@@ -14247,7 +14245,7 @@ Set time tracking settings
           );
         });
 
-      case 'CONFIGURATION_TIMETRACKING':
+      case "CONFIGURATION_TIMETRACKING":
         /*
 
 Select time tracking provider
@@ -14264,7 +14262,7 @@ Select time tracking provider
           });
         });
 
-      case 'DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY':
+      case "DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set dashboard item property
@@ -14284,7 +14282,7 @@ Set dashboard item property
           );
         });
 
-      case 'DASHBOARD_ID':
+      case "DASHBOARD_ID":
         /*
 
 Update dashboard
@@ -14301,7 +14299,7 @@ Update dashboard
           });
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY':
+      case "REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Set app property
@@ -14321,7 +14319,7 @@ Set app property
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID":
         /*
 
 Update worklog
@@ -14348,10 +14346,10 @@ Set comment property
 
  */
   commentCommentIdPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentPropertiesApi(); // Object | Cloudi of the projec // String | The ID of the comment // String | The key of the property. The maximum length is 255 characters // Object |
@@ -14376,10 +14374,10 @@ Update workflow transition rule configurations
 
  */
   workflowRuleConfigPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionRulesApi(); // Object | Cloudi of the projec // WorkflowTransitionRulesUpdate |
@@ -14402,10 +14400,10 @@ Update project category
 
  */
   projectCategoryIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectCategoriesApi(); // Object | Cloudi of the projec // Number | // ProjectCategory |
@@ -14429,10 +14427,10 @@ Set actors for project role
 
  */
   projectProjectIdOrKeyRoleIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs // ProjectRoleActorsUpdateBean | The groups or users to associate with the project role for this project. Provide the user account ID or group name.
@@ -14457,10 +14455,10 @@ Fully update project role
 
  */
   roleIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs // CreateUpdateRoleRequestBean |
@@ -14484,7 +14482,7 @@ Update screen tab
 
  */
   screensScreenIdTabsTabIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab // ScreenableTab |
     /*let cloudid = null;*/ /*let screenId = 789;*/ /*let tabId = 789;*/ /*let body = new Jira.ScreenableTab();*/ apiInstance.screensScreenIdTabsTabIdPut(
@@ -14511,10 +14509,10 @@ Set worklog property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogPropertiesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog // String | The key of the issue property. The maximum length is 255 characters // Object |
@@ -14540,10 +14538,10 @@ Update workflow transition property
 
  */
   workflowTransitionsTransitionIdPropertiesPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionPropertiesApi(); // Object | Cloudi of the projec // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition // String | The key of the property being updated, also known as the name of the property. Set this to the same value as the `key` defined in the request body // String | The name of the workflow that the transition belongs to // WorkflowTransitionProperty |
@@ -14583,10 +14581,10 @@ Set issue navigator default columns
 
  */
   settingsColumnsPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueNavigatorSettingsApi(); // Object | Cloudi of the project
@@ -14622,10 +14620,10 @@ Set project property
 
  */
   projectProjectIdOrKeyPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPropertiesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // String | The key of the project property. The maximum length is 255 characters // Object |
@@ -14650,10 +14648,10 @@ Merge versions
 
  */
   versionIdMergetoMoveIssuesToPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version to delete // String | The ID of the version to merge into.
@@ -14677,10 +14675,10 @@ Update version
 
  */
   versionIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version // Version |
@@ -14704,7 +14702,7 @@ Set user default columns
 
  */
   userColumnsPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
@@ -14740,10 +14738,10 @@ Assign issue
 
  */
   issueIssueIdOrKeyAssigneePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue to be assigned // User | The request object with the user that the issue is assigned to.
@@ -14767,10 +14765,10 @@ Edit issue
 
  */
   issueIssueIdOrKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // IssueUpdateDetails |
@@ -14810,10 +14808,10 @@ Set locale
 
  */
   mypreferencesLocalePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the projec // Locale | The locale defined in a LocaleBean.
@@ -14836,10 +14834,10 @@ Set preference
 
  */
   mypreferencesPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the projec // String | The key of the preference. The maximum length is 255 characters // String | The value of the preference as a plain text string. The maximum length is 255 characters.
@@ -14863,10 +14861,10 @@ Assign issue type scheme to project
 
  */
   issuetypeschemeProjectPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeSchemesApi(); // Object | Cloudi of the projec // IssueTypeSchemeProjectAssociation |
@@ -14889,10 +14887,10 @@ Update comment
 
  */
   issueIssueIdOrKeyCommentIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the comment // Comment |
@@ -14931,10 +14929,10 @@ Set default share scope
 
  */
   filterDefaultShareScopePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the projec // DefaultShareScope |
@@ -14957,10 +14955,10 @@ Set project avatar
 
  */
   projectProjectIdOrKeyAvatarPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectAvatarsApi(); // Object | Cloudi of the projec // String | The ID or (case-sensitive) key of the project // Avatar |
@@ -14984,10 +14982,10 @@ Update issue type
 
  */
   issuetypeIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue type // IssueTypeUpdateBean |
@@ -15011,10 +15009,10 @@ Update default workflow
 
  */
   workflowschemeIdDefaultPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // DefaultWorkflow | The new default workflow.
@@ -15038,10 +15036,10 @@ Set workflow for issue type in workflow scheme
 
  */
   workflowschemeIdIssuetypeIssueTypePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // String | The ID of the issue type // IssueTypeWorkflowMapping | The issue type-project mapping.
@@ -15066,10 +15064,10 @@ Update workflow scheme
 
  */
   workflowschemeIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID is shown in the URL as `schemeId`. For example, *schemeId=10301* // WorkflowScheme |
@@ -15093,10 +15091,10 @@ Set issue types for workflow in workflow scheme
 
  */
   workflowschemeIdWorkflowPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // String | The name of the workflow // IssueTypesWorkflowMapping |
@@ -15121,7 +15119,7 @@ Update issue link type
 
  */
   issueLinkTypeIssueLinkTypeIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.IssueLinkTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue link type // IssueLinkType |
     /*let cloudid = null;*/ /*let issueLinkTypeId = "issueLinkTypeId_example";*/ /*let body = new Jira.IssueLinkType();*/ apiInstance.issueLinkTypeIssueLinkTypeIdPut(
@@ -15144,10 +15142,10 @@ Set issue type property
 
  */
   issuetypeIssueTypeIdPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypePropertiesApi(); // Object | Cloudi of the projec // String | The ID of the issue type // String | The key of the issue type property. The maximum length is 255 characters // Object |
@@ -15172,10 +15170,10 @@ Set columns
 
  */
   filterIdColumnsPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -15212,10 +15210,10 @@ Add filter as favorite
 
  */
   filterIdFavouritePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -15252,10 +15250,10 @@ Update filter
 
  */
   filterIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter to update // Filter | The filter to update.
@@ -15293,10 +15291,10 @@ Update permission scheme
 
  */
   permissionschemeSchemeIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme to update // PermissionScheme |
@@ -15334,10 +15332,10 @@ Update remote issue link by ID
 
  */
   issueIssueIdOrKeyRemotelinkLinkIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the remote issue link // RemoteIssueLinkRequest |
@@ -15362,10 +15360,10 @@ Set application property
 
  */
   applicationPropertiesIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.JiraSettingsApi(); // Object | Cloudi of the projec // String | The key of the application property to update // SimpleApplicationPropertyBean |
@@ -15389,10 +15387,10 @@ Update component
 
  */
   componentIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The ID of the component // Component |
@@ -15416,10 +15414,10 @@ Update custom field options
 
  */
   customFieldFieldIdOptionPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsApi(); // Object | Cloudi of the projec // Number | The ID of the custom field. Note: This is the numeric part of the of the field ID. For example, for a field with the ID *customfield\\_10075* use *10075* // UpdateCustomFieldOption |
@@ -15443,10 +15441,10 @@ Update draft default workflow
 
  */
   workflowschemeIdDraftDefaultPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // DefaultWorkflow | The object for the new default workflow.
@@ -15470,10 +15468,10 @@ Set workflow for issue type in draft workflow scheme
 
  */
   workflowschemeIdDraftIssuetypeIssueTypePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // String | The ID of the issue type // IssueTypeWorkflowMapping | The issue type-project mapping.
@@ -15498,10 +15496,10 @@ Update draft workflow scheme
 
  */
   workflowschemeIdDraftPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the active workflow scheme that the draft was created from // WorkflowScheme |
@@ -15525,10 +15523,10 @@ Set issue types for workflow in workflow scheme
 
  */
   workflowschemeIdDraftWorkflowPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // String | The name of the workflow // IssueTypesWorkflowMapping |
@@ -15553,10 +15551,10 @@ Set user property
 
  */
   userPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserPropertiesApi(); // Object | Cloudi of the projec // String | The key of the user's property. The maximum length is 255 characters // Object |
@@ -15596,10 +15594,10 @@ Assign issue type screen scheme to project
 
  */
   issuetypescreenschemeProjectPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypeScreenSchemesApi(); // Object | Cloudi of the projec // IssueTypeScreenSchemeProjectAssociation |
@@ -15622,10 +15620,10 @@ Update issue field option
 
  */
   fieldFieldKeyOptionOptionIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\" // Number | The ID of the option to be updated // IssueFieldOption |
@@ -15650,10 +15648,10 @@ Extend webhook life
 
  */
   webhookRefreshPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WebhooksApi(); // Object | Cloudi of the projec // ContainerForWebhookIDs |
@@ -15676,10 +15674,10 @@ Assign field configuration scheme to project
 
  */
   fieldconfigurationschemeProjectPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueFieldConfigurationsApi(); // Object | Cloudi of the projec // FieldConfigurationSchemeProjectAssociation |
@@ -15702,10 +15700,10 @@ Assign permission scheme
 
  */
   projectProjectKeyOrIdPermissionschemePut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPermissionSchemesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // IdBean |
@@ -15743,10 +15741,10 @@ Update project
 
  */
   projectProjectIdOrKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // ProjectInputBean | The project details to be updated.
@@ -15784,10 +15782,10 @@ Update project type
 
  */
   projectProjectIdOrKeyTypeNewProjectTypeKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // String | The key of the new project type.
@@ -15811,10 +15809,10 @@ Set issue property
 
  */
   issueIssueIdOrKeyPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The key of the issue property. The maximum length is 255 characters // Object |
@@ -15839,10 +15837,10 @@ Bulk set issue property
 
  */
   issuePropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The key of the property. The maximum length is 255 characters // BulkIssuePropertyUpdateRequest |
@@ -15854,7 +15852,7 @@ Bulk set issue property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -15866,10 +15864,10 @@ Set time tracking settings
 
  */
   configurationTimetrackingOptionsPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TimeTrackingApi(); // Object | Cloudi of the projec // TimeTrackingConfiguration |
@@ -15892,10 +15890,10 @@ Select time tracking provider
 
  */
   configurationTimetrackingPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.TimeTrackingApi(); // Object | Cloudi of the projec // TimeTrackingProvider |
@@ -15918,10 +15916,10 @@ Set dashboard item property
 
  */
   dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard // String | The ID of the dashboard item // String | The key of the dashboard item property. The maximum length is 255 characters // Object |
@@ -15947,10 +15945,10 @@ Update dashboard
 
  */
   dashboardIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard to update // DashboardRequest | Replacement dashboard details.
@@ -15977,7 +15975,7 @@ Set app property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AppPropertiesApi(); // Object | Cloudi of the projec // String | The key of the app, as defined in its descriptor // String | The key of the property // Object |
     /*let cloudid = null;*/ /*let addonKey = "addonKey_example";*/ /*let propertyKey = "propertyKey_example";*/ /*let body = null;*/ apiInstance.restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyPut(
@@ -16001,10 +15999,10 @@ Update worklog
 
  */
   issueIssueIdOrKeyWorklogIdPut(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // String | The ID or key the issue // String | The ID of the worklog // Worklog |
@@ -16043,7 +16041,7 @@ Update worklog
 
   async delete(entity, options) {
     switch (entity) {
-      case 'COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY':
+      case "COMMENT_COMMENT_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete comment property
@@ -16063,7 +16061,7 @@ Delete comment property
           );
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC':
+      case "REST_ATLASSIAN_CONNECT1_APP_MODULE_DYNAMIC":
         /*
 
 Remove modules
@@ -16083,7 +16081,7 @@ Remove modules
           );
         });
 
-      case 'PROJECT_CATEGORY_ID':
+      case "PROJECT_CATEGORY_ID":
         /*
 
 Delete project category
@@ -16100,7 +16098,7 @@ Delete project category
           });
         });
 
-      case 'UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_OWNING_OBJECT_ID_AVATAR_ID':
+      case "UNIVERSAL_AVATAR_TYPE_TYPE_OWNER_OWNING_OBJECT_ID_AVATAR_ID":
         /*
 
 Delete avatar
@@ -16120,7 +16118,7 @@ Delete avatar
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_ROLE_ID':
+      case "PROJECT_PROJECT_ID_OR_KEY_ROLE_ID":
         /*
 
 Delete actors from project role
@@ -16140,7 +16138,7 @@ Delete actors from project role
           );
         });
 
-      case 'ROLE_ID_ACTORS':
+      case "ROLE_ID_ACTORS":
         /*
 
 Delete default actors from project role
@@ -16157,7 +16155,7 @@ Delete default actors from project role
           });
         });
 
-      case 'ATTACHMENT_ID':
+      case "ATTACHMENT_ID":
         /*
 
 Delete attachment
@@ -16174,7 +16172,7 @@ Delete attachment
           });
         });
 
-      case 'ROLE_ID':
+      case "ROLE_ID":
         /*
 
 Delete project role
@@ -16191,7 +16189,7 @@ Delete project role
           });
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID":
         /*
 
 Delete screen tab
@@ -16211,7 +16209,7 @@ Delete screen tab
           );
         });
 
-      case 'SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS_ID':
+      case "SCREENS_SCREEN_ID_TABS_TAB_ID_FIELDS_ID":
         /*
 
 Remove screen tab field
@@ -16231,7 +16229,7 @@ Remove screen tab field
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WATCHERS':
+      case "ISSUE_ISSUE_ID_OR_KEY_WATCHERS":
         /*
 
 Delete watcher
@@ -16251,7 +16249,7 @@ Delete watcher
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_WORKLOG_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete worklog property
@@ -16271,7 +16269,7 @@ Delete worklog property
           );
         });
 
-      case 'WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES':
+      case "WORKFLOW_TRANSITIONS_TRANSITION_ID_PROPERTIES":
         /*
 
 Delete workflow transition property
@@ -16291,7 +16289,7 @@ Delete workflow transition property
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete project property
@@ -16311,7 +16309,7 @@ Delete project property
           );
         });
 
-      case 'VERSION_ID':
+      case "VERSION_ID":
         /*
 
 Delete version
@@ -16328,7 +16326,7 @@ Delete version
           });
         });
 
-      case 'USER_COLUMNS':
+      case "USER_COLUMNS":
         /*
 
 Reset user default columns
@@ -16345,7 +16343,7 @@ Reset user default columns
           });
         });
 
-      case 'USER':
+      case "USER":
         /*
 
 Delete user
@@ -16362,7 +16360,7 @@ Delete user
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY":
         /*
 
 Delete issue
@@ -16379,7 +16377,7 @@ Delete issue
           });
         });
 
-      case 'MYPREFERENCES':
+      case "MYPREFERENCES":
         /*
 
 Delete preference
@@ -16396,7 +16394,7 @@ Delete preference
           });
         });
 
-      case 'MYPREFERENCES_LOCALE':
+      case "MYPREFERENCES_LOCALE":
         /*
 
 Delete locale
@@ -16413,7 +16411,7 @@ Delete locale
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_COMMENT_ID":
         /*
 
 Delete comment
@@ -16433,7 +16431,7 @@ Delete comment
           );
         });
 
-      case 'FILTER_ID_PERMISSION_PERMISSION_ID':
+      case "FILTER_ID_PERMISSION_PERMISSION_ID":
         /*
 
 Delete share permission
@@ -16453,7 +16451,7 @@ Delete share permission
           );
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY_AVATAR_ID':
+      case "PROJECT_PROJECT_ID_OR_KEY_AVATAR_ID":
         /*
 
 Delete project avatar
@@ -16473,7 +16471,7 @@ Delete project avatar
           );
         });
 
-      case 'ISSUETYPE_ID':
+      case "ISSUETYPE_ID":
         /*
 
 Delete issue type
@@ -16490,7 +16488,7 @@ Delete issue type
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DEFAULT":
         /*
 
 Delete default workflow
@@ -16507,7 +16505,7 @@ Delete default workflow
           });
         });
 
-      case 'WORKFLOWSCHEME_ID':
+      case "WORKFLOWSCHEME_ID":
         /*
 
 Delete workflow scheme
@@ -16524,7 +16522,7 @@ Delete workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Delete workflow for issue type in workflow scheme
@@ -16544,7 +16542,7 @@ Delete workflow for issue type in workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_WORKFLOW":
         /*
 
 Delete issue types for workflow in workflow scheme
@@ -16564,7 +16562,7 @@ Delete issue types for workflow in workflow scheme
           );
         });
 
-      case 'ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID':
+      case "ISSUE_LINK_TYPE_ISSUE_LINK_TYPE_ID":
         /*
 
 Delete issue link type
@@ -16584,7 +16582,7 @@ Delete issue link type
           );
         });
 
-      case 'ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY':
+      case "ISSUETYPE_ISSUE_TYPE_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete issue type property
@@ -16604,7 +16602,7 @@ Delete issue type property
           );
         });
 
-      case 'FILTER_ID_COLUMNS':
+      case "FILTER_ID_COLUMNS":
         /*
 
 Reset columns
@@ -16621,7 +16619,7 @@ Reset columns
           });
         });
 
-      case 'FILTER_ID':
+      case "FILTER_ID":
         /*
 
 Delete filter
@@ -16638,7 +16636,7 @@ Delete filter
           });
         });
 
-      case 'FILTER_ID_FAVOURITE':
+      case "FILTER_ID_FAVOURITE":
         /*
 
 Remove filter as favorite
@@ -16655,7 +16653,7 @@ Remove filter as favorite
           });
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID':
+      case "PERMISSIONSCHEME_SCHEME_ID":
         /*
 
 Delete permission scheme
@@ -16675,7 +16673,7 @@ Delete permission scheme
           );
         });
 
-      case 'PERMISSIONSCHEME_SCHEME_ID_PERMISSION_PERMISSION_ID':
+      case "PERMISSIONSCHEME_SCHEME_ID_PERMISSION_PERMISSION_ID":
         /*
 
 Delete permission scheme grant
@@ -16695,7 +16693,7 @@ Delete permission scheme grant
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK":
         /*
 
 Delete remote issue link by global ID
@@ -16715,7 +16713,7 @@ Delete remote issue link by global ID
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_REMOTELINK_LINK_ID":
         /*
 
 Delete remote issue link by ID
@@ -16735,7 +16733,7 @@ Delete remote issue link by ID
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_VOTES':
+      case "ISSUE_ISSUE_ID_OR_KEY_VOTES":
         /*
 
 Delete vote
@@ -16752,7 +16750,7 @@ Delete vote
           });
         });
 
-      case 'COMPONENT_ID':
+      case "COMPONENT_ID":
         /*
 
 Delete component
@@ -16769,7 +16767,7 @@ Delete component
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_DEFAULT':
+      case "WORKFLOWSCHEME_ID_DRAFT_DEFAULT":
         /*
 
 Delete draft default workflow
@@ -16789,7 +16787,7 @@ Delete draft default workflow
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT':
+      case "WORKFLOWSCHEME_ID_DRAFT":
         /*
 
 Delete draft workflow scheme
@@ -16806,7 +16804,7 @@ Delete draft workflow scheme
           });
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE':
+      case "WORKFLOWSCHEME_ID_DRAFT_ISSUETYPE_ISSUE_TYPE":
         /*
 
 Delete workflow for issue type in draft workflow scheme
@@ -16826,7 +16824,7 @@ Delete workflow for issue type in draft workflow scheme
           );
         });
 
-      case 'WORKFLOWSCHEME_ID_DRAFT_WORKFLOW':
+      case "WORKFLOWSCHEME_ID_DRAFT_WORKFLOW":
         /*
 
 Delete issue types for workflow in draft workflow scheme
@@ -16846,7 +16844,7 @@ Delete issue types for workflow in draft workflow scheme
           );
         });
 
-      case 'GROUP':
+      case "GROUP":
         /*
 
 Remove group
@@ -16863,7 +16861,7 @@ Remove group
           });
         });
 
-      case 'GROUP_USER':
+      case "GROUP_USER":
         /*
 
 Remove user from group
@@ -16880,7 +16878,7 @@ Remove user from group
           });
         });
 
-      case 'USER_PROPERTIES_PROPERTY_KEY':
+      case "USER_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete user property
@@ -16900,7 +16898,7 @@ Delete user property
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_OPTION_ID':
+      case "FIELD_FIELD_KEY_OPTION_OPTION_ID":
         /*
 
 Delete issue field option
@@ -16920,7 +16918,7 @@ Delete issue field option
           );
         });
 
-      case 'FIELD_FIELD_KEY_OPTION_OPTION_ID_ISSUE':
+      case "FIELD_FIELD_KEY_OPTION_OPTION_ID_ISSUE":
         /*
 
 Replace issue field option
@@ -16940,7 +16938,7 @@ Replace issue field option
           );
         });
 
-      case 'ISSUE_LINK_LINK_ID':
+      case "ISSUE_LINK_LINK_ID":
         /*
 
 Delete issue link
@@ -16957,7 +16955,7 @@ Delete issue link
           });
         });
 
-      case 'WEBHOOK':
+      case "WEBHOOK":
         /*
 
 Delete webhooks by ID
@@ -16974,7 +16972,7 @@ Delete webhooks by ID
           });
         });
 
-      case 'PROJECT_PROJECT_ID_OR_KEY':
+      case "PROJECT_PROJECT_ID_OR_KEY":
         /*
 
 Delete project
@@ -16991,7 +16989,7 @@ Delete project
           });
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_ISSUE_ID_OR_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete issue property
@@ -17011,7 +17009,7 @@ Delete issue property
           );
         });
 
-      case 'ISSUE_PROPERTIES_PROPERTY_KEY':
+      case "ISSUE_PROPERTIES_PROPERTY_KEY":
         /*
 
 Bulk delete issue property
@@ -17031,7 +17029,7 @@ Bulk delete issue property
           );
         });
 
-      case 'DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY':
+      case "DASHBOARD_DASHBOARD_ID_ITEMS_ITEM_ID_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete dashboard item property
@@ -17051,7 +17049,7 @@ Delete dashboard item property
           );
         });
 
-      case 'DASHBOARD_ID':
+      case "DASHBOARD_ID":
         /*
 
 Delete dashboard
@@ -17068,7 +17066,7 @@ Delete dashboard
           });
         });
 
-      case 'REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY':
+      case "REST_ATLASSIAN_CONNECT1_ADDONS_ADDON_KEY_PROPERTIES_PROPERTY_KEY":
         /*
 
 Delete app property
@@ -17088,7 +17086,7 @@ Delete app property
           );
         });
 
-      case 'ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID':
+      case "ISSUE_ISSUE_ID_OR_KEY_WORKLOG_ID":
         /*
 
 Delete worklog
@@ -17118,10 +17116,10 @@ Delete comment property
 
  */
   commentCommentIdPropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentPropertiesApi(); // Object | Cloudi of the projec // String | The ID of the comment // String | The key of the property.
@@ -17133,7 +17131,7 @@ Delete comment property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17145,7 +17143,7 @@ Remove modules
 
  */
   restAtlassianConnect1AppModuleDynamicDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.DynamicModulesApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
@@ -17168,7 +17166,7 @@ Remove modules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17180,10 +17178,10 @@ Delete project category
 
  */
   projectCategoryIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectCategoriesApi(); // Object | Cloudi of the projec // Number | ID of the project category to delete.
@@ -17194,7 +17192,7 @@ Delete project category
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17209,7 +17207,7 @@ Delete avatar
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AvatarsApi(); // Object | Cloudi of the projec // String | The avatar type // String | The ID of the item the avatar is associated with // Number | The ID of the avatar.
     /*let cloudid = null;*/ /*let type = "type_example";*/ /*let owningObjectId = "owningObjectId_example";*/ /*let id = 789;*/ apiInstance.universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(
@@ -17221,7 +17219,7 @@ Delete avatar
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17233,10 +17231,10 @@ Delete actors from project role
 
  */
   projectProjectIdOrKeyRoleIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -17263,7 +17261,7 @@ Delete actors from project role
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17275,10 +17273,10 @@ Delete default actors from project role
 
  */
   roleIdActorsDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRoleActorsApi(); // Object | Cloudi of the projec // Number | The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -17316,10 +17314,10 @@ Delete attachment
 
  */
   attachmentIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueAttachmentsApi(); // Object | Cloudi of the projec // String | The ID of the attachment.
@@ -17330,7 +17328,7 @@ Delete attachment
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17342,10 +17340,10 @@ Delete project role
 
  */
   roleIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectRolesApi(); // Object | Cloudi of the projec // Number | The ID of the project role to delete. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
@@ -17370,7 +17368,7 @@ Delete project role
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17382,7 +17380,7 @@ Delete screen tab
 
  */
   screensScreenIdTabsTabIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab.
     /*let cloudid = null;*/ /*let screenId = 789;*/ /*let tabId = 789;*/ apiInstance.screensScreenIdTabsTabIdDelete(
@@ -17393,7 +17391,7 @@ Delete screen tab
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17405,7 +17403,7 @@ Remove screen tab field
 
  */
   screensScreenIdTabsTabIdFieldsIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.ScreensApi(); // Object | Cloudi of the projec // Number | The ID of the screen // Number | The ID of the screen tab // String | The ID of the field.
     /*let cloudid = null;*/ /*let screenId = 789;*/ /*let tabId = 789;*/ /*let id = "id_example";*/ apiInstance.screensScreenIdTabsTabIdFieldsIdDelete(
@@ -17417,7 +17415,7 @@ Remove screen tab field
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17429,10 +17427,10 @@ Delete watcher
 
  */
   issueIssueIdOrKeyWatchersDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWatchersApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -17458,7 +17456,7 @@ Delete watcher
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17473,10 +17471,10 @@ Delete worklog property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogPropertiesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog // String | The key of the property.
@@ -17489,7 +17487,7 @@ Delete worklog property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17501,10 +17499,10 @@ Delete workflow transition property
 
  */
   workflowTransitionsTransitionIdPropertiesDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowTransitionPropertiesApi(); // Object | Cloudi of the projec // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition // String | The name of the transition property to delete, also known as the name of the property // String | The name of the workflow that the transition belongs to.
@@ -17531,7 +17529,7 @@ Delete workflow transition property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17543,10 +17541,10 @@ Delete project property
 
  */
   projectProjectIdOrKeyPropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectPropertiesApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive) // String | The project property key. Use [Get project property keys](#api-rest-api-3-project-projectIdOrKey-properties-get) to get a list of all project property keys.
@@ -17558,7 +17556,7 @@ Delete project property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17570,10 +17568,10 @@ Delete version
 
  */
   versionIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectVersionsApi(); // Object | Cloudi of the projec // String | The ID of the version.
@@ -17599,7 +17597,7 @@ Delete version
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17611,7 +17609,7 @@ Reset user default columns
 
  */
   userColumnsDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
@@ -17635,7 +17633,7 @@ Reset user default columns
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17647,7 +17645,7 @@ Delete user
 
  */
   userDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.UsersApi(); // Object | Cloudi of the projec // String | The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*.
     /*let cloudid = null;*/ /*let accountId = "accountId_example";*/ let opts = {
@@ -17672,7 +17670,7 @@ Delete user
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17684,10 +17682,10 @@ Delete issue
 
  */
   issueIssueIdOrKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -17712,7 +17710,7 @@ Delete issue
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17724,10 +17722,10 @@ Delete preference
 
  */
   mypreferencesDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the projec // String | The key of the preference.
@@ -17738,7 +17736,7 @@ Delete preference
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17750,10 +17748,10 @@ Delete locale
 
  */
   mypreferencesLocaleDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.MyselfApi(); // Object | Cloudi of the project
@@ -17775,10 +17773,10 @@ Delete comment
 
  */
   issueIssueIdOrKeyCommentIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCommentsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the comment.
@@ -17790,7 +17788,7 @@ Delete comment
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17802,10 +17800,10 @@ Delete share permission
 
  */
   filterIdPermissionPermissionIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FilterSharingApi(); // Object | Cloudi of the projec // Number | The ID of the filter // Number | The ID of the share permission.
@@ -17817,7 +17815,7 @@ Delete share permission
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17829,10 +17827,10 @@ Delete project avatar
 
  */
   projectProjectIdOrKeyAvatarIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectAvatarsApi(); // Object | Cloudi of the projec // String | The project ID or (case-sensitive) key // Number | The ID of the avatar.
@@ -17844,7 +17842,7 @@ Delete project avatar
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17856,10 +17854,10 @@ Delete issue type
 
  */
   issuetypeIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue type.
@@ -17884,7 +17882,7 @@ Delete issue type
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17896,10 +17894,10 @@ Delete default workflow
 
  */
   workflowschemeIdDefaultDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme.
@@ -17936,10 +17934,10 @@ Delete workflow scheme
 
  */
   workflowschemeIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID is shown in the URL as `schemeId`. For example, *schemeId=10301*.
@@ -17950,7 +17948,7 @@ Delete workflow scheme
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -17962,10 +17960,10 @@ Delete workflow for issue type in workflow scheme
 
  */
   workflowschemeIdIssuetypeIssueTypeDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // String | The ID of the issue type.
@@ -18003,10 +18001,10 @@ Delete issue types for workflow in workflow scheme
 
  */
   workflowschemeIdWorkflowDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme // String | The name of the workflow.
@@ -18032,7 +18030,7 @@ Delete issue types for workflow in workflow scheme
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18044,10 +18042,10 @@ Delete issue link type
 
  */
   issueLinkTypeIssueLinkTypeIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinkTypesApi(); // Object | Cloudi of the projec // String | The ID of the issue link type.
@@ -18058,7 +18056,7 @@ Delete issue link type
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18070,10 +18068,10 @@ Delete issue type property
 
  */
   issuetypeIssueTypeIdPropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueTypePropertiesApi(); // Object | Cloudi of the projec // String | The ID of the issue type // String | The key of the property. Use [Get issue type property keys](#api-rest-api-3-issuetype-issueTypeId-properties-get) to get a list of all issue type property keys.
@@ -18085,7 +18083,7 @@ Delete issue type property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18097,10 +18095,10 @@ Reset columns
 
  */
   filterIdColumnsDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -18111,7 +18109,7 @@ Reset columns
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18123,10 +18121,10 @@ Delete filter
 
  */
   filterIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter to delete.
@@ -18137,7 +18135,7 @@ Delete filter
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18149,10 +18147,10 @@ Remove filter as favorite
 
  */
   filterIdFavouriteDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.FiltersApi(); // Object | Cloudi of the projec // Number | The ID of the filter.
@@ -18189,10 +18187,10 @@ Delete permission scheme
 
  */
   permissionschemeSchemeIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme being deleted.
@@ -18203,7 +18201,7 @@ Delete permission scheme
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18215,10 +18213,10 @@ Delete permission scheme grant
 
  */
   permissionschemeSchemeIdPermissionPermissionIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.PermissionSchemesApi(); // Object | Cloudi of the projec // Number | The ID of the permission scheme to delete the permission grant from // Number | The ID of the permission grant to delete.
@@ -18230,7 +18228,7 @@ Delete permission scheme grant
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18242,10 +18240,10 @@ Delete remote issue link by global ID
 
  */
   issueIssueIdOrKeyRemotelinkDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The global ID of a remote issue link.
@@ -18257,7 +18255,7 @@ Delete remote issue link by global ID
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18269,10 +18267,10 @@ Delete remote issue link by ID
 
  */
   issueIssueIdOrKeyRemotelinkLinkIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueRemoteLinksApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of a remote issue link.
@@ -18284,7 +18282,7 @@ Delete remote issue link by ID
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18296,10 +18294,10 @@ Delete vote
 
  */
   issueIssueIdOrKeyVotesDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueVotesApi(); // Object | Cloudi of the projec // String | The ID or key of the issue.
@@ -18310,7 +18308,7 @@ Delete vote
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18322,10 +18320,10 @@ Delete component
 
  */
   componentIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectComponentsApi(); // Object | Cloudi of the projec // String | The ID of the component.
@@ -18350,7 +18348,7 @@ Delete component
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18362,10 +18360,10 @@ Delete draft default workflow
 
  */
   workflowschemeIdDraftDefaultDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to.
@@ -18388,10 +18386,10 @@ Delete draft workflow scheme
 
  */
   workflowschemeIdDraftDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the active workflow scheme that the draft was created from.
@@ -18402,7 +18400,7 @@ Delete draft workflow scheme
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18414,10 +18412,10 @@ Delete workflow for issue type in draft workflow scheme
 
  */
   workflowschemeIdDraftIssuetypeIssueTypeDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // String | The ID of the issue type.
@@ -18441,10 +18439,10 @@ Delete issue types for workflow in draft workflow scheme
 
  */
   workflowschemeIdDraftWorkflowDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WorkflowSchemeDraftsApi(); // Object | Cloudi of the projec // Number | The ID of the workflow scheme that the draft belongs to // String | The name of the workflow.
@@ -18456,7 +18454,7 @@ Delete issue types for workflow in draft workflow scheme
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18468,10 +18466,10 @@ Remove group
 
  */
   groupDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // String | The name of the group.
@@ -18496,7 +18494,7 @@ Remove group
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18508,10 +18506,10 @@ Remove user from group
 
  */
   groupUserDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.GroupsApi(); // Object | Cloudi of the projec // String | The name of the group // String | The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*.
@@ -18537,7 +18535,7 @@ Remove user from group
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18549,10 +18547,10 @@ Delete user property
 
  */
   userPropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.UserPropertiesApi(); // Object | Cloudi of the projec // String | The key of the user's property.
@@ -18579,7 +18577,7 @@ Delete user property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18591,10 +18589,10 @@ Delete issue field option
 
  */
   fieldFieldKeyOptionOptionIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\" // Number | The ID of the option to be deleted.
@@ -18618,10 +18616,10 @@ Replace issue field option
 
  */
   fieldFieldKeyOptionOptionIdIssueDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueCustomFieldOptionsAppsApi(); // Object | Cloudi of the projec // String | The field key is specified in the following format: **$(app-key)\\_\\_$(field-key)**. For example, *example-add-on\\_\\_example-issue-field*. To determine the `fieldKey` value, do one of the following:   *  open the app's plugin descriptor, then **app-key** is the key at the top and **field-key** is the key in the `jiraIssueFields` module. **app-key** can also be found in the app listing in the Atlassian Universal Plugin Manager.  *  run [Get fields](#api-rest-api-3-field-get) and in the field details the value is returned in `key`. For example, `\"key\": \"teams-add-on__team-issue-field\" // Number | The ID of the option to be deselected.
@@ -18648,7 +18646,7 @@ Replace issue field option
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18660,10 +18658,10 @@ Delete issue link
 
  */
   issueLinkLinkIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueLinksApi(); // Object | Cloudi of the projec // String | The ID of the issue link.
@@ -18674,7 +18672,7 @@ Delete issue link
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18686,10 +18684,10 @@ Delete webhooks by ID
 
  */
   webhookDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.WebhooksApi(); // Object | Cloudi of the projec // ContainerForWebhookIDs |
@@ -18700,7 +18698,7 @@ Delete webhooks by ID
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18712,10 +18710,10 @@ Delete project
 
  */
   projectProjectIdOrKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
@@ -18740,7 +18738,7 @@ Delete project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18752,10 +18750,10 @@ Delete issue property
 
  */
   issueIssueIdOrKeyPropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The key or ID of the issue // String | The key of the property.
@@ -18767,7 +18765,7 @@ Delete issue property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18779,10 +18777,10 @@ Bulk delete issue property
 
  */
   issuePropertiesPropertyKeyDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssuePropertiesApi(); // Object | Cloudi of the projec // String | The key of the property // IssueFilterForBulkPropertyDelete |
@@ -18794,7 +18792,7 @@ Bulk delete issue property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18809,10 +18807,10 @@ Delete dashboard item property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard // String | The ID of the dashboard item // String | The key of the dashboard item property.
@@ -18825,7 +18823,7 @@ Delete dashboard item property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18837,10 +18835,10 @@ Delete dashboard
 
  */
   dashboardIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.DashboardsApi(); // Object | Cloudi of the projec // String | The ID of the dashboard.
@@ -18851,7 +18849,7 @@ Delete dashboard
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18866,7 +18864,7 @@ Delete app property
     incomingOptions,
     cb
   ) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
 
     let apiInstance = new Jira.AppPropertiesApi(); // Object | Cloudi of the projec // String | The key of the app, as defined in its descriptor // String | The key of the property.
     /*let cloudid = null;*/ /*let addonKey = "addonKey_example";*/ /*let propertyKey = "propertyKey_example";*/ apiInstance.restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyDelete(
@@ -18877,7 +18875,7 @@ Delete app property
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
@@ -18889,10 +18887,10 @@ Delete worklog
 
  */
   issueIssueIdOrKeyWorklogIdDelete(incomingOptions, cb) {
-    const Jira = require('./dist');
+    const Jira = require("./dist");
     let defaultClient = Jira.ApiClient.instance;
     // Configure OAuth2 access token for authorization: OAuth2
-    let OAuth2 = defaultClient.authentications['OAuth2'];
+    let OAuth2 = defaultClient.authentications["OAuth2"];
     OAuth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Jira.IssueWorklogsApi(); // Object | Cloudi of the projec // String | The ID or key of the issue // String | The ID of the worklog.
@@ -18922,7 +18920,7 @@ Delete worklog
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, '', response);
+          cb(null, "", response);
         }
       }
     );
