@@ -265,14 +265,6 @@ class SentryService {
     let data = [];
     for (let index = 0; index < projects.data.length; ++index) {
       if (projects.data[index].status === "active") {
-        const stats = await Axios.default.get(
-          `${this.apiEndpoint}/projects/${projects.data[index].organization.slug}/${projects.data[index].slug}/stats/?stat=received&resolution=1d`,
-          {
-            headers: {
-              Authorization: `Bearer ${options.accessToken}`,
-            },
-          }
-        );
         let description = projects.data[index].platform;
         description =
           description.charAt(0).toUpperCase() + description.slice(1);
@@ -283,12 +275,6 @@ class SentryService {
           projectRef: `https://sentry.io/${projects.data[index].organization.slug}/${projects.data[index].slug}`,
           organizationName: projects.data[index].organization.name,
           organizationId: projects.data[index].organization.slug,
-          metrics: [
-            {
-              key: "# of events received in 24 hours",
-              value: `${stats.data[0][1]}`,
-            },
-          ],
         });
       }
     }
