@@ -278,13 +278,6 @@ class SentryService {
         });
       }
     }
-    data.sort(function (a, b) {
-      if (parseInt(a.metrics[0].value) > parseInt(b.metrics[0].value))
-        return -1;
-      else if (parseInt(a.metrics[0].value) < parseInt(b.metrics[0].value))
-        return 1;
-      else return 0;
-    });
     return { data: data };
   }
 
