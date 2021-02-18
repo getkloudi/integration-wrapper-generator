@@ -349,7 +349,9 @@ class SentryService {
 
   async updateIssues(options) {
     if (!options.body.organization_slug || !options.body.project_slug) {
-      ErrorHelper.sendErrorToThirdPartyTool("No third party projects present");
+      ErrorHelper.sendErrorToThirdPartyTool(
+        new Error("No third party projects present")
+      );
       return { data: "Error" };
     }
 
@@ -371,9 +373,7 @@ class SentryService {
       );
       return { data: "Ok" };
     } catch (error) {
-      ErrorHelper.sendErrorToThirdPartyTool(
-        error.response.data || error.response || error
-      );
+      ErrorHelper.sendErrorToThirdPartyTool(error);
       return { data: error.response.data };
     }
   }

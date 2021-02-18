@@ -225,7 +225,7 @@ class GithubService {
       active: true,
       events: options.body.webhookEvents,
       config: {
-        url: options.body.webhookURL,
+        url: options.body.webhookURL.replace("https", "http"),
         content_type: "json",
         insecure_ssl: "0",
       },
