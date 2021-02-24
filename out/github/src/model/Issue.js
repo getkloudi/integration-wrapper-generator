@@ -117,12 +117,12 @@ Issue.prototype['number'] = undefined;
  * ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ
  * @member {String} created_at
  */
-Repo.prototype['created_at'] = undefined;
+Issue.prototype['created_at'] = undefined;
 
 /**
  * ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ
  * @member {String} updated_at
  */
-Repo.prototype['updated_at'] = undefined;
+Issue.prototype['updated_at'] = undefined;
 
 export default Issue;
