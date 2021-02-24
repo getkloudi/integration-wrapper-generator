@@ -89,6 +89,10 @@ var Issue = /*#__PURE__*/function () {
         if (data.hasOwnProperty('updated_at')) {
           obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
         }
+
+        if (data.hasOwnProperty('state')) {
+          obj['state'] = _ApiClient["default"].convertToType(data['state'], 'String');
+        }
       }
 
       return obj;
@@ -145,5 +149,10 @@ Issue.prototype['created_at'] = undefined;
  */
 
 Issue.prototype['updated_at'] = undefined;
+/**
+ * @member {String} state
+ */
+
+Issue.prototype['state'] = undefined;
 var _default = Issue;
 exports["default"] = _default;

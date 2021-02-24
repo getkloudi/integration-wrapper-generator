@@ -69,9 +69,11 @@ class Issue {
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
-
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+            }
+            if (data.hasOwnProperty('state')) {
+                obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
         }
         return obj;
@@ -124,5 +126,10 @@ Issue.prototype['created_at'] = undefined;
  * @member {String} updated_at
  */
 Issue.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} state
+ */
+Issue.prototype['state'] = undefined;
 
 export default Issue;
