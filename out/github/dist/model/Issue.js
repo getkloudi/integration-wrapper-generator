@@ -81,6 +81,14 @@ var Issue = /*#__PURE__*/function () {
         if (data.hasOwnProperty('number')) {
           obj['number'] = _ApiClient["default"].convertToType(data['number'], 'Number');
         }
+
+        if (data.hasOwnProperty('created_at')) {
+          obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'String');
+        }
+
+        if (data.hasOwnProperty('updated_at')) {
+          obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
+        }
       }
 
       return obj;
@@ -125,5 +133,17 @@ Issue.prototype['url'] = undefined;
  */
 
 Issue.prototype['number'] = undefined;
+/**
+ * ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} created_at
+ */
+
+Repo.prototype['created_at'] = undefined;
+/**
+ * ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} updated_at
+ */
+
+Repo.prototype['updated_at'] = undefined;
 var _default = Issue;
 exports["default"] = _default;
