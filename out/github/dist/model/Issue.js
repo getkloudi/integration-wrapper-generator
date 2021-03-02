@@ -79,7 +79,7 @@ var Issue = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('number')) {
-          obj['number'] = _ApiClient["default"].convertToType(data['number'], 'Number');
+          obj['number'] = _ApiClient["default"].convertToType(data['number'], 'String');
         }
 
         if (data.hasOwnProperty('created_at')) {
@@ -133,7 +133,7 @@ Issue.prototype['title'] = undefined;
 
 Issue.prototype['url'] = undefined;
 /**
- * @member {Number} number
+ * @member {String} number
  */
 
 Issue.prototype['number'] = undefined;

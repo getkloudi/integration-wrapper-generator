@@ -64,7 +64,7 @@ class Issue {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('number')) {
-                obj['number'] = ApiClient.convertToType(data['number'], 'Number');
+                obj['number'] = ApiClient.convertToType(data['number'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -111,7 +111,7 @@ Issue.prototype['title'] = undefined;
 Issue.prototype['url'] = undefined;
 
 /**
- * @member {Number} number
+ * @member {String} number
  */
 Issue.prototype['number'] = undefined;
 
