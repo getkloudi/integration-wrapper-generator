@@ -79,9 +79,20 @@ class SentryService {
 
     async connect(authParams) {
         if (authParams.auth_token) {
-            return {
-                accessToken: authParams.auth_token,
-            };
+            const url = `https://sentry.io/api/0/`;
+            const res = await Axios.default.get(url, {
+                headers: { Authorization: `Bearer ${authParams.auth_token}` },
+            });
+            const data = res.data;
+            if (data && data.auth && data.auth.scopes.indexOf('project:admin') >= 0) {
+                return {
+                    accessToken: authParams.auth_token,
+                };
+            } else
+                throw ErrorHelper.getError(
+                    'Incorrect API Token<br />You need API token with project:admin permission',
+                    400
+                );
         } else {
             throw ErrorHelper.getError('auth_token missing', 400);
         }
