@@ -28,7 +28,7 @@ production:
   environment:
     name: production
   only:
-    - master
+    - main
   script:
     - echo "$PRODUCTION_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh
