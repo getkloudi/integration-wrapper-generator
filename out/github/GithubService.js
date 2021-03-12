@@ -30,23 +30,27 @@ class GithubService {
     }
 
     get authMethod() {
-        return 'OAUTH2';
+        if (nconf.get('PLATFORM') === 'cloud') return 'OAUTH2';
+        else return 'API_TOKEN';
     }
 
     get authEndpoint() {
-        return (
-            `https://github.com/login/oauth/authorize?` +
-            `client_id=${nconf.get('GITHUB_CLIENT_ID')}&` +
-            `scope=${qs.escape(this.scopes.join(' '))}`
-        );
+        if (nconf.get('PLATFORM') === 'cloud')
+            return (
+                `https://github.com/login/oauth/authorize?` +
+                `client_id=${nconf.get('GITHUB_CLIENT_ID')}&` +
+                `scope=${qs.escape(this.scopes.join(' '))}`
+            );
+        else return;
     }
 
     get apiTokenURL() {
-        return;
+        return 'https://github.com/settings/tokens/new?description=kloudi-local';
     }
 
     get requiredAuthParams() {
-        return ['code'];
+        if (nconf.get('PLATFORM') === 'cloud') return ['code'];
+        else return ['apiKey'];
     }
 
     get scopes() {
@@ -105,11 +109,17 @@ class GithubService {
     }
 
     get primaryAction() {
-        return {
-            type: 'HREF',
-            url: this.authEndpoint,
-            requiredAuthParams: this.requiredAuthParams,
-        };
+        if (nconf.get('PLATFORM') === 'cloud')
+            return {
+                type: 'HREF',
+                url: this.authEndpoint,
+                requiredAuthParams: this.requiredAuthParams,
+            };
+        else
+            return {
+                type: 'INPUT_API_TOKEN_PARAMS',
+                requiredAuthParams: this.requiredAuthParams,
+            };
     }
 
     get entities() {
@@ -123,7 +133,11 @@ class GithubService {
         return;
     }
 
-    async connect(authParams) {
+    async connectUsingAPIToken(authParams) {
+        return authParams.apiKey;
+    }
+
+    async connectUsingOAuth(authParams) {
         let res = await axios.default.post(
             'https://github.com/login/oauth/access_token',
             {
@@ -137,42 +151,55 @@ class GithubService {
                 },
             }
         );
-        const apiKey = res.data.access_token;
-        const apiKeyPrefix = 'token';
-        let orgs = [],
-            incomingOptions = { opts: {} };
 
-        res = await this.get('USER', {
-            apiKey: apiKey,
-            apiKeyPrefix: apiKeyPrefix,
-            opts: {
-                perPage: incomingOptions.opts.perPage,
-                page: incomingOptions.opts.page,
-            },
-        });
-        const user = res.data;
+        return res.data.access_token;
+    }
 
-        while (true) {
-            let res = await this.get('USER_ORGS', {
+    async connect(authParams) {
+        try {
+            const apiKey =
+                nconf.get('PLATFORM') === 'cloud'
+                    ? await this.connectUsingOAuth(authParams)
+                    : await this.connectUsingAPIToken(authParams);
+
+            const apiKeyPrefix = 'token';
+            let orgs = [],
+                incomingOptions = { opts: {} };
+
+            let res = await this.get('USER', {
                 apiKey: apiKey,
+                apiKeyPrefix: apiKeyPrefix,
                 opts: {
                     perPage: incomingOptions.opts.perPage,
                     page: incomingOptions.opts.page,
                 },
             });
-            incomingOptions.opts = this.getNextPaginationURIFromResponse(res.response);
-            orgs = orgs.concat(res.data.map((item) => item.login));
-            if (!incomingOptions.opts || !incomingOptions.opts.page) break;
-        }
+            const user = res.data;
 
-        const data = {
-            accessToken: apiKey,
-            integrationSpecificParams: {
-                username: user.login,
-            },
-        };
-        if (orgs.length > 0) data.team = { usernames: orgs };
-        return data;
+            while (true) {
+                let res = await this.get('USER_ORGS', {
+                    apiKey: apiKey,
+                    opts: {
+                        perPage: incomingOptions.opts.perPage,
+                        page: incomingOptions.opts.page,
+                    },
+                });
+                incomingOptions.opts = this.getNextPaginationURIFromResponse(res.response);
+                orgs = orgs.concat(res.data.map((item) => item.login));
+                if (!incomingOptions.opts || !incomingOptions.opts.page) break;
+            }
+
+            const data = {
+                accessToken: apiKey,
+                integrationSpecificParams: {
+                    username: user.login,
+                },
+            };
+            if (orgs.length > 0) data.team = { usernames: orgs };
+            return data;
+        } catch (error) {
+            throw new Error(error.response.body.message);
+        }
     }
 
     async getThirdPartyProjects(incomingOptions) {
